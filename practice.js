@@ -483,3 +483,58 @@
 // }
 
 // console.log(fibonacciSequence(10))
+
+// function fizzBuzz(num){
+//     for (let i=1; i<=num; i++){
+//         console.log(i%3 === 0 && i%5 === 0 ? 'FizzBuzz' : i%3 === 0 ? 'Fizz' : i%5 === 0 ? 'Buzz' : i)
+//     }
+// }
+
+// fizzBuzz(20)
+
+// let array1 = [1,3,5,7,9]
+// let array2 = [2,4,6,8,10]
+
+// let mergeArrays = (arr1,arr2) => {
+//     let merged = [...arr1,...arr2]
+//     console.log(merged.sort((a,b) => a - b))
+// }
+
+// mergeArrays(array1,array2)
+
+
+// let fibonacciSequence = (num) => {
+//     let arr = [0,1]
+
+//     if (num <= 0) return 'Please enter positive integer';
+//     if (num === 1) return arr[0]
+//     if (num === 2) return arr;
+ 
+//     while (num > 2){
+//         arr.push(arr.slice(-2).reduce((a,b) => a+b, 0))
+//         num--;
+//     }
+//     return arr;
+// }
+
+// console.log(fibonacciSequence(10))
+
+
+let fibonacciSequence = (num) => {
+    let fib1 = 0;
+    let fib2 = 1;
+    let nextFib;
+    let arr = []
+
+    if (num <= 0) return 'Please enter positive integer'
+
+    for (let i = 1; i <= num; i++){
+        arr.push(fib1)
+        nextFib = fib1 + fib2;
+        fib1 = fib2;
+        fib2 = nextFib;
+    }
+    return arr
+}
+
+console.log(fibonacciSequence(-3))
