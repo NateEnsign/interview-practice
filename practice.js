@@ -637,64 +637,101 @@
 
 // console.log(fibonacciSequence(0))
 
-let fizzBuzz = (num) => {
-    let i = 1
-    while (i <= num){
-        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0? 'Buzz' : i)
-        i++
-    }
-}
+// let fizzBuzz = (num) => {
+//     let i = 1
+//     while (i <= num){
+//         console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0? 'Buzz' : i)
+//         i++
+//     }
+// }
 
-fizzBuzz(15)
+// fizzBuzz(15)
 
-function fizzBuzz(num){
-    for (let i = 1; i<=num; i++){
-        console.log(i%5===0 && i%3===0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
-    }
-}
+// function fizzBuzz(num){
+//     for (let i = 1; i<=num; i++){
+//         console.log(i%5===0 && i%3===0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+//     }
+// }
 
-fizzBuzz(30)
+// fizzBuzz(30)
 
-let array1 = [1,3,5,7,9]
-let array2 = [2,4,6,8,10]
+// let array1 = [1,3,5,7,9]
+// let array2 = [2,4,6,8,10]
 
-let mergeArrays = (arr1,arr2) => {
-    return [...arr1,...arr2].sort((a,b) => a - b)
-}
+// let mergeArrays = (arr1,arr2) => {
+//     return [...arr1,...arr2].sort((a,b) => a - b)
+// }
 
-console.log(mergeArrays(array1,array2))
+// console.log(mergeArrays(array1,array2))
 
-let fibonacciSequence = (num) => {
-    let fib1 = 0;
-    let fib2 = 1;
-    let nextFib;
-    let arr = []
+// let fibonacciSequence = (num) => {
+//     let fib1 = 0;
+//     let fib2 = 1;
+//     let nextFib;
+//     let arr = []
 
-    if (num <= 0) return 'Please enter positive integer'
+//     if (num <= 0) return 'Please enter positive integer'
 
-    for (let i = 0; i<num; i++){
-        arr.push(fib1)
-        nextFib = fib1 + fib2;
-        fib1 = fib2;
-        fib2 = nextFib;
-    }
-    return arr
-}
+//     for (let i = 0; i<num; i++){
+//         arr.push(fib1)
+//         nextFib = fib1 + fib2;
+//         fib1 = fib2;
+//         fib2 = nextFib;
+//     }
+//     return arr
+// }
 
-console.log(fibonacciSequence(0))
+// console.log(fibonacciSequence(0))
 
-let fibonacciSequence = (num) => {
-    let arr = [0,1]
+// let fibonacciSequence = (num) => {
+//     let arr = [0,1]
 
-    if (num <= 0) return 'Please enter positive integer'
-    if (num === 1) return arr[0]
-    if (num === 2) return arr
+//     if (num <= 0) return 'Please enter positive integer'
+//     if (num === 1) return arr[0]
+//     if (num === 2) return arr
 
-    while (num > 2){
-        arr.push(arr.slice(-2).reduce((a,b) => a+b,0))
-        num--
-    }
-    return arr
-}
+//     while (num > 2){
+//         arr.push(arr.slice(-2).reduce((a,b) => a+b,0))
+//         num--
+//     }
+//     return arr
+// }
 
-console.log(fibonacciSequence(2))
+// console.log(fibonacciSequence(2))
+
+
+// let fizzBuzz = (start,end) => {
+//     for (let i = start; i <= end; i++){
+//         console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+//     }
+// }
+
+// fizzBuzz(1,15)
+
+
+
+// let mergeArrays = (arr1,arr2) => {
+//     return [...arr1,...arr2].sort((a,b) => a - b)
+// }
+
+// let array1 = [1,3,5,7,9]
+// let array2 = [2,4,6,8,10]
+
+// console.log(mergeArrays(array1,array2))
+
+
+// let fibonacciSequence = (num) => {
+//     let arr = [0,1]
+
+//     if (num <= 0) return 'Please enter positive integer';
+//     if (num === 1) return arr[0];
+//     if (num === 2) return arr;
+
+//     while (num > 2){
+//         arr.push(arr.slice(-2).reduce((a,b) => a+b, 0))
+//         num--;
+//     }
+//     return arr
+// }
+
+// console.log(fibonacciSequence(10))
