@@ -752,9 +752,18 @@
 
 // console.log(fibonacciSequence(10))
 
-let fizzBuzz = (start,end) => {
-for (let i = start; i <= end; i++){
-    console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+// let fizzBuzz = (start,end) => {
+// for (let i = start; i <= end; i++){
+//     console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+// }
+// }
+// fizzBuzz(5,30)
+
+let mergeArrays = (arr1,arr2) => {
+    return [...arr1,...arr2].sort((a,b) => a - b)
 }
-}
-fizzBuzz(5,30)
+
+let array1 = [1,3,5,7,9]
+let array2 = [2,4,6,8,10]
+
+console.log(mergeArrays(array1,array2))
