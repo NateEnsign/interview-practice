@@ -768,21 +768,31 @@
 
 // console.log(mergeArrays(array1,array2))
 
-let fibonacciSequence = (num) => {
-    let fib1 = 0;
-    let fib2 = 1;
-    let nextFib;
-    let arr = []
+// let fibonacciSequence = (num) => {
+//     let fib1 = 0;
+//     let fib2 = 1;
+//     let nextFib;
+//     let arr = []
 
-    if (num <= 0) return 'Please enter positive integer';
+//     if (num <= 0) return 'Please enter positive integer';
 
-    for (let i = 1; i<=num; i++){
-        arr.push(fib1)
-        nextFib = fib1 + fib2;
-        fib1 = fib2;
-        fib2 = nextFib
+//     for (let i = 1; i<=num; i++){
+//         arr.push(fib1)
+//         nextFib = fib1 + fib2;
+//         fib1 = fib2;
+//         fib2 = nextFib
+//     }
+//     return arr
+// }
+
+// console.log(fibonacciSequence(1))
+
+let fizzBuzz = (end) => {
+    let num = 0
+    while (num <= end){
+        console.log(num%5 === 0 && num%3 === 0 ? 'FizzBuzz' : num%5 === 0 ? 'Fizz' : num%3 === 0 ? 'Buzz' : num)
+        num++;
     }
-    return arr
 }
 
-console.log(fibonacciSequence(1))
+fizzBuzz(15)
