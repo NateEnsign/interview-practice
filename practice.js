@@ -1030,11 +1030,30 @@
 
 // fizzBuzz(20)
 
-let array1 = [1,3,5,7,9]
-let array2 = [2,4,6,8,10]
+// let array1 = [1,3,5,7,9]
+// let array2 = [2,4,6,8,10]
 
-let mergeArrays = (arr1,arr2) => {
-    console.log([...arr1,...arr2].sort((a,b) => a - b))
+// let mergeArrays = (arr1,arr2) => {
+//     console.log([...arr1,...arr2].sort((a,b) => a - b))
+// }
+
+// mergeArrays(array1,array2)
+
+let fibonacciSequence = (num) => {
+    let fib1 = 0;
+    let fib2 = 1;
+    let nextFib;
+    let arr = [];
+
+    if (num <= 0) return 'Please enter positive integer';
+
+    for (let i = 0; i < num; i++){
+        arr.push(fib1);
+        nextFib = fib1 + fib2;
+        fib1 = fib2;
+        fib2 = nextFib;
+    }
+    return arr
 }
 
-mergeArrays(array1,array2)
+console.log(fibonacciSequence(10))
