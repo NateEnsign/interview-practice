@@ -1121,8 +1121,8 @@
 //         arr.push(arr.slice(-2).reduce((a,b) => a + b,0))
 //         num--;
 //     }
-//     return arr  
-// }   
+//     return arr
+// }
 
 // console.log(fibonacciSequence(10))
 
@@ -1249,9 +1249,8 @@
 //     let nextFib;
 //     let arr = [];
 
-
 //     if (num <= 0) return 'Please enter positive integer';
-    
+
 //     for (let i = 1; i <= num; i++){
 //         arr.push(fib1);
 //         nextFib = fib1 + fib2;
@@ -1266,7 +1265,7 @@
 
 // let fibonacciSequence = (num) => {
 //     let arr = [0,1];
-    
+
 //     if (num <= 0) return 'Please enter positive integer';
 //     if (num === 1) return [arr[0]]
 //     if (num === 2) return arr;
@@ -1285,7 +1284,7 @@
 //     for (let i=1; i<=num; i++){
 //         arr.push(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i  )
 //     }
-//     console.log(arr)    
+//     console.log(arr)
 // }
 
 // fizzBuzz(30)
@@ -1310,7 +1309,7 @@
 //         arr.push(arr.slice(-2).reduce((a,b) => a + b,0 ))
 //         num--;
 //     }
-//     return arr  
+//     return arr
 // }
 
 // console.log(fibonacciSequence(10))
@@ -1327,7 +1326,7 @@
 //         arr.push(fib1);
 //         nextFib = fib1 + fib2;
 //         fib1 = fib2;
-//         fib2 = nextFib; 
+//         fib2 = nextFib;
 //     }
 //     return arr
 // }
@@ -1337,7 +1336,7 @@
 // let fizzBuzz = (num) => {
 //     for ( let i=1; i<=num; i++){
 //         console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i   )
-//     }   
+//     }
 // }
 
 // fizzBuzz(30)
@@ -1351,19 +1350,38 @@
 
 // mergeArrays(array1,array2)
 
+// let fibonacciSequence = (num) => {
+//     let arr = [0,1]
+
+//     if (num <= 0) return 'Please entere positive integer';
+//     if (num === 1) return [arr[0]]
+//     if (num === 2) return arr;
+
+//     while (num > 2){
+//         arr.push(arr.slice(-2).reduce((a,b) => a+b,0))
+//         num--;
+
+//     }
+//     return arr
+// }
+
+// console.log(fibonacciSequence(10))
+
 let fibonacciSequence = (num) => {
-    let arr = [0,1]
+  let fib1 = 0;
+  let fib2 = 1;
+  let nextFib;
+  let arr = [];
 
-    if (num <= 0) return 'Please entere positive integer';
-    if (num === 1) return [arr[0]]
-    if (num === 2) return arr;
+  if (num <= 0) return "Please enter positive integer";
 
-    while (num > 2){
-        arr.push(arr.slice(-2).reduce((a,b) => a+b,0))
-        num--;
-
-    }
-    return arr
-}
+  for (let i = 1; i <= num; i++) {
+    arr.push(fib1);
+    nextFib = fib1 + fib2;
+    fib1 = fib2;
+    fib2 = nextFib;
+  }
+  return arr;
+};
 
 console.log(fibonacciSequence(10))
