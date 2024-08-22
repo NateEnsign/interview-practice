@@ -1388,10 +1388,19 @@
 
 //Write a function that takes in a string and replaces all the vowels [a,e,i,o,u] with their respective positions within that string.
 
-let str = 'Would you like to go with me to a football game this weekend?'
+// let str = 'Would you like to go with me to a football game this weekend?'
 
-let vowelsToNum = (str) => {
-   return str.replace(/[aeiou]/g, (v,i) => i + 1)
+// let vowelsToNum = (str) => {
+//    return str.replace(/[aeiou]/g, (v,i) => i + 1)
+// }
+
+// console.log(vowelsToNum(str))
+
+
+let fizzBuzz = (num) => {
+    for (let i=1; i<=num; i++){
+        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+    }
 }
 
-console.log(vowelsToNum(str))
+fizzBuzz(30)
