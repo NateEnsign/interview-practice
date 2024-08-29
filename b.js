@@ -18,10 +18,10 @@
 
 // fetchPageviewsData("2024", "05", "01");
 
-let fizzBuzz = (num) => {
-  for (let i=0; i<num; i++){
-    console.log(i)
-  }
-}
+// let fizzBuzz = (num) => {
+//   for (let i=0; i<num; i++){
+//     console.log(i)
+//   }
+// }
 
-fizzBuzz(10)
+// fizzBuzz(10)
