@@ -1715,22 +1715,30 @@
 
 
 
-
-let fibonacciSequence = (num) => {
-    let arr = [0,1];
-
-    if (num <= 0) return 'Please enter positive integer';
-    if (num === 1) return [arr[0]]
-    if (num === 2) return arr
-
-    while (num > 2){
-        arr.push(arr.slice(-2).reduce((a,b) => a+b,0))
-        num--;
-    }
-    return arr
+let mergeArrays = (arr1,arr2) => {
+    console.log([...arr1,...arr2].sort((a,b) => a - b))
 }
 
-console.log(fibonacciSequence(10))
+let array1 = [1,3,5,7,9]
+let array2 = [2,4,6,8,10]
+
+mergeArrays(array1,array2)
+
+// let fibonacciSequence = (num) => {
+//     let arr = [0,1];
+
+//     if (num <= 0) return 'Please enter positive integer';
+//     if (num === 1) return [arr[0]]
+//     if (num === 2) return arr
+
+//     while (num > 2){
+//         arr.push(arr.slice(-2).reduce((a,b) => a+b,0))
+//         num--;
+//     }
+//     return arr
+// }
+
+// console.log(fibonacciSequence(10))
 
 // let fibonacciSequence = (num) => {
 //     let fib1 = 0;
