@@ -1834,18 +1834,39 @@
 
 // mergeArrays(array1,array2)
 
-let fibonacciSequence = (num) => {
-    let arr = [0,1]
+// let fibonacciSequence = (num) => {
+//     let arr = [0,1]
 
-    if (num <= 0) return 'Please enter positive integer';
-    if (num === 1) return [arr[0]];
-    if (num === 2) return arr;
+//     if (num <= 0) return 'Please enter positive integer';
+//     if (num === 1) return [arr[0]];
+//     if (num === 2) return arr;
 
-    while (num > 2){
-        arr.push(arr.slice(-2).reduce((a,b) => a+b,0))
-        num--;
+//     while (num > 2){
+//         arr.push(arr.slice(-2).reduce((a,b) => a+b,0))
+//         num--;
+//     }
+//     return arr
+// }
+
+// console.log(fibonacciSequence(10))
+
+// If you have completed the Tribonacci sequence kata, you would know by now that mister Fibonacci has at least a bigger brother. If not, give it a quick look to get how things work.
+
+// Well, time to expand the family a little more: think of a Quadribonacci starting with a signature of 4 elements and each following element is the sum of the 4 previous, a Pentabonacci (well Cinquebonacci would probably sound a bit more italian, but it would also sound really awful) with a signature of 5 elements and each following element is the sum of the 5 previous, and so on.
+
+// Well, guess what? You have to build a Xbonacci function that takes a signature of X elements - and remember each next element is the sum of the last X elements - and returns the first n elements of the so seeded sequence.
+
+function Xbonacci(signature,n){
+    let nacci = signature.length
+    let complete = n - nacci;
+    
+    for (let i=0; i<complete; i++){
+      signature.push(signature.slice(-nacci).reduce((a,b) => a+b))
     }
-    return arr
-}
+    return signature
+  }
 
-console.log(fibonacciSequence(10))
+  let arr = [0,1,1,2]
+  let num = 10
+
+  console.log(Xbonacci(arr,num))
