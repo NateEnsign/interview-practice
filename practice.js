@@ -1860,13 +1860,10 @@ function Xbonacci(signature,n){
     let nacci = signature.length
     let complete = n - nacci;
     
+    if (n < nacci) return signature.slice(0,n)
+    
     for (let i=0; i<complete; i++){
       signature.push(signature.slice(-nacci).reduce((a,b) => a+b))
     }
     return signature
   }
-
-  let arr = [0,1,1,2]
-  let num = 10
-
-  console.log(Xbonacci(arr,num))
