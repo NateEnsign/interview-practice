@@ -1856,14 +1856,23 @@
 
 // Well, guess what? You have to build a Xbonacci function that takes a signature of X elements - and remember each next element is the sum of the last X elements - and returns the first n elements of the so seeded sequence.
 
-function Xbonacci(signature,n){
-    let nacci = signature.length
-    let complete = n - nacci;
+// function Xbonacci(signature,n){
+//     let nacci = signature.length
+//     let complete = n - nacci;
     
-    if (n < nacci) return signature.slice(0,n)
+//     if (n < nacci) return signature.slice(0,n)
     
-    for (let i=0; i<complete; i++){
-      signature.push(signature.slice(-nacci).reduce((a,b) => a+b))
-    }
-    return signature
+//     for (let i=0; i<complete; i++){
+//       signature.push(signature.slice(-nacci).reduce((a,b) => a+b))
+//     }
+//     return signature
+//   }
+
+
+// Given an input of an array of digits, return the array with each digit incremented by its position in the array: the first digit will be incremented by 1, the second digit by 2, etc. Make sure to start counting your positions from 1 ( and not 0 ).
+
+// Your result can only contain single digit numbers, so if adding a digit with its position gives you a multiple-digit number, only the last digit of the number should be returned.
+
+let incrementer = (nums) => {
+    return nums.map((n,i) => (n+i+1)%10)
   }
