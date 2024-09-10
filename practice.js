@@ -1873,6 +1873,17 @@
 
 // Your result can only contain single digit numbers, so if adding a digit with its position gives you a multiple-digit number, only the last digit of the number should be returned.
 
-let incrementer = (nums) => {
-    return nums.map((n,i) => (n+i+1)%10)
-  }
+// let incrementer = (nums) => {
+//     return nums.map((n,i) => (n+i+1)%10)
+//   }
+
+
+//Write a function that takes in a string and replaces all the vowels [a,e,i,o,u] with their respective positions within that string.
+
+let vowel2index = (str) => {
+    return str.replace(/[aeiou]/gi, (n,i) => i + 1)
+}
+
+let string = 'Hey I want to go to the game tonight.'
+
+console.log(vowel2index(string))
