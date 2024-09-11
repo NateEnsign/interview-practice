@@ -1926,10 +1926,17 @@
 
 // console.log(fibonacciSequence(10))
 
-let fizzBuzz = (num) => {
-    for (let i=1; i<=num; i++){
-        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
-    }
-}
+// let fizzBuzz = (num) => {
+//     for (let i=1; i<=num; i++){
+//         console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+//     }
+// }
 
-fizzBuzz(30)
+// fizzBuzz(30)
+
+
+// Define a method/function that removes from a given array of integers all the values contained in a second array.
+
+Array.prototype.remove_ = function(x,y){
+    return x.filter((e) => !y.includes(e))
+  }
