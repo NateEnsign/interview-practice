@@ -1945,14 +1945,20 @@
 //Jumping number is the number that All adjacent digits in it differ by 1.
 //Given a number, Find if it is Jumping or not .
 
-function jumpingNumber(n) {
-    const digitStr = n.toString();
+// function jumpingNumber(n) {
+//     const digitStr = n.toString();
   
-    for (let i = 1; i < digitStr.length; i++) {
-      if (Math.abs(digitStr[i] - digitStr[i - 1]) !== 1) {
-        return 'Not!!';
-      }
-    }
+//     for (let i = 1; i < digitStr.length; i++) {
+//       if (Math.abs(digitStr[i] - digitStr[i - 1]) !== 1) {
+//         return 'Not!!';
+//       }
+//     }
   
-    return 'Jumping!!';
+//     return 'Jumping!!';
+//   }
+
+//Create a function that takes a number as an argument and returns a grade based on that number.
+
+function grader(n) {
+    return n > 1 || n < 0.6 ? 'F' : n >= 0.9 ? 'A' : n >= 0.8 ? 'B' : n >= 0.7 ? 'C' : 'D'
   }
