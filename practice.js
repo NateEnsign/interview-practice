@@ -1937,6 +1937,17 @@
 
 // Define a method/function that removes from a given array of integers all the values contained in a second array.
 
-Array.prototype.remove_ = function(x,y){
-    return x.filter((e) => !y.includes(e))
+// Array.prototype.remove_ = function(x,y){
+//     return x.filter((e) => !y.includes(e))
+//   }
+
+
+//Jumping number is the number that All adjacent digits in it differ by 1.
+//Given a number, Find if it is Jumping or not .
+
+function jumpingNumber(n){
+    for (let i=0; i<n.length; i++){
+      if (Math.abs(i - (i - 1) !== 1)) return 'Not!!'
+    }
+    return 'Jumping!!'
   }
