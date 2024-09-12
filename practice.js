@@ -2000,13 +2000,30 @@
 
 
 
-let isPrime = (num) => {
-    if ( num <= 1) return `${num} is not a prime number.`
+// let isPrime = (num) => {
+//     if ( num <= 1) return `${num} is not a prime number.`
 
-    for (let i=2; i<=Math.sqrt(num); i++){
-        if (num%i == 0) return `${num} is not a prime number.`
+//     for (let i=2; i<=Math.sqrt(num); i++){
+//         if (num%i == 0) return `${num} is not a prime number.`
+//     }
+//         return `${num} is a prime number!`
+// }
+
+// console.log(isPrime(52))
+
+
+let fibonacciSequence = (num) => {
+    let arr = [0,1];
+
+    if (num <= 0) return 'Please enter positive integer';
+    if (num === 1) return [arr[0]];
+    if (num === 2) return arr;
+
+    while (num > 2){
+        arr.push(arr.slice(-2).reduce((a,b) => a+b))
+        num--;
     }
-        return `${num} is a prime number!`
+    return arr
 }
 
-console.log(isPrime(52))
+console.log(fibonacciSequence(10))
