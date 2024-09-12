@@ -1980,17 +1980,33 @@
 // So this function should return the first pair of two prime numbers spaced with a gap of g between the limits m, n if these numbers exist otherwise `nil or null or None or Nothing (or ... depending on the language).
 
 
-const isPrime = num => {
-    for (let i = 2; i <= num ** .5; i++) {
-      if (!(num % i)) return false;
-    }
-    return num > 1;
-  };
+// const isPrime = num => {
+//     for (let i = 2; i <= num ** .5; i++) {
+//       if (!(num % i)) return false;
+//     }
+//     return num > 1;
+//   };
   
-  const gap = (g, m, n) => {
-    while (m + g <= n) {
-      if (isPrime(m) && isPrime(m + g) && ![...Array(g - 1)].some((_, idx) => isPrime(m + ++idx))) return [m, m + g];
-      m++;
+//   const gap = (g, m, n) => {
+//     while (m + g <= n) {
+//       if (isPrime(m) && isPrime(m + g) && ![...Array(g - 1)].some((_, idx) => isPrime(m + ++idx))) return [m, m + g];
+//       m++;
+//     }
+//     return null;
+//   };
+
+
+// Write a function that accepts a number (num) as an argument, that determines if the given number is prime or not. If the given number is a prime number, return "num is a prime number!", if it is not return, "num is not a prime number."
+
+
+
+let isPrime = (num) => {
+    if ( num <= 1) return `${num} is not a prime number.`
+
+    for (let i=2; i<=Math.sqrt(num); i++){
+        if (num%i == 0) return `${num} is not a prime number.`
     }
-    return null;
-  };
+        return `${num} is a prime number!`
+}
+
+console.log(isPrime(52))
