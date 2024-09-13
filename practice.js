@@ -2029,18 +2029,38 @@
 
 // mergeArrays(array1,array2)
 
-let fibonacciSequence = (num) => {
-    let arr = [0,1];
+// let fibonacciSequence = (num) => {
+//     let arr = [0,1];
 
-    if (num <= 0) return 'Please enter postiive integer';
-    if (num === 1) return [arr[0]];
-    if (num === 2) return arr;
+//     if (num <= 0) return 'Please enter postiive integer';
+//     if (num === 1) return [arr[0]];
+//     if (num === 2) return arr;
 
-    while (num > 2){
-        arr.push(arr.slice(-2).reduce((a,b) => a + b,0))
-        num--;
+//     while (num > 2){
+//         arr.push(arr.slice(-2).reduce((a,b) => a + b,0))
+//         num--;
+//     }
+//     return arr
+// }
+
+// console.log(fibonacciSequence(10))
+
+
+function fibonacciSequence(num){
+    let arr = [];
+    let fib1 = 0;
+    let fib2 = 1;
+    let nextFib;
+
+    if (num <= 0) return 'Please enter positive integer';
+
+    for (let i=0; i<num; i++){
+        arr.push(fib1);
+        nextFib = fib1 + fib2;
+        fib1 = fib2;
+        fib2 = nextFib;
     }
-    return arr
+    return arr;
 }
 
 console.log(fibonacciSequence(10))
