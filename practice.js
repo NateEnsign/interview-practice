@@ -1396,7 +1396,6 @@
 
 // console.log(vowelsToNum(str))
 
-
 // let fizzBuzz = (num) => {
 //     for (let i=1; i<=num; i++){
 //         console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
@@ -1404,7 +1403,6 @@
 // }
 
 // fizzBuzz(30)
-
 
 // let array1 = [1,3,5,7,9]
 // let array2 = [2,4,6,8,10]
@@ -1430,7 +1428,6 @@
 // }
 
 // console.log(fibonacciSequence(10))
-
 
 // let fibonacciSequence = (num) => {
 //     let fib1 = 0;
@@ -1667,7 +1664,6 @@
 
 // fizzBuzz(10)
 
-
 // let mergeArrays = (arr1,arr2) => {
 //     console.log([...arr1,...arr2].sort((a,b) => a - b))
 // }
@@ -1693,7 +1689,6 @@
 
 // console.log(fibonacciSequence(10))
 
-
 // let fibonacciSequence = (num) => {
 //     let fib1 = 0;
 //     let fib2 = 1;
@@ -1712,7 +1707,6 @@
 // }
 
 // console.log(fibonacciSequence(10))
-
 
 // let fizzBuzz = (num) => {
 //     for (let i=0; i<=num; i++){
@@ -1859,15 +1853,14 @@
 // function Xbonacci(signature,n){
 //     let nacci = signature.length
 //     let complete = n - nacci;
-    
+
 //     if (n < nacci) return signature.slice(0,n)
-    
+
 //     for (let i=0; i<complete; i++){
 //       signature.push(signature.slice(-nacci).reduce((a,b) => a+b))
 //     }
 //     return signature
 //   }
-
 
 // Given an input of an array of digits, return the array with each digit incremented by its position in the array: the first digit will be incremented by 1, the second digit by 2, etc. Make sure to start counting your positions from 1 ( and not 0 ).
 
@@ -1876,7 +1869,6 @@
 // let incrementer = (nums) => {
 //     return nums.map((n,i) => (n+i+1)%10)
 //   }
-
 
 //Write a function that takes in a string and replaces all the vowels [a,e,i,o,u] with their respective positions within that string.
 
@@ -1888,9 +1880,6 @@
 
 // console.log(vowel2index(string))
 
-
-
-
 //Given a string "abc" and assuming that each letter in the string has a value equal to its position in the alphabet, our string will have a value of 1 + 2 + 3 = 6. This means that: a = 1, b = 2, c = 3 ....z = 26.
 
 //You will be given a list of strings and your task will be to return the values of the strings as explained above multiplied by the position of that string in the list. For our purpose, position begins with 1.
@@ -1901,11 +1890,9 @@
 
 //Input will only contain lowercase characters and spaces.
 
-
 // function wordValue(a) {
 //     return a.map((s, i) => (i + 1) * s.split``.reduce((s, n) => s + 1 + 'abcdefghijklmnopqrstuvwxyz'.indexOf(n), 0));
 //   }
-  
 
 // let fibonacciSequence = (num) => {
 //     let fib1 = 0;
@@ -1934,26 +1921,24 @@
 
 // fizzBuzz(30)
 
-
 // Define a method/function that removes from a given array of integers all the values contained in a second array.
 
 // Array.prototype.remove_ = function(x,y){
 //     return x.filter((e) => !y.includes(e))
 //   }
 
-
 //Jumping number is the number that All adjacent digits in it differ by 1.
 //Given a number, Find if it is Jumping or not .
 
 // function jumpingNumber(n) {
 //     const digitStr = n.toString();
-  
+
 //     for (let i = 1; i < digitStr.length; i++) {
 //       if (Math.abs(digitStr[i] - digitStr[i - 1]) !== 1) {
 //         return 'Not!!';
 //       }
 //     }
-  
+
 //     return 'Jumping!!';
 //   }
 
@@ -1979,14 +1964,13 @@
 
 // So this function should return the first pair of two prime numbers spaced with a gap of g between the limits m, n if these numbers exist otherwise `nil or null or None or Nothing (or ... depending on the language).
 
-
 // const isPrime = num => {
 //     for (let i = 2; i <= num ** .5; i++) {
 //       if (!(num % i)) return false;
 //     }
 //     return num > 1;
 //   };
-  
+
 //   const gap = (g, m, n) => {
 //     while (m + g <= n) {
 //       if (isPrime(m) && isPrime(m + g) && ![...Array(g - 1)].some((_, idx) => isPrime(m + ++idx))) return [m, m + g];
@@ -1995,10 +1979,7 @@
 //     return null;
 //   };
 
-
 // Write a function that accepts a number (num) as an argument, that determines if the given number is prime or not. If the given number is a prime number, return "num is a prime number!", if it is not return, "num is not a prime number."
-
-
 
 // let isPrime = (num) => {
 //     if ( num <= 1) return `${num} is not a prime number.`
@@ -2010,7 +1991,6 @@
 // }
 
 // console.log(isPrime(52))
-
 
 // let fizzBuzz = (num) => {
 //     for (let i=1; i<=num; i++){
@@ -2045,22 +2025,38 @@
 
 // console.log(fibonacciSequence(10))
 
+// function fibonacciSequence(num){
+//     let arr = [];
+//     let fib1 = 0;
+//     let fib2 = 1;
+//     let nextFib;
 
-function fibonacciSequence(num){
-    let arr = [];
-    let fib1 = 0;
-    let fib2 = 1;
-    let nextFib;
+//     if (num <= 0) return 'Please enter positive integer';
 
-    if (num <= 0) return 'Please enter positive integer';
+//     for (let i=0; i<num; i++){
+//         arr.push(fib1);
+//         nextFib = fib1 + fib2;
+//         fib1 = fib2;
+//         fib2 = nextFib;
+//     }
+//     return arr;
+// }
 
-    for (let i=0; i<num; i++){
-        arr.push(fib1);
-        nextFib = fib1 + fib2;
-        fib1 = fib2;
-        fib2 = nextFib;
-    }
-    return arr;
-}
+// console.log(fibonacciSequence(10))
 
-console.log(fibonacciSequence(10))
+let tribonacciSequence = (num) => {
+  let arr = [0, 1, 1];
+
+  if (num <= 0) return "Please enter positive integer";
+  if (num === 1) return [arr[0]];
+  if (num === 2) return [arr[0], arr[1]];
+  if (num === 2) return arr;
+
+  while (num > 3) {
+    arr.push(arr.slice(-3).reduce((a, b) => a + b, 0));
+    num--;
+  }
+  return arr;
+};
+
+console.log(tribonacciSequence(8));
