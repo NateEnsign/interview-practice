@@ -2078,7 +2078,6 @@
 
 // mergeArrays(array1,array2)
 
-
 // let fibonacciSequence = (num) => {
 //     let fib1 = 0;
 //     let fib2 = 1;
@@ -2098,19 +2097,31 @@
 
 // console.log(fibonacciSequence(10))
 
+// let fibonacciSequence = (num) => {
+//     let arr = [0,1];
 
-let fibonacciSequence = (num) => {
-    let arr = [0,1];
+//     if (num <= 0) return 'Please enter positive integer';
+//     if (num === 1) return [arr[0]];
+//     if (num === 2) return arr;
 
-    if (num <= 0) return 'Please enter positive integer';
-    if (num === 1) return [arr[0]];
-    if (num === 2) return arr;
+//     while (num > 2){
+//         arr.push(arr.slice(-2).reduce((a,b) => a+b,0))
+//         num--;
+//     }
+//     return arr;
+// }
 
-    while (num > 2){
-        arr.push(arr.slice(-2).reduce((a,b) => a+b,0))
-        num--;
+// console.log(fibonacciSequence(10))
+
+//Write a function that tells if a given number is a prime number
+
+let isPrime = (num) => {
+    if (num <= 1) return `${num} is not a prime number.`
+
+    for (let i = 2; i <= Math.sqrt(num); i++){
+        if (num%i === 0) return `${num} is not a prime number.`
     }
-    return arr;
+    return `${num} is a prime number!`
 }
 
-console.log(fibonacciSequence(10))
+console.log(isPrime(15))
