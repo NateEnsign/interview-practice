@@ -2128,7 +2128,22 @@
 
 // Complete the solution so that it returns a formatted string. The return value should equal "Value is VALUE" where value is a 5 digit padded number.
 
-function solution(value) {
-  let answer = value.toString().padStart(5, 0);
-  return `Value is ${answer}`;
+// function solution(value) {
+//   let answer = value.toString().padStart(5, 0);
+//   return `Value is ${answer}`;
+// }
+
+// Find the difference between the square of the sum of the first n natural numbers (1 <= n <= 100) and the sum of their squares.
+
+function differenceOfSquares(n) {
+  let arr1 = [];
+  let arr2 = [];
+
+  for (let i = 1; i <= n; i++) {
+    arr1.push(i);
+    arr2.push(i ** 2);
+  }
+  return Math.abs(
+    arr2.reduce((a, b) => a + b) - arr1.reduce((a, b) => a + b) ** 2
+  );
 }
