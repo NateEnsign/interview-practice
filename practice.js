@@ -2044,19 +2044,27 @@
 
 // console.log(fibonacciSequence(10))
 
-let tribonacciSequence = (num) => {
-  let arr = [0, 1, 1];
+// let tribonacciSequence = (num) => {
+//   let arr = [0, 1, 1];
 
-  if (num <= 0) return "Please enter positive integer";
-  if (num === 1) return [arr[0]];
-  if (num === 2) return [arr[0], arr[1]];
-  if (num === 2) return arr;
+//   if (num <= 0) return "Please enter positive integer";
+//   if (num === 1) return [arr[0]];
+//   if (num === 2) return [arr[0], arr[1]];
+//   if (num === 2) return arr;
 
-  while (num > 3) {
-    arr.push(arr.slice(-3).reduce((a, b) => a + b, 0));
-    num--;
-  }
-  return arr;
-};
+//   while (num > 3) {
+//     arr.push(arr.slice(-3).reduce((a, b) => a + b, 0));
+//     num--;
+//   }
+//   return arr;
+// };
 
-console.log(tribonacciSequence(8));
+// console.log(tribonacciSequence(8));
+
+let fizzBuzz = (num) => {
+    for (let i=1; i<=num; i++){
+        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+    }
+}
+
+fizzBuzz(30)
