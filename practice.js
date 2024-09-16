@@ -2115,13 +2115,20 @@
 
 //Write a function that tells if a given number is a prime number
 
-let isPrime = (num) => {
-    if (num <= 1) return `${num} is not a prime number.`
+// let isPrime = (num) => {
+//     if (num <= 1) return `${num} is not a prime number.`
 
-    for (let i = 2; i <= Math.sqrt(num); i++){
-        if (num%i === 0) return `${num} is not a prime number.`
-    }
-    return `${num} is a prime number!`
+//     for (let i = 2; i <= Math.sqrt(num); i++){
+//         if (num%i === 0) return `${num} is not a prime number.`
+//     }
+//     return `${num} is a prime number!`
+// }
+
+// console.log(isPrime(15))
+
+// Complete the solution so that it returns a formatted string. The return value should equal "Value is VALUE" where value is a 5 digit padded number.
+
+function solution(value) {
+  let answer = value.toString().padStart(5, 0);
+  return `Value is ${answer}`;
 }
-
-console.log(isPrime(15))
