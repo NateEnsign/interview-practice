@@ -2135,15 +2135,25 @@
 
 // Find the difference between the square of the sum of the first n natural numbers (1 <= n <= 100) and the sum of their squares.
 
-function differenceOfSquares(n) {
-  let arr1 = [];
-  let arr2 = [];
+// function differenceOfSquares(n) {
+//   let arr1 = [];
+//   let arr2 = [];
 
-  for (let i = 1; i <= n; i++) {
-    arr1.push(i);
-    arr2.push(i ** 2);
-  }
-  return Math.abs(
-    arr2.reduce((a, b) => a + b) - arr1.reduce((a, b) => a + b) ** 2
-  );
+//   for (let i = 1; i <= n; i++) {
+//     arr1.push(i);
+//     arr2.push(i ** 2);
+//   }
+//   return Math.abs(
+//     arr2.reduce((a, b) => a + b) - arr1.reduce((a, b) => a + b) ** 2
+//   );
+// }
+
+
+let digPow = (n,p) => {
+    let total = String(n).split('').reduce((acc,num,i) => acc + +Math.pow(num,p+i),0);
+
+    return total
 }
+
+console.log(digPow(222,3))
+
