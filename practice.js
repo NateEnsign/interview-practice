@@ -2149,11 +2149,22 @@
 // }
 
 
-let digPow = (n,p) => {
-    let total = String(n).split('').reduce((acc,num,i) => acc + +Math.pow(num,p+i),0);
+// let digPow = (n,p) => {
+//     let total = String(n).split('').reduce((acc,num,i) => acc + +Math.pow(num,p+i),0);
 
-    return total
-}
+//     return total
+// }
 
-console.log(digPow(222,3))
+// console.log(digPow(222,3))
+
+// Implement a function, multiples(m, n), which returns an array of the first m multiples of the real number n. Assume that m is a positive integer.
+
+function multiples(m, n){
+    let answer = []
+    
+    for (let i=1; i<=m; i++){
+      answer.push(i*n)
+    }
+    return answer
+  }
 
