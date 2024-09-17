@@ -2203,14 +2203,21 @@
 
 // Everybody knows the classic "half your age plus seven" dating rule that a lot of people follow (including myself). It's the 'recommended' age range in which to date someone.
 
-function datingRange(age){
-    return `${min(age)}-${max(age)}`;
+// function datingRange(age){
+//     return `${min(age)}-${max(age)}`;
     
-    function min(age) {
-      return Math.floor(age > 14 ? (age / 2) + 7 : age - 0.10 * age);
-    }
+//     function min(age) {
+//       return Math.floor(age > 14 ? (age / 2) + 7 : age - 0.10 * age);
+//     }
     
-    function max(age) {
-      return Math.floor(age > 14 ? (age - 7) * 2 : age + 0.10 * age);
-    }
-  }
+//     function max(age) {
+//       return Math.floor(age > 14 ? (age - 7) * 2 : age + 0.10 * age);
+//     }
+//   }
+
+
+// An NBA game runs 48 minutes (Four 12 minute quarters). Players do not typically play the full game, subbing in and out as necessary. Your job is to extrapolate a player's points per game if they played the full 48 minutes.
+
+// Write a function that takes two arguments, ppg (points per game) and mpg (minutes per game) and returns a straight extrapolation of ppg per 48 minutes rounded to the nearest tenth. Return 0 if 0.
+
+const pointsPer48 = (ppg, mpg) => mpg ? +(ppg*48/mpg).toFixed(1) : 0;
