@@ -2220,4 +2220,14 @@
 
 // Write a function that takes two arguments, ppg (points per game) and mpg (minutes per game) and returns a straight extrapolation of ppg per 48 minutes rounded to the nearest tenth. Return 0 if 0.
 
-const pointsPer48 = (ppg, mpg) => mpg ? +(ppg*48/mpg).toFixed(1) : 0;
+// const pointsPer48 = (ppg, mpg) => mpg ? +(ppg*48/mpg).toFixed(1) : 0;
+
+
+let mergeArrays = (arr1,arr2) => {
+    return [...arr1,...arr2].sort((a,b) => a - b)
+}
+
+let array1 = [1,3,5,7,9]
+let array2 = [2,4,6,8,10]
+
+console.log(mergeArrays(array1,array2))
