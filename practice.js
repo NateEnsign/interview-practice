@@ -2360,11 +2360,19 @@
 //     return this.filter((n) => n%2 !== 0)
 //   }
 
-function multiples(m, n){
-    let answer = []
+// function multiples(m, n){
+//     let answer = []
     
-    for (let i=1; i<=m; i++){
-      answer.push(i*n)
+//     for (let i=1; i<=m; i++){
+//       answer.push(i*n)
+//     }
+//     return answer
+//   }
+
+let fizzBuzz = (num) => {
+    for (let i=1; i<=num; i++){
+        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
     }
-    return answer
-  }
+}
+
+fizzBuzz(30)
