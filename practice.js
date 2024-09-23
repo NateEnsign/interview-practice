@@ -2310,21 +2310,33 @@
 // console.log(fibonacciSequence(10))
 
 
-let fibonacciSequence = (num) => {
-    let fib1 = 0;
-    let fib2 = 1;
-    let nextFib;
-    let arr = [];
+// let fibonacciSequence = (num) => {
+//     let fib1 = 0;
+//     let fib2 = 1;
+//     let nextFib;
+//     let arr = [];
 
-    if (num <= 0) return 'Please enter positive integer';
+//     if (num <= 0) return 'Please enter positive integer';
 
-    for (let i=0; i<num; i++){
-        arr.push(fib1);
-        nextFib = fib1 + fib2;
-        fib1 = fib2;
-        fib2 = nextFib
+//     for (let i=0; i<num; i++){
+//         arr.push(fib1);
+//         nextFib = fib1 + fib2;
+//         fib1 = fib2;
+//         fib2 = nextFib
+//     }
+//     return arr
+// }
+
+// console.log(fibonacciSequence(10))
+
+function datingRange(age){
+    return `${min(age)}-${max(age)}`;
+    
+    function min(age) {
+      return Math.floor(age > 14 ? (age / 2) + 7 : age - 0.10 * age);
     }
-    return arr
-}
-
-console.log(fibonacciSequence(10))
+    
+    function max(age) {
+      return Math.floor(age > 14 ? (age - 7) * 2 : age + 0.10 * age);
+    }
+  }
