@@ -2545,15 +2545,24 @@
 
 // console.log(digPow(222,3))
 
-function differenceOfSquares(n) {
-    let arr1 = [];
-    let arr2 = [];
+// function differenceOfSquares(n) {
+//     let arr1 = [];
+//     let arr2 = [];
   
-    for (let i = 1; i <= n; i++) {
-      arr1.push(i);
-      arr2.push(i ** 2);
-    }
-    return Math.abs(
-      arr2.reduce((a, b) => a + b) - arr1.reduce((a, b) => a + b) ** 2
-    );
-  }
+//     for (let i = 1; i <= n; i++) {
+//       arr1.push(i);
+//       arr2.push(i ** 2);
+//     }
+//     return Math.abs(
+//       arr2.reduce((a, b) => a + b) - arr1.reduce((a, b) => a + b) ** 2
+//     );
+//   }
+
+let mergeArrays = (arr1,arr2) => {
+    console.log([...arr1,...arr2].sort((a,b) => a - b))
+}
+
+let array1 = [1,3,5,7,9]
+let array2 = [2,4,6,8,10]
+
+mergeArrays(array1,array2)
