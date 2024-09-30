@@ -2148,7 +2148,6 @@
 //   );
 // }
 
-
 // let digPow = (n,p) => {
 //     let total = String(n).split('').reduce((acc,num,i) => acc + +Math.pow(num,p+i),0);
 
@@ -2161,13 +2160,12 @@
 
 // function multiples(m, n){
 //     let answer = []
-    
+
 //     for (let i=1; i<=m; i++){
 //       answer.push(i*n)
 //     }
 //     return answer
 //   }
-
 
 // This kata is designed to test your ability to extend the functionality of built-in classes. In this case, we want you to extend the built-in Array class with the following methods: square(), cube(), average(), sum(), even() and odd().
 
@@ -2180,7 +2178,6 @@
 // even() must return an array of all even numbers
 // odd() must return an array of all odd numbers
 // Note: the original array must not be changed in any case!
-
 
 // Array.prototype.square = function(){
 //     return this.map((n) => n**2)
@@ -2205,23 +2202,21 @@
 
 // function datingRange(age){
 //     return `${min(age)}-${max(age)}`;
-    
+
 //     function min(age) {
 //       return Math.floor(age > 14 ? (age / 2) + 7 : age - 0.10 * age);
 //     }
-    
+
 //     function max(age) {
 //       return Math.floor(age > 14 ? (age - 7) * 2 : age + 0.10 * age);
 //     }
 //   }
-
 
 // An NBA game runs 48 minutes (Four 12 minute quarters). Players do not typically play the full game, subbing in and out as necessary. Your job is to extrapolate a player's points per game if they played the full 48 minutes.
 
 // Write a function that takes two arguments, ppg (points per game) and mpg (minutes per game) and returns a straight extrapolation of ppg per 48 minutes rounded to the nearest tenth. Return 0 if 0.
 
 // const pointsPer48 = (ppg, mpg) => mpg ? +(ppg*48/mpg).toFixed(1) : 0;
-
 
 // let mergeArrays = (arr1,arr2) => {
 //     return [...arr1,...arr2].sort((a,b) => a - b)
@@ -2255,7 +2250,6 @@
 // }
 
 // fizzBuzz(30)
-
 
 // let fibonacciSequence = (num) => {
 //     let fib1 = 0;
@@ -2309,7 +2303,6 @@
 
 // console.log(fibonacciSequence(10))
 
-
 // let fibonacciSequence = (num) => {
 //     let fib1 = 0;
 //     let fib2 = 1;
@@ -2331,11 +2324,11 @@
 
 // function datingRange(age){
 //     return `${min(age)}-${max(age)}`;
-    
+
 //     function min(age) {
 //       return Math.floor(age > 14 ? (age / 2) + 7 : age - 0.10 * age);
 //     }
-    
+
 //     function max(age) {
 //       return Math.floor(age > 14 ? (age - 7) * 2 : age + 0.10 * age);
 //     }
@@ -2362,7 +2355,7 @@
 
 // function multiples(m, n){
 //     let answer = []
-    
+
 //     for (let i=1; i<=m; i++){
 //       answer.push(i*n)
 //     }
@@ -2504,7 +2497,6 @@
 
 // console.log(fibonacciSequence(10))
 
-
 // let fibonacciSequence = (num) => {
 //     let fib1 = 0;
 //     let fib2 = 1;
@@ -2526,16 +2518,15 @@
 
 // function datingRange(age){
 //     return `${min(age)}-${max(age)}`;
-    
+
 //     function min(age) {
 //       return Math.floor(age > 14 ? (age / 2) + 7 : age - 0.10 * age);
 //     }
-    
+
 //     function max(age) {
 //       return Math.floor(age > 14 ? (age - 7) * 2 : age + 0.10 * age);
 //     }
 //   }
-
 
 // let digPow = (n,p) => {
 //     let total = String(n).split('').reduce((acc,num,i) => acc + +Math.pow(num,p+i),0);
@@ -2548,7 +2539,7 @@
 // function differenceOfSquares(n) {
 //     let arr1 = [];
 //     let arr2 = [];
-  
+
 //     for (let i = 1; i <= n; i++) {
 //       arr1.push(i);
 //       arr2.push(i ** 2);
@@ -2567,10 +2558,26 @@
 
 // mergeArrays(array1,array2)
 
-let fizzBuzz = (num) => {
-    for (let i=1; i<num; i++){
-        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
-    }
-}
+// let fizzBuzz = (num) => {
+//     for (let i=1; i<num; i++){
+//         console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+//     }
+// }
 
-fizzBuzz(30)
+// fizzBuzz(30)
+
+let fibonacciSequence = (num) => {
+  let arr = [0, 1];
+
+  if (num <= 0) return "Please enter positive integer";
+  if (num === 1) return [arr[0]];
+  if (num === 2) return arr;
+
+  while (num > 2) {
+    arr.push(arr.slice(-2).reduce((a, b) => a + b));
+    num--;
+  }
+  return arr;
+};
+
+console.log(fibonacciSequence(10))
