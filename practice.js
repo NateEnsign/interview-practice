@@ -2537,10 +2537,23 @@
 //   }
 
 
-let digPow = (n,p) => {
-    let total = String(n).split('').reduce((acc,num,i) => acc + +Math.pow(num,p+i),0);
+// let digPow = (n,p) => {
+//     let total = String(n).split('').reduce((acc,num,i) => acc + +Math.pow(num,p+i),0);
 
-    return total
-}
+//     return total
+// }
 
-console.log(digPow(222,3))
+// console.log(digPow(222,3))
+
+function differenceOfSquares(n) {
+    let arr1 = [];
+    let arr2 = [];
+  
+    for (let i = 1; i <= n; i++) {
+      arr1.push(i);
+      arr2.push(i ** 2);
+    }
+    return Math.abs(
+      arr2.reduce((a, b) => a + b) - arr1.reduce((a, b) => a + b) ** 2
+    );
+  }
