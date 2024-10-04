@@ -108,6 +108,16 @@
 
 // console.log(fibonacciSequence(2))
 
+let text = "aaabbbbcccddeeeeefff";
+
+let setPairs = (text) => {
+    let arr = [...new Set(text)];
+
+    return arr.map(el => [el, [...text].filter(e => e === el).length]).sort((a,b) => b[1] - a[1])
+}
+
+console.log(setPairs(text))
+
 // let text = "aaabbbbcccddeeeeefff"
 
 // let pairCount = (str) => {
@@ -2706,17 +2716,17 @@
 // console.log(fibonacciSequence(10))
 
 
-function datingRange(age){
-    return `${min(age)}-${max(age)}`;
+// function datingRange(age){
+//     return `${min(age)}-${max(age)}`;
 
-    function min(age) {
-      return Math.floor(age > 14 ? (age / 2) + 7 : age - 0.10 * age);
-    }
+//     function min(age) {
+//       return Math.floor(age > 14 ? (age / 2) + 7 : age - 0.10 * age);
+//     }
 
-    function max(age) {
-      return Math.floor(age > 14 ? (age - 7) * 2 : age + 0.10 * age);
-    }
-  }
+//     function max(age) {
+//       return Math.floor(age > 14 ? (age - 7) * 2 : age + 0.10 * age);
+//     }
+//   }
 
 // Array.prototype.square = function(){
 //     return this.map((n) => n**2)
