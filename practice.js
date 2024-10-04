@@ -2756,8 +2756,14 @@
 //     return answer
 //   }
 
-let reverseWords = (str) => {
-    console.log(str.split(' ').map((word) => word.split('').reverse().join('')).join(' '))
-}
+// let reverseWords = (str) => {
+//     console.log(str.split(' ').map((word) => word.split('').reverse().join('')).join(' '))
+// }
 
-reverseWords('yeH uoy dluohs reffo em a !boj')
+// reverseWords('yeH uoy dluohs reffo em a !boj')
+
+let setPairs = (text) => {
+    let arr = [...new Set(text)];
+
+    return arr.map(el => [el, [...text].filter(e => e === el).length]).sort((a,b) => b[1] - a[1])
+}
