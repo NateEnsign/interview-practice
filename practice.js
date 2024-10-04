@@ -2686,21 +2686,62 @@
 
 // mergeArrays(array1,array2)
 
-let fibonacciSequence = (num) => {
-    let fib1 = 0;
-    let fib2 = 1;
-    let nextFib;
-    let arr = [];
+// let fibonacciSequence = (num) => {
+//     let fib1 = 0;
+//     let fib2 = 1;
+//     let nextFib;
+//     let arr = [];
 
-    if (num <= 0) return 'Please enter positive integer';
+//     if (num <= 0) return 'Please enter positive integer';
 
-    for (let i=0; i<num; i++){
-        arr.push(fib1);
-        nextFib = fib1 + fib2;
-        fib1 = fib2;
-        fib2 = nextFib;
+//     for (let i=0; i<num; i++){
+//         arr.push(fib1);
+//         nextFib = fib1 + fib2;
+//         fib1 = fib2;
+//         fib2 = nextFib;
+//     }
+//     return arr
+// }
+
+// console.log(fibonacciSequence(10))
+
+
+function datingRange(age){
+    return `${min(age)}-${max(age)}`;
+
+    function min(age) {
+      return Math.floor(age > 14 ? (age / 2) + 7 : age - 0.10 * age);
     }
-    return arr
-}
 
-console.log(fibonacciSequence(10))
+    function max(age) {
+      return Math.floor(age > 14 ? (age - 7) * 2 : age + 0.10 * age);
+    }
+  }
+
+// Array.prototype.square = function(){
+//     return this.map((n) => n**2)
+//   }
+//   Array.prototype.cube = function(){
+//     return this.map((n) => n**3)
+//   }
+//   Array.prototype.average = function(){
+//     return this.sum() / this.length
+//   }
+//   Array.prototype.sum = function(){
+//     return this.reduce((a,b) => a+b,0)
+//   }
+//   Array.prototype.even = function(){
+//     return this.filter((n) => n%2 === 0)
+//   }
+//   Array.prototype.odd = function(){
+//     return this.filter((n) => n%2 !== 0)
+//   }
+
+// function multiples(m, n){
+//     let answer = []
+
+//     for (let i=1; i<=m; i++){
+//       answer.push(i*n)
+//     }
+//     return answer
+//   }
