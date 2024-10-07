@@ -35,6 +35,8 @@ let fibonacciSequence = (num) => {
     let fib2 = 1;
     let arr = [];
 
+    if (num <= 0) return 'Please enter positive integer'
+
     for (let i=0; i<num; i++){
         arr.push(fib1);
         let nextFib = fib1 + fib2;
@@ -45,6 +47,9 @@ let fibonacciSequence = (num) => {
 }
 
 console.log(fibonacciSequence(12))
+console.log(fibonacciSequence(0))
+console.log(fibonacciSequence(-25))
+
 
 
 
