@@ -16,6 +16,14 @@
 
 // console.log(digPow(222,3))
 
+let fizzBuzz = (num) => {
+    for (let i=1; i<=num; i++){
+        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+    }
+}
+
+fizzBuzz(30)
+
 //    let digPow = (n,p) => {
 //     let total = String(n).split('').reduce((acc,num,i) => acc + +Math.pow(num,p+i),0)
 
@@ -2762,8 +2770,8 @@
 
 // reverseWords('yeH uoy dluohs reffo em a !boj')
 
-let setPairs = (text) => {
-    let arr = [...new Set(text)];
+// let setPairs = (text) => {
+//     let arr = [...new Set(text)];
 
-    return arr.map(el => [el, [...text].filter(e => e === el).length]).sort((a,b) => b[1] - a[1])
-}
+//     return arr.map(el => [el, [...text].filter(e => e === el).length]).sort((a,b) => b[1] - a[1])
+// }
