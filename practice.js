@@ -1,3 +1,22 @@
+let fibonacciSequence = (num) => {
+    let arr = [0,1];
+
+    if (num <= 0) return 'Please enter positive integer';
+    if (num === 1) return [arr[0]];
+    if (num === 2) return arr;
+
+    while (num > 2){
+        arr.push(arr.slice(-2).reduce((a,b) => a + b,0))
+        num--;
+    }
+    return arr
+}
+
+console.log(fibonacciSequence(10))
+
+
+
+
 // let text = "aaabbbbcccddeeeeefff";
 
 // let setPairs = (text) => {
@@ -50,24 +69,24 @@
 
 // console.log(fibonacciSequence(10))
 
-let fibonacciSequence = (num) => {
-    let fib1 = 0;
-    let fib2 = 1;
-    let nextFib;
-    let arr = [];
+// let fibonacciSequence = (num) => {
+//     let fib1 = 0;
+//     let fib2 = 1;
+//     let nextFib;
+//     let arr = [];
 
-    if (num <= 0) return 'Please enter positive integer';
+//     if (num <= 0) return 'Please enter positive integer';
 
-    for (let i=0; i<num; i++){
-        arr.push(fib1);
-        nextFib = fib1 + fib2;
-        fib1 = fib2;
-        fib2 = nextFib;
-    }
-    return arr;
-}
+//     for (let i=0; i<num; i++){
+//         arr.push(fib1);
+//         nextFib = fib1 + fib2;
+//         fib1 = fib2;
+//         fib2 = nextFib;
+//     }
+//     return arr;
+// }
 
-console.log(fibonacciSequence(10))
+// console.log(fibonacciSequence(10))
 
 // let fibonacciSequence = (num) => {
 //     let arr = [0,1]
