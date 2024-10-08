@@ -1,3 +1,11 @@
+let fizzBuzz = (num) => {
+    for (let i=1; i<=num; i++){
+        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+    }
+}
+
+fizzBuzz(30)
+
 // let fibonacciSequence = (num) => {
 //     let arr = [0,1];
 
@@ -2893,10 +2901,10 @@
 //     return arr.map(el => [el, [...text].filter(e => e === el).length]).sort((a,b) => b[1] - a[1])
 // }
 
-let reverseWords = (str) => {
-    return str.split(' ').map((x) => x.split('').reverse().join('')).join(' ')
-}
+// let reverseWords = (str) => {
+//     return str.split(' ').map((x) => x.split('').reverse().join('')).join(' ')
+// }
 
-let example = 'yeH uoy dluohs reffo em a !boj'
+// let example = 'yeH uoy dluohs reffo em a !boj'
 
-console.log(reverseWords(example))
+// console.log(reverseWords(example))
