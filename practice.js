@@ -48,24 +48,33 @@
 
 // console.log(fibonacciSequence(10))
 
-let fibonacciSequence = (num) => {
-  let fib1 = 0;
-  let fib2 = 1;
-  let nextFib;
-  let arr = [];
+// let fibonacciSequence = (num) => {
+//   let fib1 = 0;
+//   let fib2 = 1;
+//   let nextFib;
+//   let arr = [];
 
-  if (num <= 0) return "Please enter positive integer";
+//   if (num <= 0) return "Please enter positive integer";
 
-  for (let i = 0; i < num; i++) {
-    arr.push(fib1);
-    nextFib = fib1 + fib2;
-    fib1 = fib2;
-    fib2 + nextFib;
-  }
-  return arr;
-};
+//   for (let i = 1; i <= num; i++) {
+//     arr.push(fib1);
+//     nextFib = fib1 + fib2;
+//     fib1 = fib2;
+//     fib2 = nextFib;
+//   }
+//   return arr;
+// };
 
-console.log(fibonacciSequence(10));
+// console.log(fibonacciSequence(10));
+
+
+let reverseWords = (str) => {
+    return str.split(' ').map((x) => x.split('').reverse().join('')).join(' ')
+}
+
+let example = 'yeH uoy dluohs reffo em a !boj'
+
+console.log(reverseWords(example))
 
 // let fibonacciSequence = (num) => {
 //     let arr = [0,1];
