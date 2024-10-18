@@ -6,13 +6,21 @@
 
 // fizzBuzz(30)
 
-let reverseWords = (str) => {
-    return str.split(' ').map((n) => n.split('').reverse().join('')).join(' ')
+// let reverseWords = (str) => {
+//     return str.split(' ').map((n) => n.split('').reverse().join('')).join(' ')
+// }
+
+// let example = 'yeH uoy dluohs reffo em a !boj'
+
+// console.log(reverseWords(example))
+
+let fizzBuzz = (num) => {
+    for (let i = 1; i <= num; i++){
+        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+    }
 }
 
-let example = 'yeH uoy dluohs reffo em a !boj'
-
-console.log(reverseWords(example))
+fizzBuzz(30)
 
 // let mergeArrays = (arr1,arr2) => {
 //     console.log([...arr1,...arr2].sort((a,b) => a - b))
