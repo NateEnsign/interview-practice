@@ -6,6 +6,14 @@
 
 // fizzBuzz(30)
 
+let reverseWords = (str) => {
+    return str.split(' ').map((n) => n.split('').reverse().join('')).join(' ')
+}
+
+let example = 'yeH uoy dluohs reffo em a !boj'
+
+console.log(reverseWords(example))
+
 // let mergeArrays = (arr1,arr2) => {
 //     console.log([...arr1,...arr2].sort((a,b) => a - b))
 // }
@@ -135,24 +143,24 @@
 
 // fizzBuzz(30)
 
-let fibonacciSequence = (num) => {
-    let fib1 = 0;
-    let fib2 = 1;
-    let nextFib;
-    let arr = []
+// let fibonacciSequence = (num) => {
+//     let fib1 = 0;
+//     let fib2 = 1;
+//     let nextFib;
+//     let arr = []
 
-    if (num <= 0) return 'Please enter postivie integer';
+//     if (num <= 0) return 'Please enter postivie integer';
 
-    for (let i = 0; i < num; i++){
-        arr.push(fib1);
-        nextFib = fib1 + fib2;
-        fib1 = fib2;
-        fib2 = nextFib;
-    }
-    return arr;
-}
+//     for (let i = 0; i < num; i++){
+//         arr.push(fib1);
+//         nextFib = fib1 + fib2;
+//         fib1 = fib2;
+//         fib2 = nextFib;
+//     }
+//     return arr;
+// }
 
-console.log(fibonacciSequence(10))
+// console.log(fibonacciSequence(10))
 
 // let fibonacciSequence = (num) => {
 //     let arr = [0,1];
