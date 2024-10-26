@@ -97,13 +97,32 @@
 //     }
 // }
 
-let reverseWords = (str) => {
-    console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// let reverseWords = (str) => {
+//     console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// }
+
+// let testy = 'Hey you should offer me a job!'
+
+// reverseWords(testy)
+
+let fibonacciSequence = (num) => {
+    let fib1 = 0;
+    let fib2 = 1;
+    let nextFib;
+    let arr = [];
+
+    if (num <= 0) return 'Please enter positive integer';
+
+    for (let i = 0; i < num; i++){
+        arr.push(fib1);
+        nextFib = fib1 + fib2;
+        fib1 = fib2;
+        fib2 = nextFib;
+    }
+    return arr;
 }
 
-let testy = 'Hey you should offer me a job!'
-
-reverseWords(testy)
+console.log(fibonacciSequence(10))
 
 // let reverseWords = (str) => {
 //     console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
