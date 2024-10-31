@@ -50,10 +50,19 @@
 
 // mergeArrays(array1,array2)
 
-let reverseWords = (str) => {
-    console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// let reverseWords = (str) => {
+//     console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// }
+
+// let testy = 'yeH uoy dluohs reffo em a !boj'
+
+// reverseWords(testy)
+
+
+let fizzBuzz = (num) => {
+    for (let i = 1; i <= num; i++){
+        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+    }
 }
 
-let testy = 'yeH uoy dluohs reffo em a !boj'
-
-reverseWords(testy)
+fizzBuzz(30)
