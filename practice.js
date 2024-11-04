@@ -169,10 +169,20 @@
 // console.log(fibonacciSequence(10))
 
 
-let reverseWords = (str) => {
-    console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// let reverseWords = (str) => {
+//     console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// }
+
+// let testy = 'yeH uoy dluohs reffo em a !boj'
+
+// reverseWords(testy)
+
+
+let mergeArrays = (arr1,arr2) => {
+    console.log([...arr1,...arr2].sort((a,b) => a - b))
 }
 
-let testy = 'yeH uoy dluohs reffo em a !boj'
+let array1 = [1,3,5,7,9]
+let array2 = [2,4,6,8,10]
 
-reverseWords(testy)
+mergeArrays(array1,array2)
