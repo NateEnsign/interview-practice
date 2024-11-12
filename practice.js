@@ -453,12 +453,22 @@
 // reverseWords(test)
 
 
-let fizzBuzz = (num) => {
-    let arr = [];
-    for (let i = 1; i <= num; i++){
-        i%5 === 0 && i%3 === 0 ? arr.push('FizzBuzz') : i%5 === 0 ? arr.push('Fizz') : i%3 === 0 ? arr.push('Buzz') : arr.push(i)
-    }
-    console.log(arr)
+// let fizzBuzz = (num) => {
+//     let arr = [];
+//     for (let i = 1; i <= num; i++){
+//         i%5 === 0 && i%3 === 0 ? arr.push('FizzBuzz') : i%5 === 0 ? arr.push('Fizz') : i%3 === 0 ? arr.push('Buzz') : arr.push(i)
+//     }
+//     console.log(arr)
+// }
+
+// fizzBuzz(30)
+
+
+let mergeArrays = (arr1,arr2) => {
+    console.log([...arr1,...arr2].sort((a,b) => a - b))
 }
 
-fizzBuzz(30)
+let array1 = [1,3,5,7,9]
+let array2 = [2,4,6,8,10]
+
+mergeArrays(array1,array2)
