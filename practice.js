@@ -444,10 +444,21 @@
 // console.log(fibonacciSequence(10))
 
 
-let reverseWords = (str) => {
-    console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// let reverseWords = (str) => {
+//     console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// }
+
+// let test = 'yeH uoy dluohs reffo em a !boj'
+
+// reverseWords(test)
+
+
+let fizzBuzz = (num) => {
+    let arr = [];
+    for (let i = 1; i <= num; i++){
+        i%5 === 0 && i%3 === 0 ? arr.push('FizzBuzz') : i%5 === 0 ? arr.push('Fizz') : i%3 === 0 ? arr.push('Buzz') : arr.push(i)
+    }
+    console.log(arr)
 }
 
-let test = 'yeH uoy dluohs reffo em a !boj'
-
-reverseWords(test)
+fizzBuzz(30)
