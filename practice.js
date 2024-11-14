@@ -537,10 +537,19 @@
 // fizzBuzz(30)
 
 
-let reverseWords = (str) => {
-    console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// let reverseWords = (str) => {
+//     console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// }
+
+// let test = 'Hey you should offer me this job!'
+
+// reverseWords(test)
+
+
+let fizzBuzz = (num) => {
+    for (let i = 1; i <= num; i++){
+        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+    }
 }
 
-let test = 'Hey you should offer me this job!'
-
-reverseWords(test)
+fizzBuzz(30)
