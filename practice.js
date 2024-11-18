@@ -737,11 +737,20 @@
 
 // fizzBuzz(30)
 
-let mergeArrays = (arr1,arr2) => {
-    console.log([...arr1,...arr2].sort((a,b) => a - b))
+// let mergeArrays = (arr1,arr2) => {
+//     console.log([...arr1,...arr2].sort((a,b) => a - b))
+// }
+
+// let array1 = [1,3,5,7,9]
+// let array2 = [2,4,6,8,10]
+
+// mergeArrays(array1,array2)
+
+
+function reverseWords(str){
+    console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
 }
 
-let array1 = [1,3,5,7,9]
-let array2 = [2,4,6,8,10]
+let test = 'yeH uoy dluohs reffo em a !boj'
 
-mergeArrays(array1,array2)
+reverseWords(test)
