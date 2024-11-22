@@ -915,13 +915,30 @@
 // mergeArrays(array1,array2)
 
 
-function reverseWords(str){
-    console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+let fibonacciSequence = (num) => {
+    let arr = [0,1];
+
+    if (num <= 0) return 'Please enter positive integer';
+    if (num === 1) return [0];
+    if (num === 2) return arr;
+
+    while (num > 2){
+        arr.push(arr.slice(-2).reduce((a,b) => a + b))
+        num--;
+    }
+    return arr;
 }
 
-let test = 'yeH uoy dluohs reffo em a !boj'
+console.log(fibonacciSequence(10))
 
-reverseWords(test)
+
+// function reverseWords(str){
+//     console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// }
+
+// let test = 'yeH uoy dluohs reffo em a !boj'
+
+// reverseWords(test)
 
 
 // let fizzBuzz = (num) => {
