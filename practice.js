@@ -1087,9 +1087,18 @@
 // mergeArrays(array1,array2)
 
 
+// let fizzBuzz = (num) => {
+//     for (let i = 1; i <= num; i++){
+//         console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i) 
+//     }
+// }
+
+// fizzBuzz(30)
+
+
 let fizzBuzz = (num) => {
     for (let i = 1; i <= num; i++){
-        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i) 
+        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
     }
 }
 
