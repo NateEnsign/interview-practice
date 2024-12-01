@@ -1135,6 +1135,15 @@
 // console.log(fibonacciSequence(10))
 
 
+// let reverseWords = (str) => {
+//     console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// }
+
+// let test = 'yeH uoy dluohs reffo em a !boj'
+
+// reverseWords(test)
+
+
 let reverseWords = (str) => {
     console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
 }
