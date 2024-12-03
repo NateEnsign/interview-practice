@@ -1277,10 +1277,28 @@
 // fizzBuzz(10,30)
 
 
-let reverseWords = (str) => {
-    console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// let reverseWords = (str) => {
+//     console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// }
+
+// let test = 'Hey you should offer me a job!'
+
+// reverseWords(test)
+
+
+let fibonacciSequence = (num) => {
+    let arr = [0,1];
+
+    if (num <= 0) return 'Please enter positive integer';
+    if (num === 1) return [0];
+    if (num === 2) return arr;
+
+    while (num > 2){
+        let [x,y] = arr.slice(-2);
+        arr.push(x + y);
+        num--;
+    }
+    return arr;
 }
 
-let test = 'Hey you should offer me a job!'
-
-reverseWords(test)
+console.log(fibonacciSequence(10))
