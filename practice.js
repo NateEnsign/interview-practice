@@ -1470,11 +1470,21 @@
 // reverseWords(test)
 
 
-
-let reverseWords = (str) => {
-    console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+function mergeArrays(arr1,arr2){
+    console.log([...arr1,...arr2].sort((a,b) => a - b))
 }
 
-let test = 'yeH uoy dluohs reffo em a !boj'
+let array1 = [1,3,5,7,9];
+let array2 = [2,4,6,8,10];
 
-reverseWords(test)
+mergeArrays(array1,array2)
+
+
+
+// let reverseWords = (str) => {
+//     console.log(str.split(' ').map((n) => n.split('').reverse().join('')).join(' '))
+// }
+
+// let test = 'yeH uoy dluohs reffo em a !boj'
+
+// reverseWords(test)
