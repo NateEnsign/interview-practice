@@ -1470,21 +1470,21 @@
 // reverseWords(test)
 
 
-let fibonacciSequence = (num) => {
-    let arr = [0,1];
+// let fibonacciSequence = (num) => {
+//     let arr = [0,1];
 
-    if (num <= 0) return 'Please enter positive integer';
-    if (num === 1) return [0];
-    if (num === 2) return arr;
+//     if (num <= 0) return 'Please enter positive integer';
+//     if (num === 1) return [0];
+//     if (num === 2) return arr;
 
-    while (num > 2){
-        arr.push(arr.slice(-2).reduce((a,b) => a + b))
-        num--
-    }
-    return arr;
-}
+//     while (num > 2){
+//         arr.push(arr.slice(-2).reduce((a,b) => a + b))
+//         num--
+//     }
+//     return arr;
+// }
 
-console.log(fibonacciSequence(10))
+// console.log(fibonacciSequence(10))
 
 
 // let fizzBuzz = (num) => {
@@ -1514,3 +1514,20 @@ console.log(fibonacciSequence(10))
 // let test = 'yeH uoy dluohs reffo em a !boj'
 
 // reverseWords(test)
+
+
+let fibonacciSequence = (num) => {
+    let arr = [0,1];
+
+    if (num <= 0) return 'Please enter positive integer';
+    if (num === 1) return [0];
+    if (num === 2) return arr;
+
+    while (num > 2){
+        arr.push(arr.slice(-2).reduce((a,b) => a + b))
+        num--;
+    }
+    return arr;
+}
+
+console.log(fibonacciSequence(10))
