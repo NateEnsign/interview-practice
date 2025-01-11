@@ -1861,13 +1861,22 @@
 
 // reverseWords(test);
 
-let fizzBuzz = (num) => {
-    for (let i = 1; i <= num; i++){
-        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
-    }
+const mergeArrays = (arr1,arr2) => {
+    console.log([...arr1,...arr2].sort((a,b) => a - b))
 }
 
-fizzBuzz(30)
+let array1 = [1,3,5,7,9];
+let array2 = [2,4,6,8,10];
+
+mergeArrays(array1,array2);
+
+// let fizzBuzz = (num) => {
+//     for (let i = 1; i <= num; i++){
+//         console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+//     }
+// }
+
+// fizzBuzz(30)
 
 // const reverseWords = (str) => {
 //     console.log(str.split(' ').map((w) => w.split('').reverse().join('')).join(' '))
