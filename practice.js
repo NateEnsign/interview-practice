@@ -1853,6 +1853,14 @@
 // fizzBuzz(30)
 
 
+// const reverseWords = (str) => {
+//     console.log(str.split(' ').map((w) => w.split('').reverse().join('')).join(' '))
+// }
+
+// let test = 'yeH uoy dluohs reffo em a !boj'
+
+// reverseWords(test);
+
 const reverseWords = (str) => {
     console.log(str.split(' ').map((w) => w.split('').reverse().join('')).join(' '))
 }
