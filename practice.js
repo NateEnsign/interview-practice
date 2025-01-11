@@ -1861,10 +1861,18 @@
 
 // reverseWords(test);
 
-const reverseWords = (str) => {
-    console.log(str.split(' ').map((w) => w.split('').reverse().join('')).join(' '))
+let fizzBuzz = (num) => {
+    for (let i = 1; i <= num; i++){
+        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+    }
 }
 
-let test = 'yeH uoy dluohs reffo em a !boj'
+fizzBuzz(30)
 
-reverseWords(test);
+// const reverseWords = (str) => {
+//     console.log(str.split(' ').map((w) => w.split('').reverse().join('')).join(' '))
+// }
+
+// let test = 'yeH uoy dluohs reffo em a !boj'
+
+// reverseWords(test);
