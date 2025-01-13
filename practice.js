@@ -1861,21 +1861,21 @@
 
 // reverseWords(test);
 
-let fibonacciSequence = (num) => {
-    let arr = [0,1];
+// let fibonacciSequence = (num) => {
+//     let arr = [0,1];
 
-    if (num <= 0) return 'Please enter postiive integer';
-    if (num === 1) return [0];
-    if (num === 2) return arr;
+//     if (num <= 0) return 'Please enter postiive integer';
+//     if (num === 1) return [0];
+//     if (num === 2) return arr;
 
-    while (num > 2){
-        arr.push(arr.slice(-2).reduce((a,b) => a + b))
-        num--;
-    }
-    return arr;
-}
+//     while (num > 2){
+//         arr.push(arr.slice(-2).reduce((a,b) => a + b))
+//         num--;
+//     }
+//     return arr;
+// }
 
-console.log(fibonacciSequence(10))
+// console.log(fibonacciSequence(10))
 
 // const mergeArrays = (arr1,arr2) => {
 //     console.log([...arr1,...arr2].sort((a,b) => a - b))
@@ -1901,3 +1901,24 @@ console.log(fibonacciSequence(10))
 // let test = 'yeH uoy dluohs reffo em a !boj'
 
 // reverseWords(test);
+
+
+let fibonacciSequence = (num) => {
+    let f1 = 0;
+    let f2 = 1;
+    let nextFib;
+
+    let arr = [];
+
+    if (num <= 0) return 'Please enter positive integer';
+
+    for (let i = 0; i < num; i++){
+        arr.push(f1)
+        nextFib = f1 + f2;
+        f1 = f2;
+        f2 = nextFib;
+    }
+    return arr;
+}
+
+console.log(fibonacciSequence(10))
