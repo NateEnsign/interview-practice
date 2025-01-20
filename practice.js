@@ -34,10 +34,26 @@
 // reverseWords(test)
 
 
-const fizzBuzz = (num) => {
-    for (let i = 1; i <= num; i++){
-        console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+// const fizzBuzz = (num) => {
+//     for (let i = 1; i <= num; i++){
+//         console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+//     }
+// }
+
+// fizzBuzz(30)
+
+const fibonacciSequence = (num) => {
+    let arr = [0,1];
+
+    if (num <= 0) return 'Please enter positive integer';
+    if (num === 1) return [0];
+    if (num === 2) return arr;
+
+    while (num > 2) {
+        arr.push(arr.slice(-2).reduce((a,b) => a + b))
+        num--;
     }
+    return arr
 }
 
-fizzBuzz(30)
+console.log(fibonacciSequence(10))
