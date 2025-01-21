@@ -95,22 +95,31 @@
 // fizzBuzz(30)
 
 
-const fibonacciSequence = (num) => {
-    let fib1 = 0;
-    let fib2 = 1;
-    let nextFib;
+// const fibonacciSequence = (num) => {
+//     let fib1 = 0;
+//     let fib2 = 1;
+//     let nextFib;
 
-    let arr = [];
+//     let arr = [];
 
-    if (num <= 0) return 'Please enter positive integer';
+//     if (num <= 0) return 'Please enter positive integer';
 
-    for (let i = 0; i < num; i++){
-        arr.push(fib1);
-        nextFib = fib1 + fib2;
-        fib1 = fib2;
-        fib2 = nextFib;
-    }
-    return arr;
+//     for (let i = 0; i < num; i++){
+//         arr.push(fib1);
+//         nextFib = fib1 + fib2;
+//         fib1 = fib2;
+//         fib2 = nextFib;
+//     }
+//     return arr;
+// }
+
+// console.log(fibonacciSequence(10));
+
+
+function reverseWords(str){
+    console.log(str.split(' ').map((w) => w.split('').reverse().join('')).join(' '))
 }
 
-console.log(fibonacciSequence(10));
+let test = 'Hey you should offer me a job!';
+
+reverseWords(test)
