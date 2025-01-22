@@ -116,6 +116,15 @@
 // console.log(fibonacciSequence(10));
 
 
+// function reverseWords(str){
+//     console.log(str.split(' ').map((w) => w.split('').reverse().join('')).join(' '))
+// }
+
+// let test = 'Hey you should offer me a job!';
+
+// reverseWords(test)
+
+
 function reverseWords(str){
     console.log(str.split(' ').map((w) => w.split('').reverse().join('')).join(' '))
 }
@@ -123,3 +132,5 @@ function reverseWords(str){
 let test = 'Hey you should offer me a job!';
 
 reverseWords(test)
+
+
