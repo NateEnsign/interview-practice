@@ -175,18 +175,33 @@
 // How many months will it take him to save up enough money to buy the car he wants, and how much money will he have left over?
 
 
-function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
-    var months = 0, moneySaved = 0;
-      while (startPriceNew > startPriceOld + moneySaved){
-          moneySaved += savingperMonth;
-          startPriceOld -= (startPriceOld * (percentLossByMonth / 100));
-          startPriceNew -= (startPriceNew * (percentLossByMonth / 100));
-          months++;
-          if (months % 2 == 1){
-              percentLossByMonth += .5;
-          }
-      }
-      return [months, Math.round(startPriceOld + moneySaved - startPriceNew)];
+// function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
+//     var months = 0, moneySaved = 0;
+//       while (startPriceNew > startPriceOld + moneySaved){
+//           moneySaved += savingperMonth;
+//           startPriceOld -= (startPriceOld * (percentLossByMonth / 100));
+//           startPriceNew -= (startPriceNew * (percentLossByMonth / 100));
+//           months++;
+//           if (months % 2 == 1){
+//               percentLossByMonth += .5;
+//           }
+//       }
+//       return [months, Math.round(startPriceOld + moneySaved - startPriceNew)];
+//   }
+
+
+let string = '!!!!!Nate';
+
+function remove(str,n){
+
+    let result = str;
+    for(let i = 0; i < n; i++){
+        result = result.replace('!', '');
+    }
+    return result
+    
   }
+
+  console.log(remove(string,4))
 
 
