@@ -12,9 +12,7 @@
 //     return arr
 // }
 
-
 // console.log(fibonacciSequence(10))
-
 
 // const mergeArrays = (arr1,arr2) => {
 //     console.log([...arr1,...arr2].sort((a,b) => a - b))
@@ -32,7 +30,6 @@
 // let test = 'Hey you should offer me a job!'
 
 // reverseWords(test)
-
 
 // const fizzBuzz = (num) => {
 //     for (let i = 1; i <= num; i++){
@@ -58,7 +55,6 @@
 
 // console.log(fibonacciSequence(10))
 
-
 // const fizzBuzz = (num) => {
 //     for (let i = 1; i <= num; i++){
 //         console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
@@ -76,7 +72,6 @@
 
 // mergeArrays(array1,array2)
 
-
 // const reverseWords = (str) => {
 //     console.log(str.split(' ').map((word) => word.split('').reverse().join('')).join(' '))
 // }
@@ -85,7 +80,6 @@
 
 // reverseWords(test)
 
-
 // const fizzBuzz = (num) => {
 //     for (let i = 1; i <= num; i++){
 //         console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
@@ -93,7 +87,6 @@
 // }
 
 // fizzBuzz(30)
-
 
 // const fibonacciSequence = (num) => {
 //     let fib1 = 0;
@@ -115,7 +108,6 @@
 
 // console.log(fibonacciSequence(10));
 
-
 // function reverseWords(str){
 //     console.log(str.split(' ').map((w) => w.split('').reverse().join('')).join(' '))
 // }
@@ -124,7 +116,6 @@
 
 // reverseWords(test)
 
-
 // const fizzBuzz = (num) => {
 //     for (let i = 1; i <= num; i++){
 //         console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
@@ -132,7 +123,6 @@
 // }
 
 // fizzBuzz(30)
-
 
 // const fibonacciSequence = (num) => {
 //     let fib1 = 0;
@@ -154,7 +144,6 @@
 
 // console.log(fibonacciSequence(10));
 
-
 // function reverseWords(str){
 //     console.log(str.split(' ').map((w) => w.split('').reverse().join('')).join(' '))
 // }
@@ -162,7 +151,6 @@
 // let test = 'Hey you should offer me a job!';
 
 // reverseWords(test)
-
 
 // Let us begin with an example:
 
@@ -173,7 +161,6 @@
 // Can you help him?
 
 // How many months will it take him to save up enough money to buy the car he wants, and how much money will he have left over?
-
 
 // function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
 //     var months = 0, moneySaved = 0;
@@ -189,19 +176,37 @@
 //       return [months, Math.round(startPriceOld + moneySaved - startPriceNew)];
 //   }
 
+// let string = '!!!!!Nate';
 
-let string = '!!!!!Nate';
+// let removeHype = (str,n) => {
 
-let removeHype = (str,n) => {
+//     let result = str;
 
-    let result = str;
+//     for (let i = 0; i < n; i++){
+//         result = result.replace('!', '');
+//     }
+//     return result;
+// }
 
-    for (let i = 0; i < n; i++){
-        result = result.replace('!', '');
-    }
-    return result;
-}
+// console.log(removeHype(string,4))
 
-console.log(removeHype(string,4))
+function listSquared(m, n) {
+    let count = 0;
+    let totalSum = 0;
+
+      for (let i = m; i <= n; i++){
+        let sum = 0;
+        for (let k = 1; k <= i; k++){
+          if (i%k === 0) sum += k;
+        }
+        let sqrt = Math.sqrt(sum)
+        if (sqrt%sqrt === 0){
+          count++;
+          totalSum += sum;
+        }
+
+      }
+  return [count, totalSum]
+  }
 
 
