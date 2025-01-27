@@ -192,16 +192,16 @@
 
 let string = '!!!!!Nate';
 
-function remove(str,n){
+let removeHype = (str,n) => {
 
     let result = str;
-    for(let i = 0; i < n; i++){
+
+    for (let i = 0; i < n; i++){
         result = result.replace('!', '');
     }
-    return result
-    
-  }
+    return result;
+}
 
-  console.log(remove(string,4))
+console.log(removeHype(string,4))
 
 
