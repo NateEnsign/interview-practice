@@ -285,10 +285,60 @@
 
 // Output : "HEllO WOrld!"
 
-function replaceVowels(str){
-    console.log(str.replace(/[aeiou]/g, v => v.toUpperCase()))
+// function replaceVowels(str){
+//     console.log(str.replace(/[aeiou]/g, v => v.toUpperCase()))
+// }
+
+// let test = 'Hey you should give me a job'
+
+// replaceVowels(test)
+
+let snakeLadder = () => {
+  let player1 = 0;
+  let player2 = 0;
+
+  for (let i = 1; i < 50; i++) {
+    let die1 = Math.floor(Math.random() * 6) + 1;
+    let die2 = Math.floor(Math.random() * 6) + 1;
+
+    if (i % 2 === 0) {
+      player1 += die1 + die2;
+      if (player1 === 2) {
+        player1 = 38;
+      } else if (player1 === 7) {
+        player1 = 14;
+      } else if (player1 === 8) {
+        player1 = 31;
+      } else if (player1 === 15) {
+        player1 = 26;
+      } else if (player1 === 21) {
+        player1 = 42;
+      } else if (player1 === 28) {
+        player1 = 84;
+      } else if (player1 === 36) {
+        player1 = 44;
+      }
+    } else {
+    player2 += die1 + die2;
+    if (player2 === 2) {
+      player2 = 38;
+    } else if (player2 === 7) {
+      player2 = 14;
+    } else if (player2 === 8) {
+      player2 = 31;
+    } else if (player2 === 15) {
+      player2 = 26;
+    } else if (player2 === 21) {
+      player2 = 42;
+    } else if (player2 === 28) {
+      player2 = 84;
+    } else if (player2 === 36) {
+      player2 = 44;
+    }
+  }
+  if (player2 >= 100) return "Player 2 wins!";
+    if (player1 >= 100) return "Player 1 wins!";
 }
+};
 
-let test = 'Hey you should give me a job'
-
-replaceVowels(test)
+console.log(snakeLadder());
