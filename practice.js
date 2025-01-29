@@ -217,15 +217,33 @@
 
 // We will return an array of subarrays or of tuples (in C an array of Pair) or a string. The subarrays (or tuples or Pairs) will have two elements: first the number the squared divisors of which is a square and then the sum of the squared divisors.
 
-function listSquared(m,n){
-    let answer = [];
+// function listSquared(m,n){
+//     let answer = [];
 
-    for (let i = m; i <= n; i++){
-        let temp = 0;
-        for (let j = 1; j<= i; j++){
-            if (i%j === 0) temp += j*j;
-        }
-        if (Math.sqrt(temp) % 1 === 0) answer.push([i,temp])
+//     for (let i = m; i <= n; i++){
+//         let temp = 0;
+//         for (let j = 1; j<= i; j++){
+//             if (i%j === 0) temp += j*j;
+//         }
+//         if (Math.sqrt(temp) % 1 === 0) answer.push([i,temp])
+//     }
+//     return answer;
+// }
+
+
+const fibonacciSequence = (num) => {
+    let arr = [0,1];
+
+    if (num <= 0) return 'Please enter positive integer';
+    if (num === 1) return [0];
+    if (num === 2) return arr;
+
+    for (let i = 0; i < num; i++){
+        arr.push(arr.slice(-2).reduce((a,b) => a + b))
     }
-    return answer;
+    return arr;
 }
+
+console.log(fibonacciSequence(10))
+
+
