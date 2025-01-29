@@ -269,10 +269,26 @@
 
 // fizzBuzz(30);
 
-const reverseWords = (str) => {
-    console.log(str.split(' ').map((word) => word.split('').reverse().join('')).join(' '))
+// const reverseWords = (str) => {
+//     console.log(str.split(' ').map((word) => word.split('').reverse().join('')).join(' '))
+// }
+
+// let test = 'Hey you should offer me a job';
+
+// reverseWords(test)
+
+// When provided with a String, capitalize all vowels
+
+// For example:
+
+// Input : "Hello World!"
+
+// Output : "HEllO WOrld!"
+
+function replaceVowels(str){
+    console.log(str.replace(/[aeiou]/g, v => v.toUpperCase()))
 }
 
-let test = 'Hey you should offer me a job';
+let test = 'Hey you should give me a job'
 
-reverseWords(test)
+replaceVowels(test)
