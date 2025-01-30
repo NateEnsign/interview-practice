@@ -383,23 +383,45 @@
 
 // The vowel substrings in the word codewarriors are o,e,a,io. The longest of these has a length of 2. Given a lowercase string that has alphabetic characters only (both vowels and consonants) and no spaces, return the length of the longest vowel substring. Vowels are any of aeiou.
 
+// const longestVowel = (str) => {
+//   let cur = 0;
+//   let max = 1;
+
+//   let vowels = "aeiou";
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (vowels.includes(str[i])) {
+//       cur++;
+//       if (cur > max) {
+//         max = cur;
+//       }
+//     } else {
+//         cur = 0;
+//     }
+//   }
+//   return max;
+// };
+
+// console.log(longestVowel("jjijuuujeejjaaaaaa"));
+
+
 const longestVowel = (str) => {
-  let cur = 0;
-  let max = 1;
+    let cur = 0;
+    let max = 0;
 
-  let vowels = "aeiou";
+    let key = 'aeiou'
 
-  for (let i = 0; i < str.length; i++) {
-    if (vowels.includes(str[i])) {
-      cur++;
-      if (cur > max) {
-        max = cur;
-      }
-    } else {
-        cur = 0;
+    for (let i = 0; i < str.length; i++){
+        if (key.includes(str[i])){
+            cur++;
+            if (cur > max){
+                max = cur;
+            }
+        } else {
+            cur = 0;
+        }
     }
-  }
-  return max;
-};
+    return max;
+}
 
-console.log(longestVowel("jjijuuujeejjaaaaaa"));
+console.log(longestVowel("jjijuuuuuuuuuujeejjaaaaa"));
