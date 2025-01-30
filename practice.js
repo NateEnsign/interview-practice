@@ -293,52 +293,66 @@
 
 // replaceVowels(test)
 
-let snakeLadder = () => {
-  let player1 = 0;
-  let player2 = 0;
+// let snakeLadder = () => {
+//   let player1 = 0;
+//   let player2 = 0;
 
-  for (let i = 1; i < 50; i++) {
-    let die1 = Math.floor(Math.random() * 6) + 1;
-    let die2 = Math.floor(Math.random() * 6) + 1;
+//   for (let i = 1; i < 50; i++) {
+//     let die1 = Math.floor(Math.random() * 6) + 1;
+//     let die2 = Math.floor(Math.random() * 6) + 1;
 
-    if (i % 2 === 0) {
-      player1 += die1 + die2;
-      if (player1 === 2) {
-        player1 = 38;
-      } else if (player1 === 7) {
-        player1 = 14;
-      } else if (player1 === 8) {
-        player1 = 31;
-      } else if (player1 === 15) {
-        player1 = 26;
-      } else if (player1 === 21) {
-        player1 = 42;
-      } else if (player1 === 28) {
-        player1 = 84;
-      } else if (player1 === 36) {
-        player1 = 44;
-      }
-    } else {
-    player2 += die1 + die2;
-    if (player2 === 2) {
-      player2 = 38;
-    } else if (player2 === 7) {
-      player2 = 14;
-    } else if (player2 === 8) {
-      player2 = 31;
-    } else if (player2 === 15) {
-      player2 = 26;
-    } else if (player2 === 21) {
-      player2 = 42;
-    } else if (player2 === 28) {
-      player2 = 84;
-    } else if (player2 === 36) {
-      player2 = 44;
-    }
+//     if (i % 2 === 0) {
+//       player1 += die1 + die2;
+//       if (player1 === 2) {
+//         player1 = 38;
+//       } else if (player1 === 7) {
+//         player1 = 14;
+//       } else if (player1 === 8) {
+//         player1 = 31;
+//       } else if (player1 === 15) {
+//         player1 = 26;
+//       } else if (player1 === 21) {
+//         player1 = 42;
+//       } else if (player1 === 28) {
+//         player1 = 84;
+//       } else if (player1 === 36) {
+//         player1 = 44;
+//       }
+//     } else {
+//     player2 += die1 + die2;
+//     if (player2 === 2) {
+//       player2 = 38;
+//     } else if (player2 === 7) {
+//       player2 = 14;
+//     } else if (player2 === 8) {
+//       player2 = 31;
+//     } else if (player2 === 15) {
+//       player2 = 26;
+//     } else if (player2 === 21) {
+//       player2 = 42;
+//     } else if (player2 === 28) {
+//       player2 = 84;
+//     } else if (player2 === 36) {
+//       player2 = 44;
+//     }
+//   }
+//   if (player2 >= 100) return "Player 2 wins!";
+//     if (player1 >= 100) return "Player 1 wins!";
+// }
+// };
+
+// console.log(snakeLadder());
+
+
+// Reverse every other word in a given string, then return the string. Throw away any leading or trailing whitespace, while ensuring there is exactly one space between each word. Punctuation marks should be treated as if they are a part of the word in this kata.
+
+function reverse(str){
+    let arr = str.trim().split(' ');
+  
+    return arr.map((word, index) => index % 2 !== 0 ? word.split('').reverse().join('') : word).join(' ');
+    
   }
-  if (player2 >= 100) return "Player 2 wins!";
-    if (player1 >= 100) return "Player 1 wins!";
-}
-};
 
-console.log(snakeLadder());
+  let test = "Hey when are you going to quit messing around and offer me a job?"
+
+  console.log(reverse(test))
