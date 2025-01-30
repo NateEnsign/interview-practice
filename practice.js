@@ -343,16 +343,40 @@
 
 // console.log(snakeLadder());
 
-
 // Reverse every other word in a given string, then return the string. Throw away any leading or trailing whitespace, while ensuring there is exactly one space between each word. Punctuation marks should be treated as if they are a part of the word in this kata.
 
-function reverse(str){
-    let arr = str.trim().split(' ');
-  
-    return arr.map((word, index) => index % 2 !== 0 ? word.split('').reverse().join('') : word).join(' ');
-    
-  }
+// function reverse(str) {
+//   let arr = str.trim().split(" ");
 
-  let test = "Hey when are you going to quit messing around and offer me a job?"
+//   return arr
+//     .map((word, index) =>
+//       index % 2 !== 0 ? word.split("").reverse().join("") : word
+//     )
+//     .join(" ");
+// }
 
-  console.log(reverse(test))
+// let test = "Hey check this out, every other word is going to be reversed just like magic!";
+
+// console.log(reverse(test));
+
+// Digital Cypher assigns to each letter of the alphabet unique number. For example:
+
+//  a  b  c  d  e  f  g  h  i  j  k  l  m
+//  1  2  3  4  5  6  7  8  9 10 11 12 13
+//  n  o  p  q  r  s  t  u  v  w  x  y  z
+// 14 15 16 17 18 19 20 21 22 23 24 25 26
+// Instead of letters in encrypted word we write the corresponding number, eg. The word scout:
+
+//  s  c  o  u  t
+// 19  3 15 21 20
+// Then we add to each obtained digit consecutive digits from the key. For example. In case of key equal to 1939 :
+
+function encode(str, n) {
+  let key = String(n);
+
+  return str.split("").map((char, i) => {
+    return char.charCodeAt(0) - 96 + +key[i % key.length];
+  });
+}
+
+console.log(encode("abcdef", 345));
