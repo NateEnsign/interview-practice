@@ -371,12 +371,35 @@
 // 19  3 15 21 20
 // Then we add to each obtained digit consecutive digits from the key. For example. In case of key equal to 1939 :
 
-function encode(str, n) {
-  let key = String(n);
+// function encode(str, n) {
+//   let key = String(n);
 
-  return str.split("").map((char, i) => {
-    return char.charCodeAt(0) - 96 + +key[i % key.length];
-  });
-}
+//   return str.split("").map((char, i) => {
+//     return char.charCodeAt(0) - 96 + +key[i % key.length];
+//   });
+// }
 
-console.log(encode("abcdef", 345));
+// console.log(encode("abcdef", 345));
+
+// The vowel substrings in the word codewarriors are o,e,a,io. The longest of these has a length of 2. Given a lowercase string that has alphabetic characters only (both vowels and consonants) and no spaces, return the length of the longest vowel substring. Vowels are any of aeiou.
+
+const longestVowel = (str) => {
+  let cur = 0;
+  let max = 1;
+
+  let vowels = "aeiou";
+
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      cur++;
+      if (cur > max) {
+        max = cur;
+      }
+    } else {
+        cur = 0;
+    }
+  }
+  return max;
+};
+
+console.log(longestVowel("jjijuuujeejjaaaaaa"));
