@@ -426,8 +426,30 @@
 
 // console.log(longestVowel("jjijuuuuuuuuuujeejjaaaaa"));
 
-const longestVowel = (str) => {
-    return str.split(/[^aeiou]/).reduce((s,n) => Math.max(s,n.length), 0)
+// const longestVowel = (str) => {
+//     return str.split(/[^aeiou]/).reduce((s,n) => Math.max(s,n.length), 0)
+// }
+
+// console.log(longestVowel("jjijuuuuuuuuuujeejjaaaaa"));
+
+let vowelCity = (str) => {
+    let cur = 0;
+    let max = 0;
+
+    let key = 'aeiou';
+
+    for (let i = 0; i < str.length; i++){
+        if (key.includes(str[i])){
+            cur++;
+            if (cur > max){
+                max = cur;
+            }
+        } else {
+            cur = 0;
+        }
+    }
+    return max;
 }
 
-console.log(longestVowel("jjijuuuuuuuuuujeejjaaaaa"));
+
+console.log(vowelCity("jjijuuuuuuujeejjaaaaa"));
