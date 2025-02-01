@@ -589,3 +589,9 @@
 // let array = [4,4,4,4,4,5,11,4,6,4,8,4,9,5,24,6]
 
 // console.log(twoHigh(array));
+
+
+let arr = [1,2,3,3,3,3,3,4]
+
+console.log([...new Set(arr)])
+console.log(new Set(arr))
