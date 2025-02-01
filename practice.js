@@ -614,32 +614,56 @@
 // < 100 & > 80: 'i can handle this'
 // 100 or over: 'party time!!'
 
-function boredom(staff) {
-  let score = 0;
+// function boredom(staff) {
+//   let score = 0;
 
-  let arr = Object.values(staff);
-  for (let i = 0; i < arr.length; i++) {
-    arr[i] === "accounts"
-      ? (score += 1)
-      : arr[i] === "finance"
-      ? (score += 2)
-      : arr[i] === "canteen"
-      ? (score += 10)
-      : arr[i] === "regulation"
-      ? (score += 3)
-      : arr[i] === "trading"
-      ? (score += 6)
-      : arr[i] === "change"
-      ? (score += 6)
-      : arr[i] === "IS"
-      ? (score += 8)
-      : arr[i] === "retail"
-      ? (score += 5)
-      : arr[i] === "cleaning"
-      ? (score += 4)
-      : (score += 25);
+//   let arr = Object.values(staff);
+//   for (let i = 0; i < arr.length; i++) {
+//     arr[i] === "accounts"
+//       ? (score += 1)
+//       : arr[i] === "finance"
+//       ? (score += 2)
+//       : arr[i] === "canteen"
+//       ? (score += 10)
+//       : arr[i] === "regulation"
+//       ? (score += 3)
+//       : arr[i] === "trading"
+//       ? (score += 6)
+//       : arr[i] === "change"
+//       ? (score += 6)
+//       : arr[i] === "IS"
+//       ? (score += 8)
+//       : arr[i] === "retail"
+//       ? (score += 5)
+//       : arr[i] === "cleaning"
+//       ? (score += 4)
+//       : (score += 25);
+//   }
+//   if (score <= 80) return "kill me now";
+//   if (score > 100) return "party time!!";
+//   return "i can handle this";
+// }
+
+// Given a string, return a new string that has transformed based on the input:
+
+// Change case of every character, ie. lower case to upper case, upper case to lower case.
+// Reverse the order of words from the input.
+// Note: You will have to handle multiple spaces, and leading/trailing spaces.
+
+// For example:
+
+// "Example Input" ==> "iNPUT eXAMPLE"
+// You may assume the input only contain English alphabet and spaces.
+
+function stringTransformer(str) {
+  let newStr = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i].toLowerCase()) newStr += `${str[i].toUpperCase()}`;
+    if (str[i] === str[i].toUpperCase()) newStr += `${str[i].toLowerCase()}`;
   }
-  if (score <= 80) return "kill me now";
-  if (score > 100) return "party time!!";
-  return "i can handle this";
+
+
+  return newStr.trim().replace(/\s+/g, ' ').split(" ").reverse().join(" ");
 }
+
+console.log(stringTransformer("ffG    GFF"));
