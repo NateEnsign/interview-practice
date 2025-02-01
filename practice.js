@@ -404,7 +404,6 @@
 
 // console.log(longestVowel("jjijuuujeejjaaaaaa"));
 
-
 // const longestVowel = (str) => {
 //     let cur = 0;
 //     let max = 0;
@@ -451,15 +450,11 @@
 //     return max;
 // }
 
-
 // console.log(vowelCity("jjijuuuuuuujeejjaaaaa"));
-
 
 // const vowelCity = (str) => {
 //     return str.split(/[^aeiou]/).reduce((a, v) => Math.max(a, v.length), 0);
 // }
-
-
 
 // const solve = (str) => {
 //     return Math.max([...str.match(/[aeiou]+/g).map(x => x.length)])
@@ -468,7 +463,6 @@
 // function solve(s){
 //     return Math.max(...s.match(/[aeiou]+/g).map(x => x.length));
 //    }
-
 
 // console.log(solve("jjijuuuuuuujeejjaaaaa"));
 
@@ -480,14 +474,13 @@
 
 // console.log(sortArr(array))
 
-
 // Given an array with exactly 5 strings "a", "b" or "c" (chars in Java, characters in Fortran, Chars in Haskell), check if the array contains three and two of the same values.
 
 // function checkThreeAndTwo(array) {
 //     let a = 0;
 //      let b = 0;
 //      let c = 0;
-     
+
 //      for (let i = 0; i < 5; i++){
 //        if (array[i] === 'a') a++;
 //        if (array[i] === 'b') b++;
@@ -506,14 +499,12 @@
 
 //    console.log(checkArray(array))
 
-
 // Longest Palindrome
 // Find the length of the longest substring in the given string s that is the same in reverse.
 
 // As an example, if the input was “I like racecars that go fast”, the substring (racecar) length would be 7.
 
 // If the length of the input string is 0, the return value must be 0.
-
 
 // let palindrome = (str) => {
 //     let arr = str.split(' ')
@@ -522,31 +513,48 @@
 //     for (i = 0; i < arr.length; i++){
 //         if (arr[i] === arr[i].split('').reverse().join('') && arr[i].length > longest){
 //             longest = arr[i].length;
-//         } 
+//         }
 //     }
 //     return longest;
 // }
-
-
-
 
 // let string = 'asdfasdfasdf jhj isofs owiejfowj ertytre asodifjaposf';
 
 // console.log(palindrome(string))
 
+// const vowelCity = (str) => {
 
-const vowelCity = (str) => {
+//     return Math.max(...str.split(/[^aeiou]/).map((el) => el.length));
 
-    return Math.max(...str.split(/[^aeiou]/).map((el) => el.length));
+// }
 
-    
-}
+// let string = 'ttttuttttuuttttooottttiiiiiitttaaaa'
 
-let string = 'ttttuttttuuttttooottttiiiiiitttaaaa'
+// console.log(vowelCity(string))
 
-console.log(vowelCity(string))
+// let arr = [1,4,6,8,9]
 
+// console.log(Math.max(...arr))
 
+const vowelTown = (str) => {
+  let cur = 0;
+  let max = 0;
 
+  let key = "aeiou";
 
+  for (let i = 0; i < str.length; i++) {
+    if (key.includes(str[i])) {
+      cur++;
+      if (cur > max) {
+        max = cur;
+      }
+    } else {
+      cur = 0;
+    }
+  }
+  return max;
+};
 
+let string = "ttttuttttuuttttooottttiiiiitttaaaa";
+
+console.log(vowelTown(string));
