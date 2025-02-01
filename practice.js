@@ -582,10 +582,10 @@
 // The result should also be ordered from highest to lowest.
 
 
-const twoHigh = (arr) => {
-   return arr.sort((a,b) => b - a).slice(0,2)
-}
+// const twoHigh = (arr) => {
+//    return [...new Set(arr.sort((a,b) => b - a))].slice(0,2)
+// }
 
-let array = [4,4,4,4,4,5,11,4,6,4,8,4,9,5,24,6]
+// let array = [4,4,4,4,4,5,11,4,6,4,8,4,9,5,24,6]
 
-console.log(twoHigh(array));
+// console.log(twoHigh(array));
