@@ -559,8 +559,6 @@
 
 // console.log(vowelTown(string));
 
-
-
 // Suzuki is a monk who climbs a large staircase to the monastery as part of a ritual. Some days he climbs more stairs than others depending on the number of students he must train in the morning. He is curious how many stairs might be climbed over the next 20 years and has spent a year marking down his daily progress.
 
 // The sum of all the stairs logged in a year will be used for estimating the number he might climb in 20.
@@ -573,14 +571,12 @@
 
 // function stairsIn20(s){
 //     return s.map((a) => a.reduce((a,b) => a + b)).reduce((a,b) => a + b) * 20
-    
-//   }
 
+//   }
 
 // In this kata, your job is to return the two distinct highest values in a list. If there're less than 2 unique values, return as many of them, as possible.
 
 // The result should also be ordered from highest to lowest.
-
 
 // const twoHigh = (arr) => {
 //    return [...new Set(arr.sort((a,b) => b - a))].slice(0,2)
@@ -590,8 +586,60 @@
 
 // console.log(twoHigh(array));
 
+// let arr = [1,2,3,3,3,3,3,4]
 
-let arr = [1,2,3,3,3,3,3,4]
+// console.log([...new Set(arr)])
+// console.log(new Set(arr))
 
-console.log([...new Set(arr)])
-console.log(new Set(arr))
+// Every now and then people in the office moves teams or departments. Depending what people are doing with their time they can become more or less boring. Time to assess the current team.
+
+// You will be provided with an object(staff) containing the staff names as keys, and the department they work in as values.
+
+// Each department has a different boredom assessment score, as follows:
+
+// accounts = 1
+// finance = 2
+// canteen = 10
+// regulation = 3
+// trading = 6
+// change = 6
+// IS = 8
+// retail = 5
+// cleaning = 4
+// pissing about = 25
+
+// Depending on the cumulative score of the team, return the appropriate sentiment:
+
+// <=80: 'kill me now'
+// < 100 & > 80: 'i can handle this'
+// 100 or over: 'party time!!'
+
+function boredom(staff) {
+  let score = 0;
+
+  let arr = Object.values(staff);
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] === "accounts"
+      ? (score += 1)
+      : arr[i] === "finance"
+      ? (score += 2)
+      : arr[i] === "canteen"
+      ? (score += 10)
+      : arr[i] === "regulation"
+      ? (score += 3)
+      : arr[i] === "trading"
+      ? (score += 6)
+      : arr[i] === "change"
+      ? (score += 6)
+      : arr[i] === "IS"
+      ? (score += 8)
+      : arr[i] === "retail"
+      ? (score += 5)
+      : arr[i] === "cleaning"
+      ? (score += 4)
+      : (score += 25);
+  }
+  if (score <= 80) return "kill me now";
+  if (score > 100) return "party time!!";
+  return "i can handle this";
+}
