@@ -571,7 +571,21 @@
 
 // input: s = [sunday, monday, tuesday,...] , sunday = [555,666,444,555,666]
 
-function stairsIn20(s){
-    return s.map((a) => a.reduce((a,b) => a + b)).reduce((a,b) => a + b) * 20
+// function stairsIn20(s){
+//     return s.map((a) => a.reduce((a,b) => a + b)).reduce((a,b) => a + b) * 20
     
-  }
+//   }
+
+
+// In this kata, your job is to return the two distinct highest values in a list. If there're less than 2 unique values, return as many of them, as possible.
+
+// The result should also be ordered from highest to lowest.
+
+
+const twoHigh = (arr) => {
+   return arr.sort((a,b) => b - a).slice(0,2)
+}
+
+let array = [4,4,4,4,4,5,11,4,6,4,8,4,9,5,24,6]
+
+console.log(twoHigh(array));
