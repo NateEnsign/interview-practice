@@ -498,11 +498,43 @@
 //      return true;
 //    }
 
-   const checkArray = (arr) => {
-    return [2,3].includes(arr.filter((val) => val === arr[0]).length) && new Set(arr).size === 2;
-   }
+//    const checkArray = (arr) => {
+//     return [2,3].includes(arr.filter((val) => val === arr[0]).length) && new Set(arr).size === 2;
+//    }
 
-   let array = ['a', 'a', 'b', 'c', 'a']
+//    let array = ['a', 'a', 'b', 'c', 'a']
 
-   console.log(checkArray(array))
+//    console.log(checkArray(array))
+
+
+// Longest Palindrome
+// Find the length of the longest substring in the given string s that is the same in reverse.
+
+// As an example, if the input was “I like racecars that go fast”, the substring (racecar) length would be 7.
+
+// If the length of the input string is 0, the return value must be 0.
+
+
+let palindrome = (str) => {
+    let arr = str.split(' ')
+    let longest = 0;
+
+    for (i = 0; i < arr.length; i++){
+        if (arr[i] === arr[i].split('').reverse().join('') && arr[i].length > longest){
+            longest = arr[i].length;
+        } 
+    }
+    return longest;
+}
+
+
+
+
+let string = 'asdfasdfasdf jhj isofs owiejfowj ertytre asodifjaposf';
+
+console.log(palindrome(string))
+
+
+
+
 
