@@ -483,17 +483,26 @@
 
 // Given an array with exactly 5 strings "a", "b" or "c" (chars in Java, characters in Fortran, Chars in Haskell), check if the array contains three and two of the same values.
 
-function checkThreeAndTwo(array) {
-    let a = 0;
-     let b = 0;
-     let c = 0;
+// function checkThreeAndTwo(array) {
+//     let a = 0;
+//      let b = 0;
+//      let c = 0;
      
-     for (let i = 0; i < 5; i++){
-       if (array[i] === 'a') a++;
-       if (array[i] === 'b') b++;
-       if (array[i] === 'c') c++;
-     }
-     if (a > 0 && b > 0 && c > 0) return false;
-     if (a >= 4 || b >= 4 || c >= 4) return false;
-     return true;
+//      for (let i = 0; i < 5; i++){
+//        if (array[i] === 'a') a++;
+//        if (array[i] === 'b') b++;
+//        if (array[i] === 'c') c++;
+//      }
+//      if (a > 0 && b > 0 && c > 0) return false;
+//      if (a >= 4 || b >= 4 || c >= 4) return false;
+//      return true;
+//    }
+
+   const checkArray = (arr) => {
+    return [2,3].includes(arr.filter((val) => val === arr[0]).length) && new Set(arr).size === 2;
    }
+
+   let array = ['a', 'a', 'b', 'c', 'a']
+
+   console.log(checkArray(array))
+
