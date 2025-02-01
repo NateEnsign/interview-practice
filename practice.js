@@ -515,24 +515,36 @@
 // If the length of the input string is 0, the return value must be 0.
 
 
-let palindrome = (str) => {
-    let arr = str.split(' ')
-    let longest = 0;
+// let palindrome = (str) => {
+//     let arr = str.split(' ')
+//     let longest = 0;
 
-    for (i = 0; i < arr.length; i++){
-        if (arr[i] === arr[i].split('').reverse().join('') && arr[i].length > longest){
-            longest = arr[i].length;
-        } 
-    }
-    return longest;
+//     for (i = 0; i < arr.length; i++){
+//         if (arr[i] === arr[i].split('').reverse().join('') && arr[i].length > longest){
+//             longest = arr[i].length;
+//         } 
+//     }
+//     return longest;
+// }
+
+
+
+
+// let string = 'asdfasdfasdf jhj isofs owiejfowj ertytre asodifjaposf';
+
+// console.log(palindrome(string))
+
+
+const vowelCity = (str) => {
+
+    return Math.max(...str.split(/[^aeiou]/).map((el) => el.length));
+
+    
 }
 
+let string = 'ttttuttttuuttttooottttiiiiiitttaaaa'
 
-
-
-let string = 'asdfasdfasdf jhj isofs owiejfowj ertytre asodifjaposf';
-
-console.log(palindrome(string))
+console.log(vowelCity(string))
 
 
 
