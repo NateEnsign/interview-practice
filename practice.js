@@ -668,7 +668,7 @@
 //     return newStr.trim().replace(/\s+/g, ' ').split(' ').reverse().join(' ');
 // }
 
-// let test = ' Hey do you want to go to the        grocery store amoOng the HEATHENS?  '
+let test = ' Hey do you want to go to the        grocery store amoOng the HEATHENS?  '
 
 // console.log(transformString(test))
 
@@ -676,8 +676,8 @@
 function stringTransformer(str) {
   let newStr = "";
   for (let i = 0; i < str.length; i++) {
-    if (str[i] === str[i].toLowerCase()) newStr += `${str[i].toUpperCase()}`;
-    if (str[i] === str[i].toUpperCase()) newStr += `${str[i].toLowerCase()}`;
+    if (str[i] === str[i].toLowerCase()) newStr += str[i].toUpperCase();
+    if (str[i] === str[i].toUpperCase()) newStr += str[i].toLowerCase();
   }
 
 
@@ -685,3 +685,6 @@ function stringTransformer(str) {
 }
 
 console.log(stringTransformer(test));
+
+
+// const transformString
