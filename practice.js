@@ -655,6 +655,24 @@
 // "Example Input" ==> "iNPUT eXAMPLE"
 // You may assume the input only contain English alphabet and spaces.
 
+
+
+// const transformString = (str) => {
+//     let newStr = '';
+
+//     for (let i = 0; i < str.length; i++){
+//         if (str[i] === str[i].toLowerCase()) newStr += `${str[i].toUpperCase()}`;
+//         if (str[i] === str[i].toUpperCase()) newStr += `${str[i].toLowerCase()}`;
+//     }
+
+//     return newStr.trim().replace(/\s+/g, ' ').split(' ').reverse().join(' ');
+// }
+
+// let test = ' Hey do you want to go to the        grocery store amoOng the HEATHENS?  '
+
+// console.log(transformString(test))
+
+
 function stringTransformer(str) {
   let newStr = "";
   for (let i = 0; i < str.length; i++) {
@@ -666,4 +684,4 @@ function stringTransformer(str) {
   return newStr.trim().replace(/\s+/g, ' ').split(" ").reverse().join(" ");
 }
 
-console.log(stringTransformer("ffG    GFF"));
+console.log(stringTransformer(test));
