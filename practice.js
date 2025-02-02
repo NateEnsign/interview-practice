@@ -655,8 +655,6 @@
 // "Example Input" ==> "iNPUT eXAMPLE"
 // You may assume the input only contain English alphabet and spaces.
 
-
-
 // const transformString = (str) => {
 //     let newStr = '';
 
@@ -672,19 +670,28 @@ let test = ' Hey do you want to go to the        grocery store amoOng the HEATHE
 
 // console.log(transformString(test))
 
+// function stringTransformer(str) {
+//   let newStr = "";
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] === str[i].toLowerCase()) newStr += str[i].toUpperCase();
+//     if (str[i] === str[i].toUpperCase()) newStr += str[i].toLowerCase();
+//   }
 
-function stringTransformer(str) {
-  let newStr = "";
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === str[i].toLowerCase()) newStr += str[i].toUpperCase();
-    if (str[i] === str[i].toUpperCase()) newStr += str[i].toLowerCase();
-  }
+//   return newStr.trim().replace(/\s+/g, ' ').split(" ").reverse().join(" ");
+// }
 
+// console.log(stringTransformer(test));
 
-  return newStr.trim().replace(/\s+/g, ' ').split(" ").reverse().join(" ");
-}
+const transformString = (str) => {
+  return str
+    .split('')
+    .map(char => char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase())
+    .join('')
+    .split(' ')
+    .reverse()
+    .join(' ')
+    .trim()
+    .replace(/\s+/g, ' ')
+};
 
-console.log(stringTransformer(test));
-
-
-// const transformString
+console.log(transformString(test))
