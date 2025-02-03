@@ -711,5 +711,7 @@ let test = ' Hey do you want to go to the        grocery store amoOng the HEATHE
 
 
 function removeRotten(bagOfFruits){
-    return bagOfFruits.map(f => f.replace('rotten', '').toLowerCase());
+    return bagOfFruits ? bagOfFruits.map(f => f.replace('rotten', '').toLowerCase()) : [];
   }
+
+
