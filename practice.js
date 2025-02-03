@@ -666,7 +666,8 @@
 //     return newStr.trim().replace(/\s+/g, ' ').split(' ').reverse().join(' ');
 // }
 
-let test = ' Hey do you want to go to the        grocery store amoOng the HEATHENS?  '
+let test =
+  " Hey do you want to go to the        grocery store amoOng the HEATHENS?  ";
 
 // console.log(transformString(test))
 
@@ -696,11 +697,9 @@ let test = ' Hey do you want to go to the        grocery store amoOng the HEATHE
 
 // console.log(transformString(test))
 
-
 // const removeRotten = (fruits) => {
 //     return fruits.map((f) => f.split('').replace('rotten', '').toLowerCase().join(''))
 // }
-
 
 // Our fruit guy has a bag of fruit (represented as an array of strings) where some fruits are rotten. He wants to replace all the rotten pieces of fruit with fresh ones. For example, given ["apple","rottenBanana","apple"] the replaced array should be ["apple","banana","apple"]. Your task is to implement a method that accepts an array of strings containing fruits should returns an array of strings where all the rotten fruits are replaced by good ones.
 
@@ -709,9 +708,19 @@ let test = ' Hey do you want to go to the        grocery store amoOng the HEATHE
 // The rotten fruit name will be in this camelcase (rottenFruit).
 // The returned array should be in lowercase.
 
+// function removeRotten(bagOfFruits){
+//     return bagOfFruits ? bagOfFruits.map(f => f.replace('rotten', '').toLowerCase()) : [];
+//   }
 
-function removeRotten(bagOfFruits){
-    return bagOfFruits ? bagOfFruits.map(f => f.replace('rotten', '').toLowerCase()) : [];
-  }
 
+// Given a string and an array of integers representing indices, capitalize all letters at the given indices.
 
+// For example:
+
+// capitalize("abcdef",[1,2,5]) = "aBCdeF"
+// capitalize("abcdef",[1,2,5,100]) = "aBCdeF". There is no index 100.
+// The input will be a lowercase string with no spaces and an array of digits.
+
+function capitalize(s, arr) {
+  return [...s].map((x, i) => (arr.includes(i) ? x.toUpperCase() : x)).join("");
+}
