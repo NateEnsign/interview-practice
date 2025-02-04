@@ -742,18 +742,28 @@ let test =
 // }
 
 
-const fibonacciSequence = (num) => {
-    let arr = [0,1];
+// const fibonacciSequence = (num) => {
+//     let arr = [0,1];
 
-    if (num <= 0) return 'Please enter positive integer';
-    if (num === 1) return [0];
-    if (num === 2) return arr;
+//     if (num <= 0) return 'Please enter positive integer';
+//     if (num === 1) return [0];
+//     if (num === 2) return arr;
 
-    while (num > 2){
-        arr.push(arr.slice(-2).reduce((a,b) => a + b));
-        num--;
-    }
-    return arr;
+//     while (num > 2){
+//         arr.push(arr.slice(-2).reduce((a,b) => a + b));
+//         num--;
+//     }
+//     return arr;
+// }
+
+// console.log(fibonacciSequence(10))
+
+
+const mergeArrays = (arr1,arr2) => {
+    return [...new Set(arr1),...new Set(arr2)].sort((a,b) => a - b)
 }
 
-console.log(fibonacciSequence(10))
+let array1 = [1,3,5,7,9,9,9,9];
+let array2 = [2,4,6,6,6,6,8,10];
+
+console.log(mergeArrays(array1,array2))
