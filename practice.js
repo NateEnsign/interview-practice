@@ -712,7 +712,6 @@ let test =
 //     return bagOfFruits ? bagOfFruits.map(f => f.replace('rotten', '').toLowerCase()) : [];
 //   }
 
-
 // Given a string and an array of integers representing indices, capitalize all letters at the given indices.
 
 // For example:
@@ -721,6 +720,23 @@ let test =
 // capitalize("abcdef",[1,2,5,100]) = "aBCdeF". There is no index 100.
 // The input will be a lowercase string with no spaces and an array of digits.
 
-function capitalize(s, arr) {
-  return [...s].map((x, i) => (arr.includes(i) ? x.toUpperCase() : x)).join("");
+// function capitalize(s, arr) {
+//   return [...s].map((x, i) => (arr.includes(i) ? x.toUpperCase() : x)).join("");
+// }
+
+
+// Given an array/list [] of n integers , find maximum triplet sum in the array Without duplications .
+
+// Notes :
+// Array/list size is at least 3 .
+
+// Array/list numbers could be a mixture of positives , negatives and zeros .
+
+// Repetition of numbers in the array/list could occur , So (duplications are not included when summing).
+
+function maxTriSum(numbers) {
+  return [...new Set(numbers)]
+    .sort((a, b) => a - b)
+    .slice(-3)
+    .reduce((a, b) => a + b);
 }
