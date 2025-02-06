@@ -783,15 +783,28 @@ let test =
 
 
 let beggers = (values, n) => {
- let outputValues = [];
+  let collectionVal = [];
 
- for (let i = 0; i < n; i++){
-  let sum = 0;
-  for (let j = i; j < values.length; j += n){
-    sum += values[j];
+  for (let i = 0; i < n; i++){
+    let sum = 0;
+    for (let j = i; j < values.length; j += n){
+      sum += values[j];
+    }
+    collectionVal.push(sum);
   }
-  outputValues.push(sum);
- }
- return outputValues;
-
+  return collectionVall;
 }
+
+// let beggers = (values, n) => {
+//  let outputValues = [];
+
+//  for (let i = 0; i < n; i++){
+//   let sum = 0;
+//   for (let j = i; j < values.length; j += n){
+//     sum += values[j];
+//   }
+//   outputValues.push(sum);
+//  }
+//  return outputValues;
+
+// }
