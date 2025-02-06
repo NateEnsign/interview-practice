@@ -759,11 +759,39 @@ let test =
 // console.log(fibonacciSequence(10))
 
 
-const mergeArrays = (arr1,arr2) => {
-    return [...new Set(arr1),...new Set(arr2)].sort((a,b) => a - b)
+// const mergeArrays = (arr1,arr2) => {
+//     return [...new Set(arr1),...new Set(arr2)].sort((a,b) => a - b)
+// }
+
+// let array1 = [1,3,5,7,9,9,9,9];
+// let array2 = [2,4,6,6,6,6,8,10];
+
+// console.log(mergeArrays(array1,array2))
+
+
+// your task here is pretty simple: given an array of values and an amount of beggars, you are supposed to return an array with the sum of what each beggar brings home, assuming they all take regular turns, from the first to the last.
+
+// For example: [1,2,3,4,5] for 2 beggars will return a result of [9,6], as the first one takes [1,3,5], the second collects [2,4].
+
+// The same array with 3 beggars would have in turn have produced a better out come for the second beggar: [5,7,3], as they will respectively take [1,4], [2,5] and [3].
+
+// Also note that not all beggars have to take the same amount of "offers", meaning that the length of the array is not necessarily a multiple of n; length can be even shorter, in which case the last beggars will of course take nothing (0).
+
+// Note: in case you don't get why this kata is about English beggars, then you are not familiar on how religiously queues are taken in the kingdom ;)
+
+// Note 2: do not modify the input array.
+
+
+let beggers = (values, n) => {
+ let outputValues = [];
+
+ for (let i = 0; i < n; i++){
+  let sum = 0;
+  for (let j = i; j < values.length; j += n){
+    sum += values[j];
+  }
+  outputValues.push(sum);
+ }
+ return outputValues;
+
 }
-
-let array1 = [1,3,5,7,9,9,9,9];
-let array2 = [2,4,6,6,6,6,8,10];
-
-console.log(mergeArrays(array1,array2))
