@@ -851,12 +851,16 @@ let test =
 // All inputs will be valid.
 
 
-function last(x){
-  let arr =  x.split(' ').map(w => w.split('').reverse().join(''))
+// function last(x){
+//   let arr =  x.split(' ').map(w => w.split('').reverse().join(''))
 
-  return arr.sort().map(r => r.split('').reverse().join(''))
+//   return arr.sort().map(r => r.split('').reverse().join(''))
+// }
+
+let lastSort = (str) => {
+  return str.split(' ').sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
 }
 
 let str = 'Hey this should be a fun one'
 
-console.log(last(str))
+console.log(lastSort(str))
