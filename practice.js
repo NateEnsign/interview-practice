@@ -857,10 +857,20 @@ let test =
 //   return arr.sort().map(r => r.split('').reverse().join(''))
 // }
 
-let lastSort = (str) => {
-  return str.split(' ').sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
-}
+// let lastSort = (str) => {
+//   return str.split(' ').sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
+// }
 
-let str = 'Hey this should be a fun one'
+// let str = 'Hey this should be a fun one'
 
-console.log(lastSort(str))
+// console.log(lastSort(str))
+
+
+// Your job at E-Corp is both boring and difficult. It isn't made any easier by the fact that everyone constantly wants to have a meeting with you, and that the meeting rooms are always taken!
+
+// In this kata, you will be given an array. Each value represents a meeting room. Your job? Find the first empty one and return its index (N.B. There may be more than one empty room in some test cases).
+
+
+function meeting(x){
+  return !x.includes('O') ? 'None available!' : x.indexOf('O');
+  }
