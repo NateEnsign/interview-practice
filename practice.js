@@ -782,18 +782,18 @@ let test =
 // Note 2: do not modify the input array.
 
 
-let beggers = (values, n) => {
-  let collectionVal = [];
+// let beggers = (values, n) => {
+//   let collectionVal = [];
 
-  for (let i = 0; i < n; i++){
-    let sum = 0;
-    for (let j = i; j < values.length; j += n){
-      sum += values[j];
-    }
-    collectionVal.push(sum);
-  }
-  return collectionVall;
-}
+//   for (let i = 0; i < n; i++){
+//     let sum = 0;
+//     for (let j = i; j < values.length; j += n){
+//       sum += values[j];
+//     }
+//     collectionVal.push(sum);
+//   }
+//   return collectionVall;
+// }
 
 // let beggers = (values, n) => {
 //  let outputValues = [];
@@ -808,3 +808,33 @@ let beggers = (values, n) => {
 //  return outputValues;
 
 // }
+
+// A number is called Automorphic number if and only if its square ends in the same digits as the number itself. For example, 25 is an automorphic number because its square (625) ends with 25.
+
+// Task
+// Given a positive number, determine if it is Automorphic or not. If it is, return "Automorphic", otherwise return "Not!!"
+
+// Examples
+// 25 is an automorphic number, because 
+// 2
+// 5
+// 2
+// =
+// 625
+// 25 
+// 2
+//  =625 ends with 25, so return "Automorphic".
+
+
+function automorphic(n){
+  let square = n*n;
+
+  return +square.toString().split('').slice(-1) === +n.toString().split('').slice(-1) ? "Automorphic" : 'Not!!';
+}
+
+console.log(automorphic(95))
+
+
+// let num = 656
+
+// console.log(+num.toString().split('').slice(-1))
