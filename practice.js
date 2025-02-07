@@ -835,11 +835,28 @@ let test =
 // console.log(automorphic(95))
 
 
-function automorphic(n){
-  return String(n*n).endsWith(String(n)) ? "Automorphic" : "Not!!";
-}
+// function automorphic(n){
+//   return String(n*n).endsWith(String(n)) ? "Automorphic" : "Not!!";
+// }
 
 
 // let num = 656
 
 // console.log(+num.toString().split('').slice(-1))
+
+// Given a string of words (x), you need to return an array of the words, sorted alphabetically by the final character in each.
+
+// If two words have the same last letter, the returned array should show them in the order they appeared in the given string.
+
+// All inputs will be valid.
+
+
+function last(x){
+  let arr =  x.split(' ').map(w => w.split('').reverse().join(''))
+
+  return arr.sort().map(r => r.split('').reverse().join(''))
+}
+
+let str = 'Hey this should be a fun one'
+
+console.log(last(str))
