@@ -826,13 +826,18 @@ let test =
 //  =625 ends with 25, so return "Automorphic".
 
 
+// function automorphic(n){
+//   let square = n*n;
+
+//   return +square.toString().split('').slice(-1) === +n.toString().split('').slice(-1) ? "Automorphic" : 'Not!!';
+// }
+
+// console.log(automorphic(95))
+
+
 function automorphic(n){
-  let square = n*n;
-
-  return +square.toString().split('').slice(-1) === +n.toString().split('').slice(-1) ? "Automorphic" : 'Not!!';
+  return String(n*n).endsWith(String(n)) ? "Automorphic" : "Not!!";
 }
-
-console.log(automorphic(95))
 
 
 // let num = 656
