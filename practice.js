@@ -666,8 +666,8 @@
 //     return newStr.trim().replace(/\s+/g, ' ').split(' ').reverse().join(' ');
 // }
 
-let test =
-  " Hey do you want to go to the        grocery store amoOng the HEATHENS?  ";
+// let test =
+//   " Hey do you want to go to the        grocery store amoOng the HEATHENS?  ";
 
 // console.log(transformString(test))
 
@@ -724,7 +724,6 @@ let test =
 //   return [...s].map((x, i) => (arr.includes(i) ? x.toUpperCase() : x)).join("");
 // }
 
-
 // Given an array/list [] of n integers , find maximum triplet sum in the array Without duplications .
 
 // Notes :
@@ -740,7 +739,6 @@ let test =
 //     .slice(-3)
 //     .reduce((a, b) => a + b);
 // }
-
 
 // const fibonacciSequence = (num) => {
 //     let arr = [0,1];
@@ -758,7 +756,6 @@ let test =
 
 // console.log(fibonacciSequence(10))
 
-
 // const mergeArrays = (arr1,arr2) => {
 //     return [...new Set(arr1),...new Set(arr2)].sort((a,b) => a - b)
 // }
@@ -767,7 +764,6 @@ let test =
 // let array2 = [2,4,6,6,6,6,8,10];
 
 // console.log(mergeArrays(array1,array2))
-
 
 // your task here is pretty simple: given an array of values and an amount of beggars, you are supposed to return an array with the sum of what each beggar brings home, assuming they all take regular turns, from the first to the last.
 
@@ -780,7 +776,6 @@ let test =
 // Note: in case you don't get why this kata is about English beggars, then you are not familiar on how religiously queues are taken in the kingdom ;)
 
 // Note 2: do not modify the input array.
-
 
 // let beggers = (values, n) => {
 //   let collectionVal = [];
@@ -815,16 +810,15 @@ let test =
 // Given a positive number, determine if it is Automorphic or not. If it is, return "Automorphic", otherwise return "Not!!"
 
 // Examples
-// 25 is an automorphic number, because 
+// 25 is an automorphic number, because
 // 2
 // 5
 // 2
 // =
 // 625
-// 25 
+// 25
 // 2
 //  =625 ends with 25, so return "Automorphic".
-
 
 // function automorphic(n){
 //   let square = n*n;
@@ -834,11 +828,9 @@ let test =
 
 // console.log(automorphic(95))
 
-
 // function automorphic(n){
 //   return String(n*n).endsWith(String(n)) ? "Automorphic" : "Not!!";
 // }
-
 
 // let num = 656
 
@@ -849,7 +841,6 @@ let test =
 // If two words have the same last letter, the returned array should show them in the order they appeared in the given string.
 
 // All inputs will be valid.
-
 
 // function last(x){
 //   let arr =  x.split(' ').map(w => w.split('').reverse().join(''))
@@ -865,12 +856,28 @@ let test =
 
 // console.log(lastSort(str))
 
-
 // Your job at E-Corp is both boring and difficult. It isn't made any easier by the fact that everyone constantly wants to have a meeting with you, and that the meeting rooms are always taken!
 
 // In this kata, you will be given an array. Each value represents a meeting room. Your job? Find the first empty one and return its index (N.B. There may be more than one empty room in some test cases).
 
+// function meeting(x){
+//   return !x.includes('O') ? 'None available!' : x.indexOf('O');
+//   }
 
-function meeting(x){
-  return !x.includes('O') ? 'None available!' : x.indexOf('O');
-  }
+// You are given a secret message you need to decipher. Here are the things you need to know to decipher it:
+
+// For each word:
+
+// the second and the last letter is switched (e.g. Hello becomes Holle)
+// the first letter is replaced by its character code (e.g. H becomes 72)
+// there are no special characters used, only letters and spaces
+// words are separated by a single space
+// there are no leading or trailing spaces
+
+function decipherThis(str) {
+  return str.split(' ').map(v => {
+    v = v.replace(/[0-9]+/g, m => String.fromCharCode(m))
+    if(v.length < 3) return v
+    else return v.slice(0,1) + v[v.length - 1] + v.slice(2, -1) + v[1]
+  }).join(' ')
+}
