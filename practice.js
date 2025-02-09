@@ -883,18 +883,27 @@
 // }
 
 
-let fibonacciSequence = (num) => {
-  let arr = [0,1];
+// let fibonacciSequence = (num) => {
+//   let arr = [0,1];
 
-  if (num <= 0) return 'Please enter postive integer';
-  if (num === 1) return [0];
-  if (num === 2) return arr;
+//   if (num <= 0) return 'Please enter postive integer';
+//   if (num === 1) return [0];
+//   if (num === 2) return arr;
 
-  while (num > 2){
-    arr.push(arr.slice(-2).reduce((a,b) => a + b))
-    num--;
-  }
-  return arr
+//   while (num > 2){
+//     arr.push(arr.slice(-2).reduce((a,b) => a + b))
+//     num--;
+//   }
+//   return arr
+// }
+
+// console.log(fibonacciSequence(10))
+
+
+let reverse = (str) => {
+  return str.split(' ').map((e) => e.split('').reverse().join('')).join(' ')
 }
 
-console.log(fibonacciSequence(10))
+let test = 'Hey you should offer me a job!'
+
+console.log(reverse(test))
