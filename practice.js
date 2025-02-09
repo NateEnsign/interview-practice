@@ -874,10 +874,27 @@
 // words are separated by a single space
 // there are no leading or trailing spaces
 
-function decipherThis(str) {
-  return str.split(' ').map(v => {
-    v = v.replace(/[0-9]+/g, m => String.fromCharCode(m))
-    if(v.length < 3) return v
-    else return v.slice(0,1) + v[v.length - 1] + v.slice(2, -1) + v[1]
-  }).join(' ')
+// function decipherThis(str) {
+//   return str.split(' ').map(v => {
+//     v = v.replace(/[0-9]+/g, m => String.fromCharCode(m))
+//     if(v.length < 3) return v
+//     else return v.slice(0,1) + v[v.length - 1] + v.slice(2, -1) + v[1]
+//   }).join(' ')
+// }
+
+
+let fibonacciSequence = (num) => {
+  let arr = [0,1];
+
+  if (num <= 0) return 'Please enter postive integer';
+  if (num === 1) return [0];
+  if (num === 2) return arr;
+
+  while (num > 2){
+    arr.push(arr.slice(-2).reduce((a,b) => a + b))
+    num--;
+  }
+  return arr
 }
+
+console.log(fibonacciSequence(10))
