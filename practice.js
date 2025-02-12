@@ -968,15 +968,28 @@
 //Write a function that returns true if every letter in a string begins with a capital letter
 
 
-let startsCaps = (str) => {
-  let arr = str.split('');
+// let startsCaps = (str) => {
+//   let arr = str.split('');
 
-  return arr.every(word => word[0] === word[0].toUpperCase());
+//   return arr.every(word => word[0] === word[0].toUpperCase());
+// }
+
+// let test1 = 'HEY LETS SEE IF THIS IS GOING TO WORK';
+
+// let test2 = 'ya lets see if this is going to work';
+
+// console.log(startsCaps(test2))
+
+
+// Write a function that checks whether a given number is a prime number.
+
+let isPrime = (num) => {
+  let count = 0;
+  for (let i = 1; i <= num; i++){
+    if (num%i === 0) count++;
+  }
+  return count === 2 ? true : false;
 }
 
-let test1 = 'HEY LETS SEE IF THIS IS GOING TO WORK';
-
-let test2 = 'ya lets see if this is going to work';
-
-console.log(startsCaps(test2))
+console.log(isPrime(3))
 
