@@ -1008,13 +1008,29 @@
 
 // Given an array of numbers, return a new array with duplicate values removed.
 
-let uniqueNums = (arr) => {
-  return [...new Set(arr)]
+// let uniqueNums = (arr) => {
+//   return [...new Set(arr)]
+// }
+
+// let test = [1,4,6,7,7,7,3,4,5,5,5,9]
+
+// console.log(uniqueNums(test))
+
+
+//Write a function that finds the first character in a string that does not repeat. If all characters repeat, return null.
+
+let nonRepeat = (str) => {
+  for (let i = 0; i < str.length; i++){
+    if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) return str[i]
+  }
+  return null;
 }
 
-let test = [1,4,6,7,7,7,3,4,5,5,5,9]
+let test = 'aabbccde';
 
-console.log(uniqueNums(test))
+console.log(nonRepeat(test))
+
+
 
 
 
