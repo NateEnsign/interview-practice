@@ -939,11 +939,28 @@
 // fizzBuzz(30)
 
 
-const mergeArrays = (arr1,arr2) => {
-  return [...arr1,...arr2].sort((a,b) => a - b)
+// const mergeArrays = (arr1,arr2) => {
+//   return [...arr1,...arr2].sort((a,b) => a - b)
+// }
+
+// let array1 = [1,3,5,7,9]
+// let array2 = [2,4,6,8,10]
+
+// console.log(mergeArrays(array1,array2))
+
+// A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+
+// Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+
+let isPangram = (str) => {
+  let alpha = 'abcdefghijklmnopqrstuvwxyz';
+  let arr = alpha.split('');
+
+  return arr.every(x => str.toLowerCase().includes(x));
 }
 
-let array1 = [1,3,5,7,9]
-let array2 = [2,4,6,8,10]
+let test1 =  "The quick brown fox jumps over the lazy dog" 
+let test2 = 'Ya this is not going to do the trick'
 
-console.log(mergeArrays(array1,array2))
+console.log(isPangram(test1))
+
