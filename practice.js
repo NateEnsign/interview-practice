@@ -994,16 +994,27 @@
 // console.log(isPrime(3))
 
 
-const isPrime = (num) => {
-  if (num <= 1) return false;
-  for (let i = 2; i <= Math.sqrt(num); i++) {
-    if (num % i === 0) return false;
-  }
-  return true;
-};
+// const isPrime = (num) => {
+//   if (num <= 1) return false;
+//   for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) return false;
+//   }
+//   return true;
+// };
 
-console.log(isPrime(3)); // true
-console.log(isPrime(4)); // false
+// console.log(isPrime(3)); // true
+// console.log(isPrime(4)); // false
+
+
+// Given an array of numbers, return a new array with duplicate values removed.
+
+let uniqueNums = (arr) => {
+  return [...new Set(arr)]
+}
+
+let test = [1,4,6,7,7,7,3,4,5,5,5,9]
+
+console.log(uniqueNums(test))
 
 
 
