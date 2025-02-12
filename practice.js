@@ -983,13 +983,27 @@
 
 // Write a function that checks whether a given number is a prime number.
 
-let isPrime = (num) => {
-  let count = 0;
-  for (let i = 1; i <= num; i++){
-    if (num%i === 0) count++;
-  }
-  return count === 2 ? true : false;
-}
+// let isPrime = (num) => {
+//   let count = 0;
+//   for (let i = 1; i <= num; i++){
+//     if (num%i === 0) count++;
+//   }
+//   return count === 2 ? true : false;
+// }
 
-console.log(isPrime(3))
+// console.log(isPrime(3))
+
+
+const isPrime = (num) => {
+  if (num <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+};
+
+console.log(isPrime(3)); // true
+console.log(isPrime(4)); // false
+
+
 
