@@ -1019,16 +1019,32 @@
 
 //Write a function that finds the first character in a string that does not repeat. If all characters repeat, return null.
 
-let nonRepeat = (str) => {
-  for (let i = 0; i < str.length; i++){
-    if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) return str[i]
-  }
-  return null;
+// let nonRepeat = (str) => {
+//   for (let i = 0; i < str.length; i++){
+//     if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) return str[i]
+//   }
+//   return null;
+// }
+
+// let test = 'aabbccdede';
+
+// console.log(nonRepeat(test))
+
+
+//Write a function that checks if two strings are anagrams (contain the same characters in a different order).
+
+let anagramCheck = (str1,str2) => {
+  if (str1.length !== str2.length) return false;
+
+  let arr = str2.split('');
+
+  return arr.every(x => str1.includes(x))
 }
 
-let test = 'aabbccde';
+let one = 'abcdefg';
+let two = 'gfedcba';
 
-console.log(nonRepeat(test))
+console.log(anagramCheck(one,two))
 
 
 
