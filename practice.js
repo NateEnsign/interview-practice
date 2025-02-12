@@ -952,15 +952,31 @@
 
 // Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
 
-let isPangram = (str) => {
-  let alpha = 'abcdefghijklmnopqrstuvwxyz';
-  let arr = alpha.split('');
+// let isPangram = (str) => {
+//   let alpha = 'abcdefghijklmnopqrstuvwxyz';
+//   let arr = alpha.split('');
 
-  return arr.every(x => str.toLowerCase().includes(x));
+//   return arr.every(x => str.toLowerCase().includes(x));
+// }
+
+// let test1 =  "The quick brown fox jumps over the lazy dog" 
+// let test2 = 'Ya this is not going to do the trick'
+
+// console.log(isPangram(test1))
+
+
+//Write a function that returns true if every letter in a string begins with a capital letter
+
+
+let startsCaps = (str) => {
+  let arr = str.split('');
+
+  return arr.every(word => word[0] === word[0].toUpperCase());
 }
 
-let test1 =  "The quick brown fox jumps over the lazy dog" 
-let test2 = 'Ya this is not going to do the trick'
+let test1 = 'HEY LETS SEE IF THIS IS GOING TO WORK';
 
-console.log(isPangram(test1))
+let test2 = 'ya lets see if this is going to work';
+
+console.log(startsCaps(test2))
 
