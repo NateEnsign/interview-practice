@@ -882,7 +882,6 @@
 //   }).join(' ')
 // }
 
-
 // let fibonacciSequence = (num) => {
 //   let arr = [0,1];
 
@@ -899,7 +898,6 @@
 
 // console.log(fibonacciSequence(10))
 
-
 // let reverse = (str) => {
 //   return str.split(' ').map((e) => e.split('').reverse().join('')).join(' ')
 // }
@@ -907,7 +905,6 @@
 // let test = 'Hey you should offer me a job!'
 
 // console.log(reverse(test))
-
 
 // function fibonacciSequence(num){
 //   let fib1 = 0;
@@ -929,7 +926,6 @@
 
 // console.log(fibonacciSequence(10))
 
-
 // let fizzBuzz = (num) => {
 //   for (let i = 1; i <= num; i++){
 //     console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i);
@@ -937,7 +933,6 @@
 // }
 
 // fizzBuzz(30)
-
 
 // const mergeArrays = (arr1,arr2) => {
 //   return [...arr1,...arr2].sort((a,b) => a - b)
@@ -959,14 +954,12 @@
 //   return arr.every(x => str.toLowerCase().includes(x));
 // }
 
-// let test1 =  "The quick brown fox jumps over the lazy dog" 
+// let test1 =  "The quick brown fox jumps over the lazy dog"
 // let test2 = 'Ya this is not going to do the trick'
 
 // console.log(isPangram(test1))
 
-
 //Write a function that returns true if every letter in a string begins with a capital letter
-
 
 // let startsCaps = (str) => {
 //   let arr = str.split('');
@@ -980,7 +973,6 @@
 
 // console.log(startsCaps(test2))
 
-
 // Write a function that checks whether a given number is a prime number.
 
 // let isPrime = (num) => {
@@ -993,7 +985,6 @@
 
 // console.log(isPrime(3))
 
-
 // const isPrime = (num) => {
 //   if (num <= 1) return false;
 //   for (let i = 2; i <= Math.sqrt(num); i++) {
@@ -1005,7 +996,6 @@
 // console.log(isPrime(3)); // true
 // console.log(isPrime(4)); // false
 
-
 // Given an array of numbers, return a new array with duplicate values removed.
 
 // let uniqueNums = (arr) => {
@@ -1015,7 +1005,6 @@
 // let test = [1,4,6,7,7,7,3,4,5,5,5,9]
 
 // console.log(uniqueNums(test))
-
 
 //Write a function that finds the first character in a string that does not repeat. If all characters repeat, return null.
 
@@ -1029,7 +1018,6 @@
 // let test = 'aabbccdede';
 
 // console.log(nonRepeat(test))
-
 
 //Write a function that checks if two strings are anagrams (contain the same characters in a different order).
 
@@ -1045,9 +1033,6 @@
 // let two = 'gfedcba';
 
 // console.log(anagramCheck(one,two))
-
-
-
 
 // let fibonacciSequence = (num) => {
 //   let arr = [0,1];
@@ -1065,7 +1050,6 @@
 
 // console.log(fibonacciSequence(10))
 
-
 // let fizzBuzz = (num) => {
 //   for (let i = 1; i <= num; i++){
 //     console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
@@ -1073,7 +1057,6 @@
 // }
 
 // fizzBuzz(30)
-
 
 // let mergeArrays = (arr1,arr2) => {
 //   console.log([...arr1,...arr2].sort((a,b) => a - b))
@@ -1084,11 +1067,34 @@
 
 // mergeArrays(array1,array2)
 
+// let reverseWords = (str) => {
+//   console.log( str.split(' ').map((word) => word.split('').reverse().join('')).join(' '));
+// }
 
-let reverseWords = (str) => {
-  console.log( str.split(' ').map((word) => word.split('').reverse().join('')).join(' '));
-}
+// let test = 'yeH uoy dluohs reffo em a !boj';
 
-let test = 'yeH uoy dluohs reffo em a !boj';
+// reverseWords(test)
 
-reverseWords(test)
+// Problem:
+// Write a function that takes a string containing only lowercase letters and returns the longest substring in which the letters appear in alphabetical order. If there are multiple substrings of the same length, return the first one that appears.
+
+let longestAlphabeticalString = (str) => {
+  let curr = str[0];
+  let longest = "";
+
+  for (let i = 1; i < str.length; i++) {
+    if (str[i] >= str[i - 1]) {
+      curr += str[i];
+    } else {
+      if (curr.length > longest.length) {
+        longest = curr;
+      }
+      curr = str[i];
+    }
+  }
+  return curr.length > longest.length ? curr : longest;
+};
+
+let test = "abcdefgazzzbcdefghijk";
+
+console.log(longestAlphabeticalString(test));
