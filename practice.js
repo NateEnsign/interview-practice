@@ -1033,20 +1033,34 @@
 
 //Write a function that checks if two strings are anagrams (contain the same characters in a different order).
 
-let anagramCheck = (str1,str2) => {
-  if (str1.length !== str2.length) return false;
+// let anagramCheck = (str1,str2) => {
+//   if (str1.length !== str2.length) return false;
 
-  let arr = str2.split('');
+//   let arr = str2.split('');
 
-  return arr.every(x => str1.includes(x))
+//   return arr.every(x => str1.includes(x))
+// }
+
+// let one = 'abcdefg';
+// let two = 'gfedcba';
+
+// console.log(anagramCheck(one,two))
+
+
+
+
+let fibonacciSequence = (num) => {
+  let arr = [0,1];
+
+  if (num <= 0) return 'Please enter positive integer';
+  if (num === 1) return [0];
+  if (num === 2) return arr;
+
+  while (num > 2){
+    arr.push(arr.slice(-2).reduce((a,b) => a + b))
+    num--;
+  }
+  return arr;
 }
 
-let one = 'abcdefg';
-let two = 'gfedcba';
-
-console.log(anagramCheck(one,two))
-
-
-
-
-
+console.log(fibonacciSequence(10))
