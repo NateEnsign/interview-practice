@@ -1127,17 +1127,35 @@
 
 // Given an array with exactly 5 strings "a", "b" or "c" (chars in Java, characters in Fortran, Chars in Haskell), check if the array contains three and two of the same values.
 
-function checkThreeAndTwo(array) {
-    let a = 0;
-     let b = 0;
-     let c = 0;
+// function checkThreeAndTwo(array) {
+//     let a = 0;
+//      let b = 0;
+//      let c = 0;
 
-     for (let i = 0; i < 5; i++){
-       if (array[i] === 'a') a++;
-       if (array[i] === 'b') b++;
-       if (array[i] === 'c') c++;
-     }
-     if (a > 0 && b > 0 && c > 0) return false;
-     if (a >= 4 || b >= 4 || c >= 4) return false;
-     return true;
-   }
+//      for (let i = 0; i < 5; i++){
+//        if (array[i] === 'a') a++;
+//        if (array[i] === 'b') b++;
+//        if (array[i] === 'c') c++;
+//      }
+//      if (a > 0 && b > 0 && c > 0) return false;
+//      if (a >= 4 || b >= 4 || c >= 4) return false;
+//      return true;
+//    }
+
+
+
+// Given an array/list [] of n integers , find maximum triplet sum in the array Without duplications .
+
+// Notes :
+// Array/list size is at least 3 .
+
+// Array/list numbers could be a mixture of positives , negatives and zeros .
+
+// Repetition of numbers in the array/list could occur , So (duplications are not included when summing).
+
+function maxTriSum(numbers) {
+  return [...new Set(numbers)]
+    .sort((a, b) => a - b)
+    .slice(-3)
+    .reduce((a, b) => a + b);
+}
