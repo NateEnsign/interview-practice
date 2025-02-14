@@ -1109,16 +1109,35 @@
 
 // How many months will it take him to save up enough money to buy the car he wants, and how much money will he have left over?
 
-function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
-    var months = 0, moneySaved = 0;
-      while (startPriceNew > startPriceOld + moneySaved){
-          moneySaved += savingperMonth;
-          startPriceOld -= (startPriceOld * (percentLossByMonth / 100));
-          startPriceNew -= (startPriceNew * (percentLossByMonth / 100));
-          months++;
-          if (months % 2 == 1){
-              percentLossByMonth += .5;
-          }
-      }
-      return [months, Math.round(startPriceOld + moneySaved - startPriceNew)];
-  }
+// function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
+//     var months = 0, moneySaved = 0;
+//       while (startPriceNew > startPriceOld + moneySaved){
+//           moneySaved += savingperMonth;
+//           startPriceOld -= (startPriceOld * (percentLossByMonth / 100));
+//           startPriceNew -= (startPriceNew * (percentLossByMonth / 100));
+//           months++;
+//           if (months % 2 == 1){
+//               percentLossByMonth += .5;
+//           }
+//       }
+//       return [months, Math.round(startPriceOld + moneySaved - startPriceNew)];
+//   }
+
+
+
+// Given an array with exactly 5 strings "a", "b" or "c" (chars in Java, characters in Fortran, Chars in Haskell), check if the array contains three and two of the same values.
+
+function checkThreeAndTwo(array) {
+    let a = 0;
+     let b = 0;
+     let c = 0;
+
+     for (let i = 0; i < 5; i++){
+       if (array[i] === 'a') a++;
+       if (array[i] === 'b') b++;
+       if (array[i] === 'c') c++;
+     }
+     if (a > 0 && b > 0 && c > 0) return false;
+     if (a >= 4 || b >= 4 || c >= 4) return false;
+     return true;
+   }
