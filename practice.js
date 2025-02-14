@@ -1078,23 +1078,47 @@
 // Problem:
 // Write a function that takes a string containing only lowercase letters and returns the longest substring in which the letters appear in alphabetical order. If there are multiple substrings of the same length, return the first one that appears.
 
-let longestAlphabeticalString = (str) => {
-  let curr = str[0];
-  let longest = "";
+// let longestAlphabeticalString = (str) => {
+//   let curr = str[0];
+//   let longest = "";
 
-  for (let i = 1; i < str.length; i++) {
-    if (str[i] >= str[i - 1]) {
-      curr += str[i];
-    } else {
-      if (curr.length > longest.length) {
-        longest = curr;
+//   for (let i = 1; i < str.length; i++) {
+//     if (str[i] >= str[i - 1]) {
+//       curr += str[i];
+//     } else {
+//       if (curr.length > longest.length) {
+//         longest = curr;
+//       }
+//       curr = str[i];
+//     }
+//   }
+//   return curr.length > longest.length ? curr : longest;
+// };
+
+// let test = "abcdefgazzzbcdefghijk";
+
+// console.log(longestAlphabeticalString(test));
+
+
+
+// A man has a rather old car being worth $2000. He saw a secondhand car being worth $8000. He wants to keep his old car until he can buy the secondhand one.
+
+// He thinks he can save $1000 each month but the prices of his old car and of the new one decrease of 1.5 percent per month. Furthermore this percent of loss increases of 0.5 percent at the end of every two months. Our man finds it difficult to make all these calculations.
+
+// Can you help him?
+
+// How many months will it take him to save up enough money to buy the car he wants, and how much money will he have left over?
+
+function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
+    var months = 0, moneySaved = 0;
+      while (startPriceNew > startPriceOld + moneySaved){
+          moneySaved += savingperMonth;
+          startPriceOld -= (startPriceOld * (percentLossByMonth / 100));
+          startPriceNew -= (startPriceNew * (percentLossByMonth / 100));
+          months++;
+          if (months % 2 == 1){
+              percentLossByMonth += .5;
+          }
       }
-      curr = str[i];
-    }
+      return [months, Math.round(startPriceOld + moneySaved - startPriceNew)];
   }
-  return curr.length > longest.length ? curr : longest;
-};
-
-let test = "abcdefgazzzbcdefghijk";
-
-console.log(longestAlphabeticalString(test));
