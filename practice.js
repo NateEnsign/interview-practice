@@ -1196,15 +1196,34 @@
 // Note : The last element 2 is greater than the sum of its right elements (abstract zero).
 
 
-function arrayLeaders(numbers){
-  let answer = [];
-  for (let i = 0; i < numbers.length; i++){
-    if (numbers[i] > numbers.slice(i+1).reduce((a,b) => a + b, 0)) answer.push(numbers[i])
+// function arrayLeaders(numbers){
+//   let answer = [];
+//   for (let i = 0; i < numbers.length; i++){
+//     if (numbers[i] > numbers.slice(i+1).reduce((a,b) => a + b, 0)) answer.push(numbers[i])
+//   }
+// return answer;
+// }
+
+// let arr = [10, 9, 5, 2, 1]
+
+// console.log(arrayLeaders(arr))
+
+
+
+// Write a program that outputs the top n elements from a list.
+
+// Example:
+
+// largest(2, [7,6,5,4,3,2,1])
+// // => [6,7]
+
+
+
+
+function largest(n, array) {
+  if (n === 0) return [];
+  return array.sort((a,b) => a - b).slice(-n)
   }
-return answer;
-}
 
-let arr = [10, 9, 5, 2, 1]
-
-console.log(arrayLeaders(arr))
+  console.log(largest(0, [9,8,7,6,5,4,3,2,1]))
 
