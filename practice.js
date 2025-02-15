@@ -1218,12 +1218,55 @@
 // // => [6,7]
 
 
+// function largest(n, array) {
+//   if (n === 0) return [];
+//   return array.sort((a,b) => a - b).slice(-n)
+//   }
+
+//   console.log(largest(0, [9,8,7,6,5,4,3,2,1]))
 
 
-function largest(n, array) {
-  if (n === 0) return [];
-  return array.sort((a,b) => a - b).slice(-n)
+
+function dirReduc(arr){
+  let n = arr.filter(el => el === 'NORTH').length;
+  let s = arr.filter(el => el === 'SOUTH').length;
+  let e = arr.filter(el => el === 'EAST').length;
+  let w = arr.filter(el => el === 'WEST').length;
+
+  let answer = []
+
+  if (e > w){
+    let sum = e - w;
+    for (let i = 1; i <= sum; i++){
+      answer.push('EAST');
+    }
+  } else {
+    let sum = w - e;
+    for (let i = 1; i <= sum; i++){
+      answer.push('WEST');
+    }
   }
 
-  console.log(largest(0, [9,8,7,6,5,4,3,2,1]))
+  if (n > s){
+    let sum = n - s;
+    for (let i = 1; i <= sum; i++){
+      answer.push('NORTH');
+    }
+  } else {
+    let sum = s - n;
+    for (let i = 1; i <= sum; i++){
+      answer.push('SOUTH');
+    }
+  }
+
+  return answer;
+  
+}
+
+
+let arr = ['WEST', 'WEST', 'WEST', 'EAST', 'SOUTH', 'SOUTH', 'NORTH', 'NORTH', 'NORTH']
+
+console.log(dirReduc(arr))
+
+
 
