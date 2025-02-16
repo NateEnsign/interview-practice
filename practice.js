@@ -1312,19 +1312,44 @@
 // console.log(firstRecur(test))
 
 
-let firstRecur = (str) => {
-  let seen = new Set();
+// let firstRecur = (str) => {
+//   let seen = new Set();
 
-  for (let char of str){
-    if (seen.has(char)) return char;
-    seen.add(char);
+//   for (let char of str){
+//     if (seen.has(char)) return char;
+//     seen.add(char);
+//   }
+//   return null;
+// }
+
+// let test = 'abcdecfgh'
+
+// console.log(firstRecur(test))
+
+
+// Problem: Longest Consecutive Sequence
+// Given an unsorted array of integers, write a function that finds the length of the longest consecutive sequence of numbers in the array.
+
+let longestSequence = (arr) => {
+  let count = 1;
+  let answer = 0;
+
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] - arr[i-1] === 1){
+      count++
+    } else {
+      if (count > answer) answer = count;
+      count = 1;
+    }
+
   }
-  return null;
+  return answer > count ? answer : count;
 }
 
-let test = 'abcdecfgh'
+let test = [5,4,1,2,3,3,2,3,3,4,5,6,7,4,7,8,9,1,2,3,4,5,6,7,8,9,10]
+let test2 = [9,8,7,6,5,4,3]
 
-console.log(firstRecur(test))
+console.log(longestSequence(test))
 
 
 
