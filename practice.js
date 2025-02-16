@@ -1273,25 +1273,43 @@
 // Given a string, find the first non-repeating character and return it. If there are no unique characters, return null.
 
 
-let nonRepeat = (str) => {
-  let charCount = {};
+// let nonRepeat = (str) => {
+//   let charCount = {};
 
-  for (let char of str){
-    charCount[char] = (charCount[char] || 0) + 1;
-  }
+//   for (let char of str){
+//     charCount[char] = (charCount[char] || 0) + 1;
+//   }
 
-  for (let char of str){
-    if (charCount[char] === 1){
-      return char;
-    }
+//   for (let char of str){
+//     if (charCount[char] === 1){
+//       return char;
+//     }
+//   }
+//   return null;
+
+// }
+
+// let test = 'aabebcdde'
+
+// console.log(nonRepeat(test))
+
+
+// Question:
+// Given a string, write a function to find the first recurring character (the first character that appears more than once). If there are no recurring characters, return null.
+
+let firstRecur = (str) => {
+  let arr = [];
+
+  for (let i = 0; i < str.length; i++){
+    if (arr.includes(str[i])) return str[i];
+    arr.push(str[i])
   }
   return null;
-
 }
 
-let test = 'aabebcdde'
+let test = 'abcdefgh'
 
-console.log(nonRepeat(test))
+console.log(firstRecur(test))
 
 
 
