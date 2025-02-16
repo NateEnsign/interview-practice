@@ -1285,10 +1285,11 @@ let nonRepeat = (str) => {
       return char;
     }
   }
+  return null;
 
 }
 
-let test = 'aabebccdde'
+let test = 'aabebcdde'
 
 console.log(nonRepeat(test))
 
