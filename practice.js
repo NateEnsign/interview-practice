@@ -1227,46 +1227,70 @@
 
 
 
-function dirReduc(arr){
-  let n = arr.filter(el => el === 'NORTH').length;
-  let s = arr.filter(el => el === 'SOUTH').length;
-  let e = arr.filter(el => el === 'EAST').length;
-  let w = arr.filter(el => el === 'WEST').length;
+// function dirReduc(arr){
+//   let n = arr.filter(el => el === 'NORTH').length;
+//   let s = arr.filter(el => el === 'SOUTH').length;
+//   let e = arr.filter(el => el === 'EAST').length;
+//   let w = arr.filter(el => el === 'WEST').length;
 
-  let answer = []
+//   let answer = []
 
-  if (e > w){
-    let sum = e - w;
-    for (let i = 1; i <= sum; i++){
-      answer.push('EAST');
-    }
-  } else {
-    let sum = w - e;
-    for (let i = 1; i <= sum; i++){
-      answer.push('WEST');
-    }
-  }
+//   if (e > w){
+//     let sum = e - w;
+//     for (let i = 1; i <= sum; i++){
+//       answer.push('EAST');
+//     }
+//   } else {
+//     let sum = w - e;
+//     for (let i = 1; i <= sum; i++){
+//       answer.push('WEST');
+//     }
+//   }
 
-  if (n > s){
-    let sum = n - s;
-    for (let i = 1; i <= sum; i++){
-      answer.push('NORTH');
-    }
-  } else {
-    let sum = s - n;
-    for (let i = 1; i <= sum; i++){
-      answer.push('SOUTH');
-    }
-  }
+//   if (n > s){
+//     let sum = n - s;
+//     for (let i = 1; i <= sum; i++){
+//       answer.push('NORTH');
+//     }
+//   } else {
+//     let sum = s - n;
+//     for (let i = 1; i <= sum; i++){
+//       answer.push('SOUTH');
+//     }
+//   }
 
-  return answer;
+//   return answer;
   
+// }
+
+
+// let arr = ['WEST', 'WEST', 'WEST', 'EAST', 'SOUTH', 'SOUTH', 'NORTH', 'NORTH', 'NORTH']
+
+// console.log(dirReduc(arr))
+
+
+// Find the First Non-Repeating Character
+// Given a string, find the first non-repeating character and return it. If there are no unique characters, return null.
+
+
+let nonRepeat = (str) => {
+  let charCount = {};
+
+  for (let char of str){
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+
+  for (let char of str){
+    if (charCount[char] === 1){
+      return char;
+    }
+  }
+
 }
 
+let test = 'aabebccdde'
 
-let arr = ['WEST', 'WEST', 'WEST', 'EAST', 'SOUTH', 'SOUTH', 'NORTH', 'NORTH', 'NORTH']
-
-console.log(dirReduc(arr))
+console.log(nonRepeat(test))
 
 
 
