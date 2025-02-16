@@ -1356,26 +1356,55 @@
 // Given an unsorted array of integers, write a function that finds the length of the longest consecutive sequence of numbers in the array.
 
 
-let longestSequence = (arr) => {
-  let array = [...new Set(arr)].sort((a,b) => a - b);
+// let longestSequence = (arr) => {
+//   let array = [...new Set(arr)].sort((a,b) => a - b);
 
-  let count = 1;
-  let answer = 0;
+//   let count = 1;
+//   let answer = 0;
 
-  for (let i = 1; i < array.length; i++){
-    if (array[i] - array[i-1] === 1){
-      count++
-    } else {
-      if (count > answer) answer = count;
-      count = 1;
-    }
+//   for (let i = 1; i < array.length; i++){
+//     if (array[i] - array[i-1] === 1){
+//       count++
+//     } else {
+//       if (count > answer) answer = count;
+//       count = 1;
+//     }
+//   }
+//   return answer > count ? answer : count;
+// }
+
+// let test = [6,6,6,4,4,8,8,9,7,6,5,4,3,2,1,2,3,2,2,2,3];
+
+// console.log(longestSequence(test))
+
+
+// Problem:
+// Write a function that takes an array of integers and returns the length of the longest subarray that has a sum equal to zero.
+
+
+// let sumZeroSub = (arr) => {
+  
+// }
+
+
+// Problem:
+// Write a function that takes a string as input and returns true if it contains all the letters from 'a' to 'z' at least once (a pangram), and false otherwise.
+
+let isPangram = (str) => {
+  let key = 'abcdefghijklmnopqrstuvwxyz';
+  let string = str.toLowerCase();
+
+  for (let i = 0; i < key.length; i++){
+    if (!string.includes(key[i])) return false;
   }
-  return answer > count ? answer : count;
+ return true;
 }
 
-let test = [6,6,6,4,4,8,8,9,7,6,5,4,3,2,1,2,3,2,2,2,3];
+let test1 = 'abcdefghijklmnopqrstuvwxyz'
 
-console.log(longestSequence(test))
+let test2 = 'abcdefghijklmnopqrstuvwxy'
+
+console.log(isPangram(test1))
 
 
 
