@@ -1400,19 +1400,52 @@
 //  return true;
 // }
 
-let isPangram = (str) => {
-  let alphabet = new Set('abcdefghijklmnopqrstuvwxyz')
-  let strSet = new Set(str.toLowerCase().replace(/[^a-z]/g, ''))
+// let isPangram = (str) => {
+//   let alphabet = new Set('abcdefghijklmnopqrstuvwxyz')
+//   let strSet = new Set(str.toLowerCase().replace(/[^a-z]/g, ''))
 
-  return ([...alphabet].every(letter => strSet.has(letter)));
+//   return ([...alphabet].every(letter => strSet.has(letter)));
 
-}
+// }
 
-let test1 = 'abcdefghijklmnopqrstuvwxyz'
+// let test1 = 'abcdefghijklmnopqrstuvwxyz'
 
-let test2 = 'abcdefghijklmnopqrstuvwxy'
+// let test2 = 'abcdefghijklmnopqrstuvwxy'
 
-console.log(isPangram(test2))
+// console.log(isPangram(test2))
+
+
+// let mySet = new Set('abcdefg')
+
+// console.log(mySet)
+
+// Set Challenge: Find the Missing Letter
+// You're given an array containing a sequence of unique letters in alphabetical order, but one letter is missing. Write a function that finds and returns the missing letter.
+
+// Example Input & Output
+// findMissingLetter(["a", "b", "c", "e"]); // Output: "d"
+// findMissingLetter(["O", "Q", "R", "S"]); // Output: "P"
+// Constraints
+// The array will always be in order.
+// There will always be exactly one missing letter.
+// The input array can contain either uppercase or lowercase, but never mixed.
+
+
+let findMissingLetter = (arr) => {
+  let letterSet = new Set(arr);
+  
+  for (let i = 0; i < arr.length; i++) {
+    if (!letterSet.has(String.fromCharCode(arr[i].charCodeAt(0) + 1))) {
+      return String.fromCharCode(arr[i].charCodeAt(0) + 1);
+    }
+  }
+};
+
+let array1 = ['a','b','d','e']
+
+let array2 = ['e','f','g','h','j']
+
+console.log(missingLetter(array1))
 
 
 
