@@ -1330,24 +1330,50 @@
 // Problem: Longest Consecutive Sequence
 // Given an unsorted array of integers, write a function that finds the length of the longest consecutive sequence of numbers in the array.
 
+// let longestSequence = (arr) => {
+//   let count = 1;
+//   let answer = 0;
+
+//   for (let i = 0; i < arr.length; i++){
+//     if (arr[i] - arr[i-1] === 1){
+//       count++
+//     } else {
+//       if (count > answer) answer = count;
+//       count = 1;
+//     }
+
+//   }
+//   return answer > count ? answer : count;
+// }
+
+// let test = [5,4,1,2,3,3,2,3,3,4,5,6,7,4,7,8,9,1,2,3,4,5,6,7,8,9,10]
+// let test2 = [9,8,7,6,5,4,3]
+
+// console.log(longestSequence(test))
+
+
+// Problem: Longest Consecutive Sequence
+// Given an unsorted array of integers, write a function that finds the length of the longest consecutive sequence of numbers in the array.
+
+
 let longestSequence = (arr) => {
+  let array = [...new Set(arr)].sort((a,b) => a - b);
+
   let count = 1;
   let answer = 0;
 
-  for (let i = 0; i < arr.length; i++){
-    if (arr[i] - arr[i-1] === 1){
+  for (let i = 1; i < array.length; i++){
+    if (array[i] - array[i-1] === 1){
       count++
     } else {
       if (count > answer) answer = count;
       count = 1;
     }
-
   }
   return answer > count ? answer : count;
 }
 
-let test = [5,4,1,2,3,3,2,3,3,4,5,6,7,4,7,8,9,1,2,3,4,5,6,7,8,9,10]
-let test2 = [9,8,7,6,5,4,3]
+let test = [6,6,6,4,4,8,8,9,7,6,5,4,3,2,1,2,3,2,2,2,3];
 
 console.log(longestSequence(test))
 
