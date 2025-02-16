@@ -1390,21 +1390,29 @@
 // Problem:
 // Write a function that takes a string as input and returns true if it contains all the letters from 'a' to 'z' at least once (a pangram), and false otherwise.
 
-let isPangram = (str) => {
-  let key = 'abcdefghijklmnopqrstuvwxyz';
-  let string = str.toLowerCase();
+// let isPangram = (str) => {
+//   let key = 'abcdefghijklmnopqrstuvwxyz';
+//   let string = str.toLowerCase();
 
-  for (let i = 0; i < key.length; i++){
-    if (!string.includes(key[i])) return false;
-  }
- return true;
+//   for (let i = 0; i < key.length; i++){
+//     if (!string.includes(key[i])) return false;
+//   }
+//  return true;
+// }
+
+let isPangram = (str) => {
+  let alphabet = new Set('abcdefghijklmnopqrstuvwxyz')
+  let strSet = new Set(str.toLowerCase().replace(/[^a-z]/g, ''))
+
+  return ([...alphabet].every(letter => strSet.has(letter)));
+
 }
 
 let test1 = 'abcdefghijklmnopqrstuvwxyz'
 
 let test2 = 'abcdefghijklmnopqrstuvwxy'
 
-console.log(isPangram(test1))
+console.log(isPangram(test2))
 
 
 
