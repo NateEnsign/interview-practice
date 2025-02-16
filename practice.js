@@ -1297,17 +1297,32 @@
 // Question:
 // Given a string, write a function to find the first recurring character (the first character that appears more than once). If there are no recurring characters, return null.
 
-let firstRecur = (str) => {
-  let arr = [];
+// let firstRecur = (str) => {
+//   let arr = [];
 
-  for (let i = 0; i < str.length; i++){
-    if (arr.includes(str[i])) return str[i];
-    arr.push(str[i])
+//   for (let i = 0; i < str.length; i++){
+//     if (arr.includes(str[i])) return str[i];
+//     arr.push(str[i])
+//   }
+//   return null;
+// }
+
+// let test = 'abcdefgh'
+
+// console.log(firstRecur(test))
+
+
+let firstRecur = (str) => {
+  let seen = new Set();
+
+  for (let char of str){
+    if (seen.has(char)) return char;
+    seen.add(char);
   }
   return null;
 }
 
-let test = 'abcdefgh'
+let test = 'abcdecfgh'
 
 console.log(firstRecur(test))
 
