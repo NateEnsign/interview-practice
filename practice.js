@@ -1099,8 +1099,6 @@
 
 // console.log(longestAlphabeticalString(test));
 
-
-
 // A man has a rather old car being worth $2000. He saw a secondhand car being worth $8000. He wants to keep his old car until he can buy the secondhand one.
 
 // He thinks he can save $1000 each month but the prices of his old car and of the new one decrease of 1.5 percent per month. Furthermore this percent of loss increases of 0.5 percent at the end of every two months. Our man finds it difficult to make all these calculations.
@@ -1123,8 +1121,6 @@
 //       return [months, Math.round(startPriceOld + moneySaved - startPriceNew)];
 //   }
 
-
-
 // Given an array with exactly 5 strings "a", "b" or "c" (chars in Java, characters in Fortran, Chars in Haskell), check if the array contains three and two of the same values.
 
 // function checkThreeAndTwo(array) {
@@ -1142,8 +1138,6 @@
 //      return true;
 //    }
 
-
-
 // Given an array/list [] of n integers , find maximum triplet sum in the array Without duplications .
 
 // Notes :
@@ -1159,8 +1153,6 @@
 //     .slice(-3)
 //     .reduce((a, b) => a + b);
 // }
-
-
 
 // Input >> Output Examples
 // arrayLeaders ({1, 2, 3, 4, 0}) ==> return {4}
@@ -1195,7 +1187,6 @@
 
 // Note : The last element 2 is greater than the sum of its right elements (abstract zero).
 
-
 // function arrayLeaders(numbers){
 //   let answer = [];
 //   for (let i = 0; i < numbers.length; i++){
@@ -1208,8 +1199,6 @@
 
 // console.log(arrayLeaders(arr))
 
-
-
 // Write a program that outputs the top n elements from a list.
 
 // Example:
@@ -1217,15 +1206,12 @@
 // largest(2, [7,6,5,4,3,2,1])
 // // => [6,7]
 
-
 // function largest(n, array) {
 //   if (n === 0) return [];
 //   return array.sort((a,b) => a - b).slice(-n)
 //   }
 
 //   console.log(largest(0, [9,8,7,6,5,4,3,2,1]))
-
-
 
 // function dirReduc(arr){
 //   let n = arr.filter(el => el === 'NORTH').length;
@@ -1260,18 +1246,15 @@
 //   }
 
 //   return answer;
-  
-// }
 
+// }
 
 // let arr = ['WEST', 'WEST', 'WEST', 'EAST', 'SOUTH', 'SOUTH', 'NORTH', 'NORTH', 'NORTH']
 
 // console.log(dirReduc(arr))
 
-
 // Find the First Non-Repeating Character
 // Given a string, find the first non-repeating character and return it. If there are no unique characters, return null.
-
 
 // let nonRepeat = (str) => {
 //   let charCount = {};
@@ -1293,7 +1276,6 @@
 
 // console.log(nonRepeat(test))
 
-
 // Question:
 // Given a string, write a function to find the first recurring character (the first character that appears more than once). If there are no recurring characters, return null.
 
@@ -1311,7 +1293,6 @@
 
 // console.log(firstRecur(test))
 
-
 // let firstRecur = (str) => {
 //   let seen = new Set();
 
@@ -1325,7 +1306,6 @@
 // let test = 'abcdecfgh'
 
 // console.log(firstRecur(test))
-
 
 // Problem: Longest Consecutive Sequence
 // Given an unsorted array of integers, write a function that finds the length of the longest consecutive sequence of numbers in the array.
@@ -1351,10 +1331,8 @@
 
 // console.log(longestSequence(test))
 
-
 // Problem: Longest Consecutive Sequence
 // Given an unsorted array of integers, write a function that finds the length of the longest consecutive sequence of numbers in the array.
-
 
 // let longestSequence = (arr) => {
 //   let array = [...new Set(arr)].sort((a,b) => a - b);
@@ -1377,15 +1355,12 @@
 
 // console.log(longestSequence(test))
 
-
 // Problem:
 // Write a function that takes an array of integers and returns the length of the longest subarray that has a sum equal to zero.
 
-
 // let sumZeroSub = (arr) => {
-  
-// }
 
+// }
 
 // Problem:
 // Write a function that takes a string as input and returns true if it contains all the letters from 'a' to 'z' at least once (a pangram), and false otherwise.
@@ -1414,7 +1389,6 @@
 
 // console.log(isPangram(test2))
 
-
 // let mySet = new Set('abcdefg')
 
 // console.log(mySet)
@@ -1430,22 +1404,33 @@
 // There will always be exactly one missing letter.
 // The input array can contain either uppercase or lowercase, but never mixed.
 
-
 let findMissingLetter = (arr) => {
   let letterSet = new Set(arr);
-  
+
   for (let i = 0; i < arr.length; i++) {
-    if (!letterSet.has(String.fromCharCode(arr[i].charCodeAt(0) + 1))) {
+    if (!letterSet.has(String.fromCharCode(arr[i].charCodeAt(0) + 1)))
       return String.fromCharCode(arr[i].charCodeAt(0) + 1);
-    }
   }
 };
 
-let array1 = ['a','b','d','e']
+let array1 = ["a", "b", "d", "e"];
 
-let array2 = ['e','f','g','h','j']
+let array2 = ["e", "f", "g", "h", "j"];
 
-console.log(missingLetter(array1))
+console.log(findMissingLetter(array1));
 
+// let findMissingLetter = (arr) => {
+//   let letterSet = new Set(arr);
 
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!letterSet.has(String.fromCharCode(arr[i].charCodeAt(0) + 1))) {
+//       return String.fromCharCode(arr[i].charCodeAt(0) + 1);
+//     }
+//   }
+// };
 
+// let array1 = ['a','b','d','e']
+
+// let array2 = ['e','f','g','h','j']
+
+// console.log(findMissingLetter(array1))
