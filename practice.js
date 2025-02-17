@@ -1479,24 +1479,45 @@
 // Write a function that takes a string and returns a new string where each letter is replaced with its opposite letter in the alphabet (e.g., 'a' becomes 'z', 'b' becomes 'y', 'c' becomes 'x', etc.). Preserve the case of each letter, and leave non-alphabetical characters unchanged.
 
 
-let oppositeLetter = (str) => {
+// let oppositeLetter = (str) => {
+//   return str.split('').map((letter) => {
+//     let code = letter.charCodeAt(0);
+
+//     if (code >= 65 && code <= 90){
+//       return String.fromCharCode(155 - code);
+//     } else if(code >= 97 && code <= 122){
+//       return String.fromCharCode(219 - code);
+//     }else {
+//       return letter;
+//     }
+
+//   }).join('');
+// }
+
+
+
+
+// Problem:
+// Write a function that takes a string as input and returns a new string where each letter is replaced with the letter two places ahead in the alphabet. Wrap around the alphabet if needed (e.g., 'y' becomes 'a', 'z' becomes 'b', 'Y' becomes 'A', 'Z' becomes 'B'). Non-alphabetic characters should remain unchanged.
+
+let shiftLetters = (str) => {
   return str.split('').map((letter) => {
     let code = letter.charCodeAt(0);
 
     if (code >= 65 && code <= 90){
-      return String.fromCharCode(155 - code);
-    } else if(code >= 97 && code <= 122){
-      return String.fromCharCode(219 - code);
-    }else {
+      return letter === 'Y' ? 'A' : letter === 'Z' ? 'B' : String.fromCharCode(code + 2);
+    } else if (code >= 97 && code <= 122){
+      return letter === 'y' ? 'a' : letter === 'z' ? 'b' : String.fromCharCode(code + 2);
+    } else {
       return letter;
     }
-
-  }).join('');
+  }).join('')
 }
+
 
 let test1 = 'abcdefghiz'
 
 let test2 = 'efg hij klmn opZ'
 
-console.log(oppositeLetter(test2))
+console.log(shiftLetters(test1))
 
