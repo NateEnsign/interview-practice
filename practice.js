@@ -1404,20 +1404,20 @@
 // There will always be exactly one missing letter.
 // The input array can contain either uppercase or lowercase, but never mixed.
 
-let findMissingLetter = (arr) => {
-  let letterSet = new Set(arr);
+// let findMissingLetter = (arr) => {
+//   let letterSet = new Set(arr);
 
-  for (let i = 0; i < arr.length; i++) {
-    if (!letterSet.has(String.fromCharCode(arr[i].charCodeAt(0) + 1)))
-      return String.fromCharCode(arr[i].charCodeAt(0) + 1);
-  }
-};
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!letterSet.has(String.fromCharCode(arr[i].charCodeAt(0) + 1)))
+//       return String.fromCharCode(arr[i].charCodeAt(0) + 1);
+//   }
+// };
 
-let array1 = ["a", "b", "d", "e"];
+// let array1 = ["a", "b", "d", "e"];
 
-let array2 = ["e", "f", "g", "h", "j"];
+// let array2 = ["e", "f", "g", "h", "j"];
 
-console.log(findMissingLetter(array1));
+// console.log(findMissingLetter(array1));
 
 // let findMissingLetter = (arr) => {
 //   let letterSet = new Set(arr);
@@ -1434,3 +1434,27 @@ console.log(findMissingLetter(array1));
 // let array2 = ['e','f','g','h','j']
 
 // console.log(findMissingLetter(array1))
+
+
+// console.log(String.fromCharCode(99))
+
+
+// Problem: Consecutive Letter Shift
+// Write a function shiftLetters(str) that takes a string as input and returns a new string where each letter is replaced by the next letter in the alphabet.
+// Rules:
+// The function should preserve the case of the original letters (uppercase remains uppercase, lowercase remains lowercase).
+// If the letter is 'z', it should wrap around to 'a', and if it's 'Z', it should wrap around to 'A'.
+// The function should ignore non-letter characters (they should remain unchanged).
+
+
+let shiftLetters = (str) => {
+  let arr = str.split('')
+
+  return arr.map((letter) => letter === 'z' ? 'a' : letter === 'Z' ? 'A' : letter.charCodeAt(0) >= 97 && letter.charCodeAt(0) <= 122 || letter.charCodeAt(0) >= 65 && letter.charCodeAt(0) <= 90 ? String.fromCharCode(letter.charCodeAt(0) + 1) : letter).join('');
+}
+
+let test1 = 'abcdefghiz'
+
+let test2 = 'efg hij klmn opZ'
+
+console.log(shiftLetters(test2))
