@@ -1435,9 +1435,7 @@
 
 // console.log(findMissingLetter(array1))
 
-
 // console.log(String.fromCharCode(99))
-
 
 // Problem: Consecutive Letter Shift
 // Write a function shiftLetters(str) that takes a string as input and returns a new string where each letter is replaced by the next letter in the alphabet.
@@ -1445,7 +1443,6 @@
 // The function should preserve the case of the original letters (uppercase remains uppercase, lowercase remains lowercase).
 // If the letter is 'z', it should wrap around to 'a', and if it's 'Z', it should wrap around to 'A'.
 // The function should ignore non-letter characters (they should remain unchanged).
-
 
 // let shiftLetters = (str) => {
 //   let arr = str.split('')
@@ -1456,8 +1453,6 @@
 // let test1 = 'abcdefghiz'
 
 // let test2 = 'efg hij klmn opZ'
-
-
 
 // let shiftLetters = (str) => {
 //   return str.split('').map((letter) => {
@@ -1478,7 +1473,6 @@
 // Problem:
 // Write a function that takes a string and returns a new string where each letter is replaced with its opposite letter in the alphabet (e.g., 'a' becomes 'z', 'b' becomes 'y', 'c' becomes 'x', etc.). Preserve the case of each letter, and leave non-alphabetical characters unchanged.
 
-
 // let oppositeLetter = (str) => {
 //   return str.split('').map((letter) => {
 //     let code = letter.charCodeAt(0);
@@ -1493,9 +1487,6 @@
 
 //   }).join('');
 // }
-
-
-
 
 // Problem:
 // Write a function that takes a string as input and returns a new string where each letter is replaced with the letter two places ahead in the alphabet. Wrap around the alphabet if needed (e.g., 'y' becomes 'a', 'z' becomes 'b', 'Y' becomes 'A', 'Z' becomes 'B'). Non-alphabetic characters should remain unchanged.
@@ -1514,29 +1505,36 @@
 //   }).join('')
 // }
 
-
 // Problem:
 // Write a function that takes a string and returns true if the sum of the character codes of all its letters is an even number, and false otherwise. Ignore non-alphabetic characters.
 
+// let isEvenSum = (str) => {
+//   return str.split('').map((letter) => {
+//     let code = letter.charCodeAt(0);
+
+//     if (code >= 65 && code <= 90){
+//       return code;
+//     } else if (code >= 97 && code <= 122){
+//       return code;
+//     } else {
+//       return 0
+//     }
+//   }).reduce((a,b) => a + b, 0) % 2 === 0;
+// }
 
 let isEvenSum = (str) => {
-  return str.split('').map((letter) => {
-    let code = letter.charCodeAt(0);
+  return (
+    str.split("").reduce((sum, letter) => {
+      let code = letter.charCodeAt(0);
 
-    if (code >= 65 && code <= 90){
-      return code;
-    } else if (code >= 97 && code <= 122){
-      return code;
-    } else {
-      return 0
-    }
-  }).reduce((a,b) => a + b, 0) % 2 === 0;
-}
+      return (code >= 65 && code <= 90) || (code >= 97 && code <= 122)
+        ? sum + code
+        : sum;
+    }, 0) % 2 === 0);
+};
 
+let test1 = "abcdefghiz";
 
-let test1 = 'abcdefghiz'
+let test2 = "efg hij klmn opZ";
 
-let test2 = 'efg hij klmn opZ'
-
-console.log(isEvenSum(test2))
-
+console.log(isEvenSum(test2));
