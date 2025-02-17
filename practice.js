@@ -1447,14 +1447,30 @@
 // The function should ignore non-letter characters (they should remain unchanged).
 
 
-let shiftLetters = (str) => {
-  let arr = str.split('')
+// let shiftLetters = (str) => {
+//   let arr = str.split('')
 
-  return arr.map((letter) => letter === 'z' ? 'a' : letter === 'Z' ? 'A' : letter.charCodeAt(0) >= 97 && letter.charCodeAt(0) <= 122 || letter.charCodeAt(0) >= 65 && letter.charCodeAt(0) <= 90 ? String.fromCharCode(letter.charCodeAt(0) + 1) : letter).join('');
-}
+//   return arr.map((letter) => letter === 'z' ? 'a' : letter === 'Z' ? 'A' : letter.charCodeAt(0) >= 97 && letter.charCodeAt(0) <= 122 || letter.charCodeAt(0) >= 65 && letter.charCodeAt(0) <= 90 ? String.fromCharCode(letter.charCodeAt(0) + 1) : letter).join('');
+// }
 
 let test1 = 'abcdefghiz'
 
 let test2 = 'efg hij klmn opZ'
+
+
+
+let shiftLetters = (str) => {
+  return str.split('').map((letter) => {
+    let code = letter.charCodeAt(0);
+
+    if (code >= 65 && code <= 90){
+      return code === 90 ? 'A' : String.fromCharCode(code + 1);
+    } else if (code >= 97 && code <= 122) {
+      return code === 122 ? 'a' : String.fromCharCode(code + 1);
+    } else {
+      return letter;
+    }
+  }).join('');
+}
 
 console.log(shiftLetters(test2))
