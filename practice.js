@@ -1500,18 +1500,37 @@
 // Problem:
 // Write a function that takes a string as input and returns a new string where each letter is replaced with the letter two places ahead in the alphabet. Wrap around the alphabet if needed (e.g., 'y' becomes 'a', 'z' becomes 'b', 'Y' becomes 'A', 'Z' becomes 'B'). Non-alphabetic characters should remain unchanged.
 
-let shiftLetters = (str) => {
+// let shiftLetters = (str) => {
+//   return str.split('').map((letter) => {
+//     let code = letter.charCodeAt(0);
+
+//     if (code >= 65 && code <= 90){
+//       return letter === 'Y' ? 'A' : letter === 'Z' ? 'B' : String.fromCharCode(code + 2);
+//     } else if (code >= 97 && code <= 122){
+//       return letter === 'y' ? 'a' : letter === 'z' ? 'b' : String.fromCharCode(code + 2);
+//     } else {
+//       return letter;
+//     }
+//   }).join('')
+// }
+
+
+// Problem:
+// Write a function that takes a string and returns true if the sum of the character codes of all its letters is an even number, and false otherwise. Ignore non-alphabetic characters.
+
+
+let isEvenSum = (str) => {
   return str.split('').map((letter) => {
     let code = letter.charCodeAt(0);
 
     if (code >= 65 && code <= 90){
-      return letter === 'Y' ? 'A' : letter === 'Z' ? 'B' : String.fromCharCode(code + 2);
+      return code;
     } else if (code >= 97 && code <= 122){
-      return letter === 'y' ? 'a' : letter === 'z' ? 'b' : String.fromCharCode(code + 2);
+      return code;
     } else {
-      return letter;
+      return 0
     }
-  }).join('')
+  }).reduce((a,b) => a + b, 0) % 2 === 0;
 }
 
 
@@ -1519,5 +1538,5 @@ let test1 = 'abcdefghiz'
 
 let test2 = 'efg hij klmn opZ'
 
-console.log(shiftLetters(test1))
+console.log(isEvenSum(test2))
 
