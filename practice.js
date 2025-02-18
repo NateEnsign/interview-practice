@@ -1664,7 +1664,6 @@ let majorityElement = (arr) => {
 
   for (let num in countObj){
     if (countObj[num] > majorityCount){
-      maxCount = countObj[num];
       mostFrequent = +(num);
       break;
     }
