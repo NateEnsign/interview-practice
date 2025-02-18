@@ -1522,19 +1522,49 @@
 //   }).reduce((a,b) => a + b, 0) % 2 === 0;
 // }
 
-let isEvenSum = (str) => {
-  return (
-    str.split("").reduce((sum, letter) => {
-      let code = letter.charCodeAt(0);
+// let isEvenSum = (str) => {
+//   return (
+//     str.split("").reduce((sum, letter) => {
+//       let code = letter.charCodeAt(0);
 
-      return (code >= 65 && code <= 90) || (code >= 97 && code <= 122)
-        ? sum + code
-        : sum;
-    }, 0) % 2 === 0);
-};
+//       return (code >= 65 && code <= 90) || (code >= 97 && code <= 122)
+//         ? sum + code
+//         : sum;
+//     }, 0) % 2 === 0);
+// };
+
+// let test1 = "abcdefghiz";
+
+// let test2 = "efg hij klmn opZ";
+
+// console.log(isEvenSum(test2));
+
+
+
+// Problem:
+// Write a function that takes a string as input and returns a new string where each letter is replaced by the letter that is symmetrically opposite in the alphabet. That means:
+
+// 'a' ↔ 'z', 'b' ↔ 'y', 'c' ↔ 'x', ..., 'y' ↔ 'b', 'z' ↔ 'a'
+// 'A' ↔ 'Z', 'B' ↔ 'Y', 'C' ↔ 'X', ..., 'Y' ↔ 'B', 'Z' ↔ 'A'
+// Non-alphabet characters should remain unchanged.
+
+
+let mirrorSwitch = (str) => {
+  return str.split('').map((letter) => {
+    let code = letter.charCodeAt(0);
+
+    if (code >= 65 && code <= 90){
+      return String.fromCharCode(155 - code);
+    }else if (code >= 97 && code <= 122){
+      return String.fromCharCode(219 - code);
+    }else {
+      return letter;
+    }
+  }).join('')
+}
 
 let test1 = "abcdefghiz";
 
 let test2 = "efg hij klmn opZ";
 
-console.log(isEvenSum(test2));
+console.log(mirrorSwitch(test1));
