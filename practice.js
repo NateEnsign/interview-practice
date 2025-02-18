@@ -1606,17 +1606,17 @@
 // You cannot use built-in sorting functions.
 
 
-let smallestMissingInt = (arr) => {
-  let numSet = new Set(arr);
-  let numMax = Math.max(...numSet);
+// let smallestMissingInt = (arr) => {
+//   let numSet = new Set(arr);
+//   let numMax = Math.max(...numSet);
 
-  if (numMax < 1) return 1;
+//   if (numMax < 1) return 1;
 
-  for (let i = 1; i <= numMax; i++){
-    if (!numSet.has(i)) return i;
-  }
-  return numMax+1;
-}
+//   for (let i = 1; i <= numMax; i++){
+//     if (!numSet.has(i)) return i;
+//   }
+//   return numMax+1;
+// }
 
 
 // let smallestMissingInt = (arr) => {
@@ -1638,3 +1638,40 @@ let smallestMissingInt = (arr) => {
 // let test3 = [1,2,3,4,6]
 
 // console.log(smallestMissingInt(test3))
+
+
+// Problem: Majority Element
+// Given an array of integers, find the majority element. The majority element is the number that appears more than n/2 times in the array (where n is the length of the array). You can assume that a majority element always exists in the input.
+
+// Example 1:
+// js
+// Copy
+// Edit
+// let nums = [3, 3, 4, 2, 3, 3, 3, 1];
+// console.log(majorityElement(nums));  
+// Output: 3
+
+
+let majorityElement = (arr) => {
+  let countObj = {}
+
+  for (let num of arr){
+    countObj[num] = (countObj[num] || 0) +1;
+  }
+
+  let majorityCount = arr.length/2;
+  let mostFrequent = null;
+
+  for (let num in countObj){
+    if (countObj[num] > majorityCount){
+      maxCount = countObj[num];
+      mostFrequent = +(num);
+      break;
+    }
+  }
+ return mostFrequent
+}
+
+let test1 = [1,3,4,5,6,7,3,3,3,3,3]
+
+console.log(majorityElement(test1))
