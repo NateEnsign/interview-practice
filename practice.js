@@ -1564,27 +1564,64 @@
 // }
 
 
-let switchByPosition = (str) => {
-  return str.split('').map((letter) => {
-    let code = letter.charCodeAt(0);
+// let switchByPosition = (str) => {
+//   return str.split('').map((letter) => {
+//     let code = letter.charCodeAt(0);
 
-    if (code >= 65 && code <= 90){
-      let shift = code - 64;
-      let newCode = code + shift;
-      return String.fromCharCode(newCode > 90 ? newCode - 26 : newCode);
-    }else if (code >= 97 && code <= 122){
-      let shift = code - 96;
-      let newCode = code + shift;
-      return String.fromCharCode(newCode > 122 ? newCode - 26 : newCode);
-    }else {
-      return letter;
-    }
-  }).join('')
+//     if (code >= 65 && code <= 90){
+//       let shift = code - 64;
+//       let newCode = code + shift;
+//       return String.fromCharCode(newCode > 90 ? newCode - 26 : newCode);
+//     }else if (code >= 97 && code <= 122){
+//       let shift = code - 96;
+//       let newCode = code + shift;
+//       return String.fromCharCode(newCode > 122 ? newCode - 26 : newCode);
+//     }else {
+//       return letter;
+//     }
+//   }).join('')
+// }
+
+
+// let test1 = "abcdefghiz";
+
+// let test2 = "efg hij klmn opZ";
+
+// console.log(switchByPosition(test1));
+
+// Problem:
+// You are given an array of integers. Write a function that finds the smallest positive integer missing from the array.
+
+// Examples:
+// js
+// Copy
+// Edit
+// missingInteger([3, 4, -1, 1]) // → 2  
+// missingInteger([1, 2, 0]) // → 3  
+// missingInteger([7, 8, 9, 11, 12]) // → 1  
+// missingInteger([1, 2, 3, 4, 5]) // → 6  
+// Constraints:
+// The function should run efficiently on large inputs (think O(n) time complexity).
+// It should only consider positive integers (ignore negatives and zero).
+// You cannot use built-in sorting functions.
+
+
+let smallestMissingInt = (arr) => {
+  let numSet = new Set(arr);
+  let maxNum = Math.max(...numSet);
+
+  if (maxNum <= 0) return 1;
+
+  for (let i = 1; i <= maxNum; i++){
+    if (!numSet.has(i)) return i;
+  }
+  return maxNum+1;
 }
 
+let test1 = [1,2,3,4,5]
 
-let test1 = "abcdefghiz";
+let test2 = [-2,-4,-6,0]
 
-let test2 = "efg hij klmn opZ";
+let test3 = [1,2,3,4,6]
 
-console.log(switchByPosition(test1));
+console.log(smallestMissingInt(test3))
