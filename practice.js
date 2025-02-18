@@ -1549,22 +1549,42 @@
 // Non-alphabet characters should remain unchanged.
 
 
-let mirrorSwitch = (str) => {
+// let mirrorSwitch = (str) => {
+//   return str.split('').map((letter) => {
+//     let code = letter.charCodeAt(0);
+
+//     if (code >= 65 && code <= 90){
+//       return String.fromCharCode(155 - code);
+//     }else if (code >= 97 && code <= 122){
+//       return String.fromCharCode(219 - code);
+//     }else {
+//       return letter;
+//     }
+//   }).join('')
+// }
+
+
+let switchByPosition = (str) => {
   return str.split('').map((letter) => {
     let code = letter.charCodeAt(0);
 
     if (code >= 65 && code <= 90){
-      return String.fromCharCode(155 - code);
+      let shift = code - 64;
+      let newCode = code + shift;
+      return String.fromCharCode(newCode > 90 ? newCode - 26 : newCode);
     }else if (code >= 97 && code <= 122){
-      return String.fromCharCode(219 - code);
+      let shift = code - 96;
+      let newCode = code + shift;
+      return String.fromCharCode(newCode > 122 ? newCode - 26 : newCode);
     }else {
       return letter;
     }
   }).join('')
 }
 
+
 let test1 = "abcdefghiz";
 
 let test2 = "efg hij klmn opZ";
 
-console.log(mirrorSwitch(test1));
+console.log(switchByPosition(test1));
