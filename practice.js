@@ -1608,20 +1608,33 @@
 
 let smallestMissingInt = (arr) => {
   let numSet = new Set(arr);
-  let maxNum = Math.max(...numSet);
+  let numMax = Math.max(...numSet);
 
-  if (maxNum <= 0) return 1;
+  if (numMax < 1) return 1;
 
-  for (let i = 1; i <= maxNum; i++){
+  for (let i = 1; i <= numMax; i++){
     if (!numSet.has(i)) return i;
   }
-  return maxNum+1;
+  return numMax+1;
 }
 
-let test1 = [1,2,3,4,5]
 
-let test2 = [-2,-4,-6,0]
+// let smallestMissingInt = (arr) => {
+//   let numSet = new Set(arr);
+//   let maxNum = Math.max(...numSet);
 
-let test3 = [1,2,3,4,6]
+//   if (maxNum <= 0) return 1;
 
-console.log(smallestMissingInt(test3))
+//   for (let i = 1; i <= maxNum; i++){
+//     if (!numSet.has(i)) return i;
+//   }
+//   return maxNum+1;
+// }
+
+// let test1 = [1,2,3,4,5]
+
+// let test2 = [-2,-4,-6,0]
+
+// let test3 = [1,2,3,4,6]
+
+// console.log(smallestMissingInt(test3))
