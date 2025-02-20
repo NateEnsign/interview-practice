@@ -1699,16 +1699,31 @@
 // Non-alphabet characters should remain unchanged.
 
 
-let mirrorSwitch = (str) => {
-  return str.split('').map((letter) => {
-    let code = letter.charCodeAt(0);
+// let mirrorSwitch = (str) => {
+//   return str.split('').map((letter) => {
+//     let code = letter.charCodeAt(0);
 
-    if (code >= 65 && code <= 90){
-      return String.fromCharCode(155 - code);
-    }else if (code >= 97 && code <= 122){
-      return String.fromCharCode(219 - code);
-    }else {
-      return letter;
-    }
-  }).join('')
-}
+//     if (code >= 65 && code <= 90){
+//       return String.fromCharCode(155 - code);
+//     }else if (code >= 97 && code <= 122){
+//       return String.fromCharCode(219 - code);
+//     }else {
+//       return letter;
+//     }
+//   }).join('')
+// }
+
+
+// Write a program that outputs the top n elements from a list.
+
+// Example:
+
+// largest(2, [7,6,5,4,3,2,1])
+// // => [6,7]
+
+function largest(n, array) {
+  if (n === 0) return [];
+  return array.sort((a,b) => a - b).slice(-n)
+  }
+
+  console.log(largest(0, [9,8,7,6,5,4,3,2,1]))
