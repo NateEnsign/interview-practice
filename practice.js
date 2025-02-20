@@ -1738,9 +1738,35 @@
 
 // Repetition of numbers in the array/list could occur , So (duplications are not included when summing).
 
-function maxTriSum(numbers) {
-  return [...new Set(numbers)]
-    .sort((a, b) => a - b)
-    .slice(-3)
-    .reduce((a, b) => a + b);
-}
+// function maxTriSum(numbers) {
+//   return [...new Set(numbers)]
+//     .sort((a, b) => a - b)
+//     .slice(-3)
+//     .reduce((a, b) => a + b);
+// }
+
+
+// Example Input & Output
+// findMissingLetter(["a", "b", "c", "e"]); // Output: "d"
+// findMissingLetter(["O", "Q", "R", "S"]); // Output: "P"
+// Constraints
+// The array will always be in order.
+// There will always be exactly one missing letter.
+// The input array can contain either uppercase or lowercase, but never mixed.
+
+let findMissingLetter = (arr) => {
+  let letterSet = new Set(arr);
+
+  for (let i = 0; i < arr.length; i++) {
+    if (!letterSet.has(String.fromCharCode(arr[i].charCodeAt(0) + 1)))
+      return String.fromCharCode(arr[i].charCodeAt(0) + 1);
+  }
+};
+
+let array1 = ["a", "b", "d", "e"];
+
+let array2 = ["e", "f", "g", "h", "j"];
+
+console.log(findMissingLetter(array1));
+
+
