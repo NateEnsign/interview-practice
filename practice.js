@@ -1652,25 +1652,63 @@
 // Output: 3
 
 
-let majorityElement = (arr) => {
-  let countObj = {}
+// let majorityElement = (arr) => {
+//   let countObj = {}
 
-  for (let num of arr){
-    countObj[num] = (countObj[num] || 0) +1;
-  }
+//   for (let num of arr){
+//     countObj[num] = (countObj[num] || 0) +1;
+//   }
 
-  let majorityCount = arr.length/2;
-  let mostFrequent = null;
+//   let majorityCount = arr.length/2;
+//   let mostFrequent = null;
 
-  for (let num in countObj){
-    if (countObj[num] > majorityCount){
-      mostFrequent = +(num);
-      break;
+//   for (let num in countObj){
+//     if (countObj[num] > majorityCount){
+//       mostFrequent = +(num);
+//       break;
+//     }
+//   }
+//  return mostFrequent
+// }
+
+// let test1 = [1,3,4,5,6,7,3,3,3,3,3]
+
+// console.log(majorityElement(test1))
+
+
+// Problem: Find the Longest Substring Without Repeating Characters
+// Write a function that takes a string as input and returns the length of the longest substring that contains no repeating characters.
+
+// Examples:
+// js
+// Copy
+// Edit
+// longestUniqueSubstring("abcabcbb") // ➞ 3  ("abc")
+// longestUniqueSubstring("bbbbb")    // ➞ 1  ("b")
+// longestUniqueSubstring("pwwkew")   // ➞ 3  ("wke")
+// longestUniqueSubstring("")         // ➞ 0  (empty string)
+// longestUniqueSubstring("abcdef")   // ➞ 6  ("abcdef")
+
+
+
+// Problem:
+// Write a function that takes a string as input and returns a new string where each letter is replaced by the letter that is symmetrically opposite in the alphabet. That means:
+
+// 'a' ↔ 'z', 'b' ↔ 'y', 'c' ↔ 'x', ..., 'y' ↔ 'b', 'z' ↔ 'a'
+// 'A' ↔ 'Z', 'B' ↔ 'Y', 'C' ↔ 'X', ..., 'Y' ↔ 'B', 'Z' ↔ 'A'
+// Non-alphabet characters should remain unchanged.
+
+
+let mirrorSwitch = (str) => {
+  return str.split('').map((letter) => {
+    let code = letter.charCodeAt(0);
+
+    if (code >= 65 && code <= 90){
+      return String.fromCharCode(155 - code);
+    }else if (code >= 97 && code <= 122){
+      return String.fromCharCode(219 - code);
+    }else {
+      return letter;
     }
-  }
- return mostFrequent
+  }).join('')
 }
-
-let test1 = [1,3,4,5,6,7,3,3,3,3,3]
-
-console.log(majorityElement(test1))
