@@ -1721,9 +1721,26 @@
 // largest(2, [7,6,5,4,3,2,1])
 // // => [6,7]
 
-function largest(n, array) {
-  if (n === 0) return [];
-  return array.sort((a,b) => a - b).slice(-n)
-  }
+// function largest(n, array) {
+//   if (n === 0) return [];
+//   return array.sort((a,b) => a - b).slice(-n)
+//   }
 
-  console.log(largest(0, [9,8,7,6,5,4,3,2,1]))
+//   console.log(largest(0, [9,8,7,6,5,4,3,2,1]))
+
+
+// Given an array/list [] of n integers , find maximum triplet sum in the array Without duplications .
+
+// Notes :
+// Array/list size is at least 3 .
+
+// Array/list numbers could be a mixture of positives , negatives and zeros .
+
+// Repetition of numbers in the array/list could occur , So (duplications are not included when summing).
+
+function maxTriSum(numbers) {
+  return [...new Set(numbers)]
+    .sort((a, b) => a - b)
+    .slice(-3)
+    .reduce((a, b) => a + b);
+}
