@@ -1754,19 +1754,36 @@
 // There will always be exactly one missing letter.
 // The input array can contain either uppercase or lowercase, but never mixed.
 
-let findMissingLetter = (arr) => {
-  let letterSet = new Set(arr);
+// let findMissingLetter = (arr) => {
+//   let letterSet = new Set(arr);
 
-  for (let i = 0; i < arr.length; i++) {
-    if (!letterSet.has(String.fromCharCode(arr[i].charCodeAt(0) + 1)))
-      return String.fromCharCode(arr[i].charCodeAt(0) + 1);
-  }
-};
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!letterSet.has(String.fromCharCode(arr[i].charCodeAt(0) + 1)))
+//       return String.fromCharCode(arr[i].charCodeAt(0) + 1);
+//   }
+// };
 
-let array1 = ["a", "b", "d", "e"];
+// let array1 = ["a", "b", "d", "e"];
 
-let array2 = ["e", "f", "g", "h", "j"];
+// let array2 = ["e", "f", "g", "h", "j"];
 
-console.log(findMissingLetter(array1));
+// console.log(findMissingLetter(array1));
 
 
+// Problem: Missing Number
+// You are given an array containing n distinct numbers taken from the range 0 to n. This means exactly one number is missing from the sequence.
+
+// Write a function findMissingNumber(nums) that returns the missing number.
+
+let missingNum = (arr) => {
+ arr.sort((a,b) => a - b);
+
+ for (let i = 0; i < arr.length; i++){
+  if (arr[i] != i) return i;
+ }
+ return arr.length;
+}
+
+let test1 = [5,1,4,2,3,7,0]
+
+console.log(missingNum(test1))
