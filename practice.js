@@ -1817,19 +1817,33 @@
 // Given a string, find the first non-repeating character and return its index. If it does not exist, return -1.
 
 
+// let firstNonRepeat = (str) => {
+//   let letterObj = {};
+
+//   for (let letter of str){
+//     letterObj[letter] = (letterObj[letter] || 0) + 1;
+//   }
+
+//   for (let letter in letterObj){
+//     if (letterObj[letter] === 1) return str.indexOf(letter);
+//   }
+//    return -1;
+// }
+
+// let test = 'hheeyggaai'
+
+// console.log(firstNonRepeat(test))
+
 let firstNonRepeat = (str) => {
   let letterObj = {};
 
-  for (let letter of str){
+  for (let letter of str) {
     letterObj[letter] = (letterObj[letter] || 0) + 1;
   }
 
-  for (let letter in letterObj){
-    if (letterObj[letter] === 1) return str.indexOf(letter);
+  for (let i = 0; i < str.length; i++) {
+    if (letterObj[str[i]] === 1) return i;
   }
-   return -1;
-}
 
-let test = 'hheeyggaai'
-
-console.log(firstNonRepeat(test))
+  return -1;
+};
