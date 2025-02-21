@@ -1834,16 +1834,42 @@
 
 // console.log(firstNonRepeat(test))
 
-let firstNonRepeat = (str) => {
-  let letterObj = {};
+// let firstNonRepeat = (str) => {
+//   let letterObj = {};
 
-  for (let letter of str) {
-    letterObj[letter] = (letterObj[letter] || 0) + 1;
+//   for (let letter of str) {
+//     letterObj[letter] = (letterObj[letter] || 0) + 1;
+//   }
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (letterObj[str[i]] === 1) return i;
+//   }
+
+//   return -1;
+// };
+
+
+// Problem: Valid Anagram
+// Given two strings s and t, write a function to determine if t is an anagram of s.
+
+
+let isAnagram = (s,t) => {
+  s = s.split('').sort();
+  t = t.split('').sort();
+
+  console.log(s);
+  console.log(t);
+
+  for (let i = 0; i <= t.length; i++){
+    if (t[i] !== s[i]) return false;
   }
+  return true;
+}
 
-  for (let i = 0; i < str.length; i++) {
-    if (letterObj[str[i]] === 1) return i;
-  }
+let string1 = 'abcdefg'
 
-  return -1;
-};
+let string2 = 'gfedba'
+
+console.log(isAnagram(string1,string2))
+
+
