@@ -1775,15 +1775,39 @@
 
 // Write a function findMissingNumber(nums) that returns the missing number.
 
-let missingNum = (arr) => {
- arr.sort((a,b) => a - b);
+// let missingNum = (arr) => {
+//  arr.sort((a,b) => a - b);
 
- for (let i = 0; i < arr.length; i++){
-  if (arr[i] != i) return i;
- }
- return arr.length;
+//  for (let i = 0; i < arr.length; i++){
+//   if (arr[i] != i) return i;
+//  }
+//  return arr.length;
+// }
+
+// let test1 = [5,1,4,2,3,7,0]
+
+// console.log(missingNum(test1))
+
+
+// Problem: Single Number
+// You are given a non-empty array of integers, where every element appears twice except for one unique number.
+
+// Write a function findSingleNumber(nums) that returns the number that appears only once.
+
+
+let singleNum = (arr) => {
+  let numObj = {};
+
+  for (let num of arr){
+    numObj[num] = (numObj[num] || 0) + 1;
+  }
+
+  for (let num in numObj){
+    if (numObj[num] === 1) return +num;
+  }
+  return 'No single values are included in array';
 }
 
-let test1 = [5,1,4,2,3,7,0]
+let test1 = [1,1,2,2,3,3,4,4,5,5, 19]
 
-console.log(missingNum(test1))
+console.log(singleNum(test1))
