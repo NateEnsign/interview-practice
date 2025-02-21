@@ -1857,10 +1857,9 @@ let isAnagram = (s,t) => {
   s = s.split('').sort();
   t = t.split('').sort();
 
-  console.log(s);
-  console.log(t);
+if (s.length !== t.length) return false;
 
-  for (let i = 0; i <= t.length; i++){
+  for (let i = 0; i < t.length; i++){
     if (t[i] !== s[i]) return false;
   }
   return true;
@@ -1868,7 +1867,7 @@ let isAnagram = (s,t) => {
 
 let string1 = 'abcdefg'
 
-let string2 = 'gfedba'
+let string2 = 'gfedbac'
 
 console.log(isAnagram(string1,string2))
 
