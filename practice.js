@@ -1795,19 +1795,41 @@
 // Write a function findSingleNumber(nums) that returns the number that appears only once.
 
 
-let singleNum = (arr) => {
-  let numObj = {};
+// let singleNum = (arr) => {
+//   let numObj = {};
 
-  for (let num of arr){
-    numObj[num] = (numObj[num] || 0) + 1;
+//   for (let num of arr){
+//     numObj[num] = (numObj[num] || 0) + 1;
+//   }
+
+//   for (let num in numObj){
+//     if (numObj[num] === 1) return +num;
+//   }
+//   return 'No single values are included in array';
+// }
+
+// let test1 = [1,1,2,2,3,3,4,4,5,5, 19]
+
+// console.log(singleNum(test1))
+
+
+// Problem: Find the First Non-Repeating Character
+// Given a string, find the first non-repeating character and return its index. If it does not exist, return -1.
+
+
+let firstNonRepeat = (str) => {
+  let letterObj = {};
+
+  for (let letter of str){
+    letterObj[letter] = (letterObj[letter] || 0) + 1;
   }
 
-  for (let num in numObj){
-    if (numObj[num] === 1) return +num;
+  for (let letter in letterObj){
+    if (letterObj[letter] === 1) return str.indexOf(letter);
   }
-  return 'No single values are included in array';
+   return -1;
 }
 
-let test1 = [1,1,2,2,3,3,4,4,5,5, 19]
+let test = 'hheeyggaai'
 
-console.log(singleNum(test1))
+console.log(firstNonRepeat(test))
