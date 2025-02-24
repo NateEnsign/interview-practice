@@ -1853,22 +1853,40 @@
 // Given two strings s and t, write a function to determine if t is an anagram of s.
 
 
-let isAnagram = (s,t) => {
-  s = s.split('').sort();
-  t = t.split('').sort();
+// let isAnagram = (s,t) => {
+//   s = s.split('').sort();
+//   t = t.split('').sort();
 
-if (s.length !== t.length) return false;
+// if (s.length !== t.length) return false;
 
-  for (let i = 0; i < t.length; i++){
-    if (t[i] !== s[i]) return false;
+//   for (let i = 0; i < t.length; i++){
+//     if (t[i] !== s[i]) return false;
+//   }
+//   return true;
+// }
+
+// let string1 = 'abcdefg'
+
+// let string2 = 'gfedbac'
+
+// console.log(isAnagram(string1,string2))
+
+
+// Problem: Two Sum
+// Given an array of integers nums and an integer target, return the indices of the two numbers that add up to target.
+
+// You may not use the same element twice.
+// You can return the answer in any order.
+
+// Example 1:
+// twoSum([2, 7, 11, 15], 9); // Output: [0, 1] (since 2 + 7 = 9)
+
+let twoSum = (nums, target) => {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        return [i, j];
+      }
+    }
   }
-  return true;
-}
-
-let string1 = 'abcdefg'
-
-let string2 = 'gfedbac'
-
-console.log(isAnagram(string1,string2))
-
-
+};
