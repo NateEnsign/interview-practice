@@ -1881,12 +1881,27 @@
 // Example 1:
 // twoSum([2, 7, 11, 15], 9); // Output: [0, 1] (since 2 + 7 = 9)
 
+// let twoSum = (nums, target) => {
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] === target) {
+//         return [i, j];
+//       }
+//     }
+//   }
+// };
+
+
 let twoSum = (nums, target) => {
+  let numMap = {};
+
   for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[i] + nums[j] === target) {
-        return [i, j];
-      }
+    let complement = target - nums[i];
+
+    if (complement in numMap) {
+      return [numMap[complement], i];
     }
+
+    numMap[nums[i]] = i;
   }
 };
