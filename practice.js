@@ -1914,6 +1914,7 @@
 // findMax([3, 1, 9, 2, 8]); // Output: 9
 
 let maxNum = (arr) => {
+  if (arr.length === 0) return null;
   return Math.max(...arr);
 }
 
