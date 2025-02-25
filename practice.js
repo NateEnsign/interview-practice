@@ -1913,11 +1913,26 @@
 // Example:
 // findMax([3, 1, 9, 2, 8]); // Output: 9
 
+// let maxNum = (arr) => {
+//   if (arr.length === 0) return null;
+//   return Math.max(...arr);
+// }
+
+// let test = [1,3,5,7,4,9,3,5]
+
+// console.log(maxNum(test))
+
 let maxNum = (arr) => {
   if (arr.length === 0) return null;
-  return Math.max(...arr);
+
+  let max = arr[0];
+  for (let num of arr){
+    if (num > max) max = num;
+  }
+  return max;
 }
 
 let test = [1,3,5,7,4,9,3,5]
 
 console.log(maxNum(test))
+
