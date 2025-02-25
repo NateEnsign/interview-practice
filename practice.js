@@ -1922,17 +1922,29 @@
 
 // console.log(maxNum(test))
 
-let maxNum = (arr) => {
-  if (arr.length === 0) return null;
+// let maxNum = (arr) => {
+//   if (arr.length === 0) return null;
 
-  let max = arr[0];
-  for (let num of arr){
-    if (num > max) max = num;
-  }
-  return max;
+//   let max = arr[0];
+//   for (let num of arr){
+//     if (num > max) max = num;
+//   }
+//   return max;
+// }
+
+// let test = [1,3,5,7,4,9,3,5]
+
+// console.log(maxNum(test))
+
+
+// 5. Remove Duplicates from an Array
+// Write a function that removes duplicate values from an array and returns a new array with unique values.
+
+let removeDuplicates = (arr) => {
+  return [...new Set(arr)];
 }
 
-let test = [1,3,5,7,4,9,3,5]
+let test = [1,1,2,2,3,3,4,4]
 
-console.log(maxNum(test))
+console.log(removeDuplicates(test))
 
