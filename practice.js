@@ -1892,16 +1892,31 @@
 // };
 
 
-let twoSum = (nums, target) => {
-  let numMap = {};
+// let twoSum = (nums, target) => {
+//   let numMap = {};
 
-  for (let i = 0; i < nums.length; i++) {
-    let complement = target - nums[i];
+//   for (let i = 0; i < nums.length; i++) {
+//     let complement = target - nums[i];
 
-    if (complement in numMap) {
-      return [numMap[complement], i];
-    }
+//     if (complement in numMap) {
+//       return [numMap[complement], i];
+//     }
 
-    numMap[nums[i]] = i;
-  }
-};
+//     numMap[nums[i]] = i;
+//   }
+// };
+
+
+// 4. Find the Maximum Number in an Array
+// Write a function that takes an array of numbers and returns the maximum number.
+
+// Example:
+// findMax([3, 1, 9, 2, 8]); // Output: 9
+
+let maxNum = (arr) => {
+  return Math.max(...arr);
+}
+
+let test = [1,3,5,7,4,9,3,5]
+
+console.log(maxNum(test))
