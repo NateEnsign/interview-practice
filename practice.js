@@ -1928,18 +1928,26 @@
 // sumToSingleDigit(1234); // 1 + 2 + 3 + 4 = 10 → 1 + 0 = 1 → Output: 1
 // sumToSingleDigit(5); // Output: 5 (already a single digit)
 
-let sumToSingleDigit = (num) => {
-  let newNum = num;
+// let sumToSingleDigit = (num) => {
+//   let newNum = num;
 
-  while (newNum > 9) {
-    newNum = newNum
-      .toString()
-      .split("")
-      .map(x => +x)
-      .reduce((a, b) => a + b);
+//   while (newNum > 9) {
+//     newNum = newNum
+//       .toString()
+//       .split("")
+//       .map(x => +x)
+//       .reduce((a, b) => a + b);
+//   }
+//   return newNum;
+// };
+
+
+let sumToSingleDigit = (num) => {
+  while (num >9){
+    num = num.toString().split('').reduce((a,b) => a + +b,0)
   }
-  return newNum;
-};
+  return num;
+}
 
 let test = 59;
 
