@@ -1539,15 +1539,12 @@
 
 // console.log(isEvenSum(test2));
 
-
-
 // Problem:
 // Write a function that takes a string as input and returns a new string where each letter is replaced by the letter that is symmetrically opposite in the alphabet. That means:
 
 // 'a' ↔ 'z', 'b' ↔ 'y', 'c' ↔ 'x', ..., 'y' ↔ 'b', 'z' ↔ 'a'
 // 'A' ↔ 'Z', 'B' ↔ 'Y', 'C' ↔ 'X', ..., 'Y' ↔ 'B', 'Z' ↔ 'A'
 // Non-alphabet characters should remain unchanged.
-
 
 // let mirrorSwitch = (str) => {
 //   return str.split('').map((letter) => {
@@ -1562,7 +1559,6 @@
 //     }
 //   }).join('')
 // }
-
 
 // let switchByPosition = (str) => {
 //   return str.split('').map((letter) => {
@@ -1582,7 +1578,6 @@
 //   }).join('')
 // }
 
-
 // let test1 = "abcdefghiz";
 
 // let test2 = "efg hij klmn opZ";
@@ -1596,15 +1591,14 @@
 // js
 // Copy
 // Edit
-// missingInteger([3, 4, -1, 1]) // → 2  
-// missingInteger([1, 2, 0]) // → 3  
-// missingInteger([7, 8, 9, 11, 12]) // → 1  
-// missingInteger([1, 2, 3, 4, 5]) // → 6  
+// missingInteger([3, 4, -1, 1]) // → 2
+// missingInteger([1, 2, 0]) // → 3
+// missingInteger([7, 8, 9, 11, 12]) // → 1
+// missingInteger([1, 2, 3, 4, 5]) // → 6
 // Constraints:
 // The function should run efficiently on large inputs (think O(n) time complexity).
 // It should only consider positive integers (ignore negatives and zero).
 // You cannot use built-in sorting functions.
-
 
 // let smallestMissingInt = (arr) => {
 //   let numSet = new Set(arr);
@@ -1617,7 +1611,6 @@
 //   }
 //   return numMax+1;
 // }
-
 
 // let smallestMissingInt = (arr) => {
 //   let numSet = new Set(arr);
@@ -1639,7 +1632,6 @@
 
 // console.log(smallestMissingInt(test3))
 
-
 // Problem: Majority Element
 // Given an array of integers, find the majority element. The majority element is the number that appears more than n/2 times in the array (where n is the length of the array). You can assume that a majority element always exists in the input.
 
@@ -1648,9 +1640,8 @@
 // Copy
 // Edit
 // let nums = [3, 3, 4, 2, 3, 3, 3, 1];
-// console.log(majorityElement(nums));  
+// console.log(majorityElement(nums));
 // Output: 3
-
 
 // let majorityElement = (arr) => {
 //   let countObj = {}
@@ -1675,7 +1666,6 @@
 
 // console.log(majorityElement(test1))
 
-
 // Problem: Find the Longest Substring Without Repeating Characters
 // Write a function that takes a string as input and returns the length of the longest substring that contains no repeating characters.
 
@@ -1689,15 +1679,12 @@
 // longestUniqueSubstring("")         // ➞ 0  (empty string)
 // longestUniqueSubstring("abcdef")   // ➞ 6  ("abcdef")
 
-
-
 // Problem:
 // Write a function that takes a string as input and returns a new string where each letter is replaced by the letter that is symmetrically opposite in the alphabet. That means:
 
 // 'a' ↔ 'z', 'b' ↔ 'y', 'c' ↔ 'x', ..., 'y' ↔ 'b', 'z' ↔ 'a'
 // 'A' ↔ 'Z', 'B' ↔ 'Y', 'C' ↔ 'X', ..., 'Y' ↔ 'B', 'Z' ↔ 'A'
 // Non-alphabet characters should remain unchanged.
-
 
 // let mirrorSwitch = (str) => {
 //   return str.split('').map((letter) => {
@@ -1713,7 +1700,6 @@
 //   }).join('')
 // }
 
-
 // Write a program that outputs the top n elements from a list.
 
 // Example:
@@ -1727,7 +1713,6 @@
 //   }
 
 //   console.log(largest(0, [9,8,7,6,5,4,3,2,1]))
-
 
 // Given an array/list [] of n integers , find maximum triplet sum in the array Without duplications .
 
@@ -1744,7 +1729,6 @@
 //     .slice(-3)
 //     .reduce((a, b) => a + b);
 // }
-
 
 // Example Input & Output
 // findMissingLetter(["a", "b", "c", "e"]); // Output: "d"
@@ -1769,7 +1753,6 @@
 
 // console.log(findMissingLetter(array1));
 
-
 // Problem: Missing Number
 // You are given an array containing n distinct numbers taken from the range 0 to n. This means exactly one number is missing from the sequence.
 
@@ -1788,12 +1771,10 @@
 
 // console.log(missingNum(test1))
 
-
 // Problem: Single Number
 // You are given a non-empty array of integers, where every element appears twice except for one unique number.
 
 // Write a function findSingleNumber(nums) that returns the number that appears only once.
-
 
 // let singleNum = (arr) => {
 //   let numObj = {};
@@ -1812,10 +1793,8 @@
 
 // console.log(singleNum(test1))
 
-
 // Problem: Find the First Non-Repeating Character
 // Given a string, find the first non-repeating character and return its index. If it does not exist, return -1.
-
 
 // let firstNonRepeat = (str) => {
 //   let letterObj = {};
@@ -1848,10 +1827,8 @@
 //   return -1;
 // };
 
-
 // Problem: Valid Anagram
 // Given two strings s and t, write a function to determine if t is an anagram of s.
-
 
 // let isAnagram = (s,t) => {
 //   s = s.split('').sort();
@@ -1870,7 +1847,6 @@
 // let string2 = 'gfedbac'
 
 // console.log(isAnagram(string1,string2))
-
 
 // Problem: Two Sum
 // Given an array of integers nums and an integer target, return the indices of the two numbers that add up to target.
@@ -1891,7 +1867,6 @@
 //   }
 // };
 
-
 // let twoSum = (nums, target) => {
 //   let numMap = {};
 
@@ -1905,7 +1880,6 @@
 //     numMap[nums[i]] = i;
 //   }
 // };
-
 
 // 4. Find the Maximum Number in an Array
 // Write a function that takes an array of numbers and returns the maximum number.
@@ -1936,15 +1910,37 @@
 
 // console.log(maxNum(test))
 
-
 // 5. Remove Duplicates from an Array
 // Write a function that removes duplicate values from an array and returns a new array with unique values.
 
-let removeDuplicates = (arr) => {
-  return [...new Set(arr)];
-}
+// let removeDuplicates = (arr) => {
+//   return [...new Set(arr)];
+// }
 
-let test = [1,1,2,2,3,3,4,4]
+// 1. Warmup (Easy) - Sum of Digits Until Single Digit
+// Write a function that repeatedly sums the digits of a number until the result is a single digit.
 
-console.log(removeDuplicates(test))
+// Example:
+// js
+// Copy
+// Edit
+// sumToSingleDigit(987); // 9 + 8 + 7 = 24 → 2 + 4 = 6 → Output: 6
+// sumToSingleDigit(1234); // 1 + 2 + 3 + 4 = 10 → 1 + 0 = 1 → Output: 1
+// sumToSingleDigit(5); // Output: 5 (already a single digit)
 
+let sumToSingleDigit = (num) => {
+  let newNum = num;
+
+  while (newNum > 9) {
+    newNum = newNum
+      .toString()
+      .split("")
+      .map(x => +x)
+      .reduce((a, b) => a + b);
+  }
+  return newNum;
+};
+
+let test = 59;
+
+console.log(sumToSingleDigit(555));
