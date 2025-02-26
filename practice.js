@@ -1942,13 +1942,48 @@
 // };
 
 
-let sumToSingleDigit = (num) => {
-  while (num >9){
-    num = num.toString().split('').reduce((a,b) => a + +b,0)
+// let sumToSingleDigit = (num) => {
+//   while (num >9){
+//     num = num.toString().split('').reduce((a,b) => a + +b,0)
+//   }
+//   return num;
+// }
+
+// let test = 59;
+
+// console.log(sumToSingleDigit(555));
+
+
+
+// 3. Hard - Find the Longest Consecutive Sequence in an Array
+// Given an unsorted array of integers, find the length of the longest consecutive sequence of numbers. Your algorithm should run in O(n) time.
+
+// Example:
+// js
+// Copy
+// Edit
+// longestConsecutive([100, 4, 200, 1, 3, 2]); // Output: 4 (Sequence: [1, 2, 3, 4])
+// longestConsecutive([9, 1, 4, 7, 3, 2, 6, 5, 8, 0]); // Output: 10 (Sequence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+// longestConsecutive([1, 2, 0, 1]); // Output: 3 (Sequence: [0, 1, 2])
+
+
+let longestSequence = (arr) => {
+  let newArr = [...new Set(arr)].sort((a,b) => a - b)
+
+  let count = 1;
+  let max = 1;
+  
+  for (let i = 0; i < newArr.length; i++){
+    if (newArr[i] - newArr[i-1] === 1){
+      count++
+    } else{
+      if (count > max) max = count;
+      count = 1;
+    }
   }
-  return num;
+  return count > max ? count : max;
 }
 
-let test = 59;
+let test = [3,5,7,9,8,6,4,2,12,14,16]
 
-console.log(sumToSingleDigit(555));
+console.log(longestSequence(test))
