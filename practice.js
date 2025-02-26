@@ -1967,21 +1967,40 @@
 // longestConsecutive([1, 2, 0, 1]); // Output: 3 (Sequence: [0, 1, 2])
 
 
-let longestSequence = (arr) => {
-  let newArr = [...new Set(arr)].sort((a,b) => a - b)
+// let longestSequence = (arr) => {
+//   let newArr = [...new Set(arr)].sort((a,b) => a - b)
 
-  let count = 1;
-  let max = 1;
+//   let count = 1;
+//   let max = 1;
   
-  for (let i = 0; i < newArr.length; i++){
-    if (newArr[i] - newArr[i-1] === 1){
-      count++
-    } else{
-      if (count > max) max = count;
-      count = 1;
+//   for (let i = 0; i < newArr.length; i++){
+//     if (newArr[i] - newArr[i-1] === 1){
+//       count++
+//     } else{
+//       if (count > max) max = count;
+//       count = 1;
+//     }
+//   }
+//   return count > max ? count : max;
+// }
+
+let longestSequence = (arr) => {
+  let numSet = new Set(arr)
+  let max = 0;
+
+  for (let num of numSet){
+    if (!numSet.has(num - 1)){
+      let count = 1;
+      let currentNum = num;
+
+      while (numSet.has(currentNum + 1)) {
+        currentNum++;
+        count++
+      }
+      max = Math.max(max, count);
     }
   }
-  return count > max ? count : max;
+  return max;
 }
 
 let test = [3,5,7,9,8,6,4,2,12,14,16]
