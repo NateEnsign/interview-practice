@@ -1984,25 +1984,62 @@
 //   return count > max ? count : max;
 // }
 
-let longestSequence = (arr) => {
-  let numSet = new Set(arr)
-  let max = 0;
+// let longestSequence = (arr) => {
+//   let numSet = new Set(arr)
+//   let max = 0;
 
-  for (let num of numSet){
-    if (!numSet.has(num - 1)){
-      let count = 1;
-      let currentNum = num;
+//   for (let num of numSet){
+//     if (!numSet.has(num - 1)){
+//       let count = 1;
+//       let currentNum = num;
 
-      while (numSet.has(currentNum + 1)) {
-        currentNum++;
-        count++
-      }
-      max = Math.max(max, count);
+//       while (numSet.has(currentNum + 1)) {
+//         currentNum++;
+//         count++
+//       }
+//       max = Math.max(max, count);
+//     }
+//   }
+//   return max;
+// }
+
+// let test = [3,5,7,9,8,6,4,2,12,14,16]
+
+// console.log(longestSequence(test))
+
+
+// Merge Intervals
+// 🔹 Problem: Given an array of intervals where intervals[i] = [start, end], merge all overlapping intervals.
+// 🔹 Example:
+
+// js
+// Copy
+// Edit
+// mergeIntervals([[1, 3], [2, 6], [8, 10], [15, 18]]);
+// // Output: [[1, 6], [8, 10], [15, 18]]
+
+// mergeIntervals([[1, 4], [4, 5]]);
+// // Output: [[1, 5]]
+
+let mergeIntervals = (intervals) => {
+  if (!intervals.length) return [];
+
+
+  intervals.sort((a, b) => a[0] - b[0]);
+
+  let merged = [intervals[0]]; 
+
+
+  for (let i = 1; i < intervals.length; i++) {
+    let lastMerged = merged[merged.length - 1];
+    let current = intervals[i];
+
+    if (current[0] <= lastMerged[1]) {
+      lastMerged[1] = Math.max(lastMerged[1], current[1]);
+    } else {
+      merged.push(current);
     }
   }
-  return max;
-}
 
-let test = [3,5,7,9,8,6,4,2,12,14,16]
-
-console.log(longestSequence(test))
+  return merged;
+};
