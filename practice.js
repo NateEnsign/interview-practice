@@ -2071,10 +2071,20 @@
 // fizzBuzz(30)
 
 
-let reverseWords = (str) => {
-  return str.split(' ').map((word) => word.split('').reverse().join('')).join(' ')
+// let reverseWords = (str) => {
+//   return str.split(' ').map((word) => word.split('').reverse().join('')).join(' ')
+// }
+
+// let test = 'Hey lets see if this works!'
+
+// console.log(reverseWords(test))
+
+
+let mergeArrays = (arr1,arr2) => {
+  return [...arr1,...arr2].sort((a,b) => a - b)
 }
 
-let test = 'Hey lets see if this works!'
+let array1 = [1,3,5,7,9];
+let array2 = [2,4,6,8,10];
 
-console.log(reverseWords(test))
+console.log(mergeArrays(array1,array2))
