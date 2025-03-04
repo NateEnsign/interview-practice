@@ -2080,11 +2080,28 @@
 // console.log(reverseWords(test))
 
 
-let mergeArrays = (arr1,arr2) => {
-  return [...arr1,...arr2].sort((a,b) => a - b)
-}
+// let mergeArrays = (arr1,arr2) => {
+//   return [...arr1,...arr2].sort((a,b) => a - b)
+// }
 
-let array1 = [1,3,5,7,9];
-let array2 = [2,4,6,8,10];
+// let array1 = [1,3,5,7,9];
+// let array2 = [2,4,6,8,10];
 
-console.log(mergeArrays(array1,array2))
+// console.log(mergeArrays(array1,array2))
+
+
+// First Factorial
+// Hide Question
+// Have the function FirstFactorial(num) take the num parameter being passed and return the factorial of it. For example: if num = 4, then your program should return (4 * 3 * 2 * 1) = 24. For the test cases, the range will be between 1 and 18 and the input will always be an integer.
+
+
+function FirstFactorial(num) { 
+  let answer = 1;
+  
+  while (num > 1){
+    answer = answer*num;
+    num--
+  }
+  return answer;
+  
+  }
