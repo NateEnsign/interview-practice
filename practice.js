@@ -2095,13 +2095,31 @@
 // Have the function FirstFactorial(num) take the num parameter being passed and return the factorial of it. For example: if num = 4, then your program should return (4 * 3 * 2 * 1) = 24. For the test cases, the range will be between 1 and 18 and the input will always be an integer.
 
 
-function FirstFactorial(num) { 
-  let answer = 1;
+// function FirstFactorial(num) { 
+//   let answer = 1;
   
-  while (num > 1){
-    answer = answer*num;
-    num--
-  }
-  return answer;
+//   while (num > 1){
+//     answer = answer*num;
+//     num--
+//   }
+//   return answer;
   
-  }
+//   }
+
+
+// Longest Word
+// Hide Question
+// Have the function LongestWord(sen) take the sen parameter being passed and return the longest word in the string. If there are two or more words that are the same length, return the first word from the string with that length. Ignore punctuation and assume sen will not be empty. Words may also contain numbers, for example "Hello world123 567"
+
+
+
+
+function LongestWord(sen) { 
+  let arr = sen.split(' ').map((x) => x.replace(/[^a-zA-Z1-9]/g, ''));
+ let answer = arr[0]
+for (let i = 0; i < arr.length; i++){
+  if (arr[i].length > answer.length) answer = arr[i];
+}
+  return answer; 
+
+}
