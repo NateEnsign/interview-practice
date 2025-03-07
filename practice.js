@@ -2179,18 +2179,47 @@
 // Write a function that returns the first non-repeating character in a given string. If all characters repeat, return null.
 
 
-let firstNonRepeat = (str) => {
-  let charCount = {};
+// let firstNonRepeat = (str) => {
+//   let charCount = {};
 
-  for (let char of str) {
-    charCount[char] = (charCount[char] || 0) + 1;
+//   for (let char of str) {
+//     charCount[char] = (charCount[char] || 0) + 1;
+//   }
+
+//   for (let char of str) {
+//     if (charCount[char] === 1) {
+//       return char;
+//     }
+//   }
+
+//   return null;
+// };
+
+
+// Sliding Window Coding Challenge (Easy)
+// Problem:
+// Given an array of integers, return the maximum sum of any contiguous subarray of 3 .
+
+// Example 1:
+
+// Input: arr = [2, 1, 5, 1, 3, 2]
+// Output: 9  
+// Explanation: The subarray `[5, 1, 3]` has the maximum sum of `9`.  
+
+
+const maxSum = (arr) => {
+  let answer = 0;
+
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] + arr[i+1] + arr[i+2] > answer) answer = arr[i] + arr[i+1] + arr[i+2]
   }
+  return answer;
+}
 
-  for (let char of str) {
-    if (charCount[char] === 1) {
-      return char;
-    }
-  }
+let array = [1,5,5,5,4,3,2,1]
 
-  return null;
-};
+console.log(maxSum(array))
+
+
+
+
