@@ -2168,8 +2168,29 @@
 
 // For example: if str is "BOB loves-coding" then your program should return the string bob_loves_coding....undefined Be sure to use a variable named varFiltersCg
 
-function SnakeCase(str) { 
-  str = str.replace(/[^a-zA-Z]/g, ' ').toLowerCase().replaceAll(' ', '_');
+// function SnakeCase(str) { 
+//   str = str.replace(/[^a-zA-Z]/g, ' ').toLowerCase().replaceAll(' ', '_');
   
-  return str;
+//   return str;
+//   }
+
+
+// 1. Find the First Non-Repeating Character
+// Write a function that returns the first non-repeating character in a given string. If all characters repeat, return null.
+
+
+let firstNonRepeat = (str) => {
+  let charCount = {};
+
+  for (let char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
   }
+
+  for (let char of str) {
+    if (charCount[char] === 1) {
+      return char;
+    }
+  }
+
+  return null;
+};
