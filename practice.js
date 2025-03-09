@@ -2340,7 +2340,7 @@
 
 //Solution with O(n) time complexity
 
-const twoSum = (nums,target) => {
+function twoSum(nums,target) {
   let map = new Map();
 
   for (let i = 0; i < nums.length; i++){
@@ -2368,6 +2368,9 @@ const twoSum = (nums,target) => {
 //   }
 //   return answer;
 // };
+
+
+module.exports = { twoSum };
 
 
 
