@@ -2267,29 +2267,50 @@
 // Output: 9  
 // Explanation: The subarray `[5, 1, 3]` has the maximum sum of `9`.  
 
-const maxSum = (arr,k) => {
-  let answer = 0;
-  let sum = 0;
+// const maxSum = (arr,k) => {
+//   let answer = 0;
+//   let sum = 0;
 
-  for (let i = 0; i < k; i++){
-    sum += arr[i];
+//   for (let i = 0; i < k; i++){
+//     sum += arr[i];
+//   }
+//   answer = sum;
+
+//   for (let i = k; i < arr.length; i++){
+//    sum += arr[i] - arr[i-k];
+//    answer = Math.max(answer,sum);
+//   }
+//   return answer;
+// }
+
+
+
+
+// let array = [1,5,5,5,4,3,2,1,6,7,8]
+
+// console.log(maxSum(array,3))
+
+
+
+// 1. Find the First Non-Repeating Character
+// Write a function that returns the first non-repeating character in a given string. If all characters repeat, return null.
+
+
+let firstNonRepeat = (str) => {
+  let charCount = {};
+
+  for (let char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
   }
-  answer = sum;
 
-  for (let i = k; i < arr.length; i++){
-   sum += arr[i] - arr[i-k];
-   answer = Math.max(answer,sum);
+  for (let char of str) {
+    if (charCount[char] === 1) {
+      return char;
+    }
   }
-  return answer;
-}
 
-
-
-
-let array = [1,5,5,5,4,3,2,1,6,7,8]
-
-console.log(maxSum(array,3))
-
+  return null;
+};
 
 
 
