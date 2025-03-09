@@ -12,3 +12,7 @@ test('handles negative numbers', () => {
 test('works with duplicate numbers', () => {
     expect(twoSum([3,5,6,7,3],6)).toEqual([0,4])
 })
+
+test('returns empty array when input array is empty', () => {
+    expect(twoSum([],5)).toEqual([]);
+})
