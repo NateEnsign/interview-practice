@@ -2338,23 +2338,36 @@
 // Output: [0,1]
 // Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
+//Solution with O(n) time complexity
+
+const twoSum = (nums,target) => {
+  let map = new Map();
+
+  for (let i = 0; i < nums.length; i++){
+    let complement = target - nums[i];
+    if (map.has(complement)) {
+      return [map.get(complement), i];
+    }
+    map.set(nums[i], i);
+  }
+  return [];
+}
 
 //Brute force method:
 
+// const twoSum = (nums, target) => {
+//   let answer = [];
 
-const twoSum = (nums, target) => {
-  let answer = [];
-
-  for (let i = 0; i < nums.length; i++){
-      for (let j = 1; j < nums.length; j++){
-          if (nums[i] + nums[j] === target && answer.length < 2){
-              answer.push(i);
-              answer.push(j);
-          }
-      }
-  }
-  return answer;
-};
+//   for (let i = 0; i < nums.length; i++){
+//       for (let j = 1; j < nums.length; j++){
+//           if (nums[i] + nums[j] === target && answer.length < 2){
+//               answer.push(i);
+//               answer.push(j);
+//           }
+//       }
+//   }
+//   return answer;
+// };
 
 
 
