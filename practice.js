@@ -2296,21 +2296,34 @@
 // Write a function that returns the first non-repeating character in a given string. If all characters repeat, return null.
 
 
-let firstNonRepeat = (str) => {
-  let charCount = {};
+// let firstNonRepeat = (str) => {
+//   let charCount = {};
 
-  for (let char of str) {
-    charCount[char] = (charCount[char] || 0) + 1;
+//   for (let char of str) {
+//     charCount[char] = (charCount[char] || 0) + 1;
+//   }
+
+//   for (let char of str) {
+//     if (charCount[char] === 1) {
+//       return char;
+//     }
+//   }
+
+//   return null;
+// };
+
+
+// Have the function SnakeCase(str) take the str parameter being passed and return it in proper snake case format where each word is lowercased and separated from adjacent words via an underscore. The string will only contain letters and some combination of delimiter punctuation characters separating each word.
+
+// For example: if str is "BOB loves-coding" then your program should return the string bob_loves_coding....undefined Be sure to use a variable named varFiltersCg
+
+function SnakeCase(str) { 
+  str = str.replace(/[^a-zA-Z]/g, ' ').toLowerCase().replaceAll(' ', '_');
+  
+  return str;
   }
 
-  for (let char of str) {
-    if (charCount[char] === 1) {
-      return char;
-    }
-  }
 
-  return null;
-};
 
 
 
