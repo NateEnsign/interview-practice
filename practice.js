@@ -2232,28 +2232,66 @@
 // Explanation: The subarray `[5, 1, 3]` has the maximum sum of `9`.  
 
 
+// const maxSum = (arr,k) => {
+//   let answer = 0;
+//   let windowSum = 0;
+
+//   if (arr.length < k) return null;
+
+//   for (let i = 0; i < k; i++){
+//     windowSum += arr[i];
+//   }
+//   answer = windowSum;
+
+//   for (let i = k; i < arr.length; i++){
+//    windowSum += arr[i] - arr[i - k];
+//    answer = Math.max(windowSum, answer);
+//   }
+//   return answer;
+// }
+
+
+// let array = [1,5,5,5,4,3,2,1]
+
+// console.log(maxSum(array,17))
+
+
+
+// Sliding Window Coding Challenge (Easy)
+// Problem:
+// Given an array of integers and a number k, return the maximum sum of any contiguous subarray of length k.
+
+// Example 1:
+
+// Input: arr = [2, 1, 5, 1, 3, 2], k = 3  
+// Output: 9  
+// Explanation: The subarray `[5, 1, 3]` has the maximum sum of `9`.  
+
 const maxSum = (arr,k) => {
   let answer = 0;
-  let windowSum = 0;
-
-  if (arr.length < k) return null;
+  let sum = 0;
 
   for (let i = 0; i < k; i++){
-    windowSum += arr[i];
+    sum += arr[i];
   }
-  answer = windowSum;
+  answer = sum;
 
   for (let i = k; i < arr.length; i++){
-   windowSum += arr[i] - arr[i - k];
-   answer = Math.max(windowSum, answer);
+   sum += arr[i] - arr[i-k];
+   answer = Math.max(answer,sum);
   }
   return answer;
 }
 
 
-let array = [1,5,5,5,4,3,2,1]
 
-console.log(maxSum(array,17))
+
+let array = [1,5,5,5,4,3,2,1,6,7,8]
+
+console.log(maxSum(array,3))
+
+
+
 
 
 
