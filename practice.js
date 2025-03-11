@@ -2340,18 +2340,18 @@
 
 //Solution with O(n) time complexity
 
-function twoSum(nums,target) {
-  let map = new Map();
+// function twoSum(nums,target) {
+//   let map = new Map();
 
-  for (let i = 0; i < nums.length; i++){
-    let complement = target - nums[i];
-    if (map.has(complement)) {
-      return [map.get(complement), i];
-    }
-    map.set(nums[i], i);
-  }
-  return [];
-}
+//   for (let i = 0; i < nums.length; i++){
+//     let complement = target - nums[i];
+//     if (map.has(complement)) {
+//       return [map.get(complement), i];
+//     }
+//     map.set(nums[i], i);
+//   }
+//   return [];
+// }
 
 //Brute force method:
 
@@ -2368,6 +2368,41 @@ function twoSum(nums,target) {
 //   }
 //   return answer;
 // };
+
+
+// let twoSum = (nums,target) => {
+//   let map = new Map();
+
+//   for (let i = 0; i < nums.length; i++){
+//     let complement = target - nums[i];
+
+//     if (map.has(complement)) return ([map.get(complement), i]);
+
+//     map.set(nums[i], i);
+//   }
+//   return [];
+// }
+
+
+// Find the First Non-Repeating Character
+// Problem:
+// Given a string, find the first character that appears only once and return it. If there are no unique characters, return null.
+
+const firstUniqueChar = (s) => {
+  const charCount = new Map();
+
+  for (let char of s) {
+    charCount.set(char, (charCount.get(char) || 0) + 1);
+  }
+
+  for (let char of s) {
+    if (charCount.get(char) === 1) {
+      return char;
+    }
+  }
+
+  return null;
+};
 
 
 module.exports = { twoSum };
