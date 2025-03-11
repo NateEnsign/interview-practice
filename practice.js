@@ -2405,7 +2405,7 @@ const firstUniqueChar = (s) => {
 };
 
 
-module.exports = { twoSum };
+module.exports = { firstUniqueChar };
 
 
 
