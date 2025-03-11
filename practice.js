@@ -2388,21 +2388,56 @@
 // Problem:
 // Given a string, find the first character that appears only once and return it. If there are no unique characters, return null.
 
-const firstUniqueChar = (s) => {
-  const charCount = new Map();
+// const firstUniqueChar = (s) => {
+//   const charCount = new Map();
 
-  for (let char of s) {
-    charCount.set(char, (charCount.get(char) || 0) + 1);
-  }
+//   for (let char of s) {
+//     charCount.set(char, (charCount.get(char) || 0) + 1);
+//   }
 
-  for (let char of s) {
-    if (charCount.get(char) === 1) {
-      return char;
+//   for (let char of s) {
+//     if (charCount.get(char) === 1) {
+//       return char;
+//     }
+//   }
+
+//   return null;
+// };
+
+
+// Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+// You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+// You can return the answer in any order.
+
+ 
+
+// Example 1:
+
+// Input: nums = [2,7,11,15], target = 9
+// Output: [0,1]
+// Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+
+const twoSum = (nums, target) => {
+  let map = new Map(); // Store numbers and their indices
+
+  for (let i = 0; i < nums.length; i++) {
+    let complement = target - nums[i]; // Find the number needed to reach the target
+
+    if (map.has(complement)) {
+      return [map.get(complement), i]; // Return the indices of the two numbers
     }
+
+    map.set(nums[i], i); // Store the current number and its index
   }
 
-  return null;
+  return []; // Edge case (not needed per problem statement, but good practice)
 };
+
+// Test case
+console.log(twoSum([2, 7, 11, 15], 9)); 
 
 
 module.exports = { firstUniqueChar };
