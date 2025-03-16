@@ -2420,27 +2420,44 @@
 // Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
 
-const twoSum = (nums, target) => {
-  let map = new Map(); // Store numbers and their indices
+// const twoSum = (nums, target) => {
+//   let map = new Map(); // Store numbers and their indices
 
-  for (let i = 0; i < nums.length; i++) {
-    let complement = target - nums[i]; // Find the number needed to reach the target
+//   for (let i = 0; i < nums.length; i++) {
+//     let complement = target - nums[i]; // Find the number needed to reach the target
 
-    if (map.has(complement)) {
-      return [map.get(complement), i]; // Return the indices of the two numbers
-    }
+//     if (map.has(complement)) {
+//       return [map.get(complement), i]; // Return the indices of the two numbers
+//     }
 
-    map.set(nums[i], i); // Store the current number and its index
+//     map.set(nums[i], i); // Store the current number and its index
+//   }
+
+//   return []; // Edge case (not needed per problem statement, but good practice)
+// };
+
+// // Test case
+// console.log(twoSum([2, 7, 11, 15], 9)); 
+
+
+let fibonacciSequence = (num) => {
+  let arr = [0,1];
+
+  if (num <= 0) return 'Please enter positive integer';
+  if (num === 1) return [0];
+  if (num === 2) return arr;
+
+  while (num > 2){
+    arr.push(arr.slice(-2).reduce((a,b) => a + b))
+    num--;
   }
+  return arr;
+}
 
-  return []; // Edge case (not needed per problem statement, but good practice)
-};
-
-// Test case
-console.log(twoSum([2, 7, 11, 15], 9)); 
+console.log(fibonacciSequence(10))
 
 
-module.exports = { firstUniqueChar };
+// module.exports = { firstUniqueChar };
 
 
 

@@ -22,24 +22,24 @@
 // })
 
 
-const { firstUniqueChar } = require('./practice.js');
+// const { firstUniqueChar } = require('./practice.js');
 
-test('Finds first unique char for standard case', () => {
-    expect(firstUniqueChar('aassdffgg')).toEqual('d')
-})
+// test('Finds first unique char for standard case', () => {
+//     expect(firstUniqueChar('aassdffgg')).toEqual('d')
+// })
 
-test('return null for no no unique characters', () => {
-    expect(firstUniqueChar('aabbccdd')).toEqual(null)
-})
+// test('return null for no no unique characters', () => {
+//     expect(firstUniqueChar('aabbccdd')).toEqual(null)
+// })
 
-test('First character is unique', () => {
-    expect(firstUniqueChar('abbccddee')).toEqual('a')
-})
+// test('First character is unique', () => {
+//     expect(firstUniqueChar('abbccddee')).toEqual('a')
+// })
 
-test('Last character is unqiue', () => {
-    expect(firstUniqueChar('aabbccdde')).toEqual('e')
-})
+// test('Last character is unqiue', () => {
+//     expect(firstUniqueChar('aabbccdde')).toEqual('e')
+// })
 
-test('Returns first of multipl unique characters', () => {
-    expect(firstUniqueChar('abbccdde')).toEqual('a')
-})
+// test('Returns first of multipl unique characters', () => {
+//     expect(firstUniqueChar('abbccdde')).toEqual('a')
+// })
