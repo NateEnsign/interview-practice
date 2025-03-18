@@ -2440,6 +2440,24 @@
 // console.log(twoSum([2, 7, 11, 15], 9)); 
 
 
+// let fibonacciSequence = (num) => {
+//   let arr = [0,1];
+
+//   if (num <= 0) return 'Please enter positive integer';
+//   if (num === 1) return [0];
+//   if (num === 2) return arr;
+
+//   while (num > 2){
+//     arr.push(arr.slice(-2).reduce((a,b) => a + b))
+//     num--;
+//   }
+//   return arr;
+// }
+
+// console.log(fibonacciSequence(10))
+
+
+
 let fibonacciSequence = (num) => {
   let arr = [0,1];
 
