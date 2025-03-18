@@ -22,7 +22,7 @@
 // })
 
 
-// const { firstUniqueChar } = require('./practice.js');
+
 
 // test('Finds first unique char for standard case', () => {
 //     expect(firstUniqueChar('aassdffgg')).toEqual('d')
@@ -43,3 +43,10 @@
 // test('Returns first of multipl unique characters', () => {
 //     expect(firstUniqueChar('abbccdde')).toEqual('a')
 // })
+
+
+const { changeToCamelCase } = require('./practice.js');
+
+test('Changes to camel case from standard string', () => {
+    expect(changeToCamelCase('Hey this should be a good test')).toEqual('heyThisShouldBeAGoodTest')
+})

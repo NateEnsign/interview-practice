@@ -2523,7 +2523,7 @@ let changeToCamelCase = (str) => {
 console.log(changeToCamelCase('hey This should_be-Fun'))
 
 
-// module.exports = { firstUniqueChar };
+module.exports = { changeToCamelCase };
 
 
 
