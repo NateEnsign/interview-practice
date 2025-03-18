@@ -2480,18 +2480,18 @@
 // fizzBuzz(30)
 
 
-let anagramCheck = (str1,str2) => {
-  if (str1.length !== str2.length) return false;
+// let anagramCheck = (str1,str2) => {
+//   if (str1.length !== str2.length) return false;
 
-  let arr = str2.split('');
+//   let arr = str2.split('');
 
-  return arr.every(x => str1.includes(x))
-}
+//   return arr.every(x => str1.includes(x))
+// }
 
-let one = 'abcdefg';
-let two = 'gfedcba';
+// let one = 'abcdefg';
+// let two = 'gfedcba';
 
-console.log(anagramCheck(one,two))
+// console.log(anagramCheck(one,two))
 
 
 
@@ -2510,6 +2510,17 @@ console.log(anagramCheck(one,two))
 // }
 
 // console.log(fibonacciSequence(10))
+
+
+//Change input string to camel case
+
+let changeToCamelCase = (str) => {
+  let arr = str.toLowerCase().split(/[^a-zA-Z]/g)
+
+  return arr.map((word,i) => i === 0 ? word : word.split('').map((letter,i) => i === 0 ? letter[i].toUpperCase() : letter).join('')).join('')
+}
+
+console.log(changeToCamelCase('hey This should_be-Fun'))
 
 
 // module.exports = { firstUniqueChar };
