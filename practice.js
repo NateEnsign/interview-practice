@@ -2515,7 +2515,7 @@
 //Change input string to camel case
 
 let changeToCamelCase = (str) => {
-  let arr = str.toLowerCase().split(/[^a-zA-Z]/g)
+  let arr = str.trim().toLowerCase().split(/[^a-zA-Z]/g)
 
   return arr.map((word,i) => i === 0 ? word : word.split('').map((letter,i) => i === 0 ? letter[i].toUpperCase() : letter).join('')).join('')
 }

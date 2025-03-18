@@ -58,3 +58,7 @@ test('Changes to camel case from snake case', () => {
 test('Changes to camel case from title case', () => {
     expect(changeToCamelCase('change-this-please')).toEqual('changeThisPlease')
 })
+
+test('Changes to camel case from combo of others plus white space', () => {
+    expect(changeToCamelCase(' Down with-the_king')).toEqual('downWithTheKing')
+})
