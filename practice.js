@@ -2520,7 +2520,7 @@ let changeToCamelCase = (str) => {
   return arr.map((word,i) => i === 0 ? word : word.split('').map((letter,i) => i === 0 ? letter[i].toUpperCase() : letter).join('')).join('')
 }
 
-console.log(changeToCamelCase('hey This should_be-Fun'))
+console.log(changeToCamelCase('now_we_try_snake_case'))
 
 
 module.exports = { changeToCamelCase };

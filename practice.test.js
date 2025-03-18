@@ -50,3 +50,11 @@ const { changeToCamelCase } = require('./practice.js');
 test('Changes to camel case from standard string', () => {
     expect(changeToCamelCase('Hey this should be a good test')).toEqual('heyThisShouldBeAGoodTest')
 })
+
+test('Changes to camel case from snake case', () => {
+    expect(changeToCamelCase('now_we_try_snake_case')).toEqual('nowWeTrySnakeCase')
+})
+
+test('Changes to camel case from title case', () => {
+    expect(changeToCamelCase('change-this-please')).toEqual('changeThisPlease')
+})
