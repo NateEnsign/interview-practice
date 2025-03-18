@@ -2471,13 +2471,27 @@
 // }
 
 
-let fizzBuzz = (num) => {
-  for (let i = 1; i <= num; i++){
-    console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
-  }
+// let fizzBuzz = (num) => {
+//   for (let i = 1; i <= num; i++){
+//     console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
+//   }
+// }
+
+// fizzBuzz(30)
+
+
+let anagramCheck = (str1,str2) => {
+  if (str1.length !== str2.length) return false;
+
+  let arr = str2.split('');
+
+  return arr.every(x => str1.includes(x))
 }
 
-fizzBuzz(30)
+let one = 'abcdefg';
+let two = 'gfedcba';
+
+console.log(anagramCheck(one,two))
 
 
 
