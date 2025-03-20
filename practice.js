@@ -2514,16 +2514,26 @@
 
 //Change input string to camel case
 
-let changeToCamelCase = (str) => {
-  let arr = str.trim().toLowerCase().split(/[^a-zA-Z]/g)
+// let changeToCamelCase = (str) => {
+//   let arr = str.trim().toLowerCase().split(/[^a-zA-Z]/g)
 
-  return arr.map((word,i) => i === 0 ? word : word.split('').map((letter,i) => i === 0 ? letter[i].toUpperCase() : letter).join('')).join('')
+//   return arr.map((word,i) => i === 0 ? word : word.split('').map((letter,i) => i === 0 ? letter[i].toUpperCase() : letter).join('')).join('')
+// }
+
+// console.log(changeToCamelCase('now_we_try_snake_case'))
+
+
+const mergeArrays = (arr1,arr2) => {
+  return [...arr1,...arr2].sort((a,b) => a - b)
 }
 
-console.log(changeToCamelCase('now_we_try_snake_case'))
+let array1 = [1,3,5,7,9]
+let array2 = [2,4,6,8,10]
+
+console.log(mergeArrays(array1,array2))
 
 
-module.exports = { changeToCamelCase };
+// module.exports = { changeToCamelCase };
 
 
 
