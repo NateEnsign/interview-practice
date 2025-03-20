@@ -2551,20 +2551,37 @@
 // console.log(reverseWords(test))
 
 
-const fibonacciSequence = (num) => {
-  let fib1 = 0;
-  let fib2 = 1;
-  let nextFib;
-  let arr = [];
+// const fibonacciSequence = (num) => {
+//   let fib1 = 0;
+//   let fib2 = 1;
+//   let nextFib;
+//   let arr = [];
 
-  for (let i = 0; i < num; i++){
-    arr.push(fib1);
-    nextFib = fib1 + fib2;
-    fib1 = fib2;
-    fib2 = nextFib;
+//   for (let i = 0; i < num; i++){
+//     arr.push(fib1);
+//     nextFib = fib1 + fib2;
+//     fib1 = fib2;
+//     fib2 = nextFib;
+//   }
+//   return arr;
+
+// }
+
+// console.log(fibonacciSequence(10))
+
+
+let fibonacciSequence = (num) => {
+  let arr = [0,1];
+
+  if (num <= 0) return 'Please enter positive integer';
+  if (num === 1) return [0];
+  if (num === 2) return arr;
+
+  while (num > 2){
+    arr.push(arr.slice(-2).reduce((a,b) => a + b));
+    num--;
   }
   return arr;
-
 }
 
 console.log(fibonacciSequence(10))
