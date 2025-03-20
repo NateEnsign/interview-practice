@@ -2570,21 +2570,39 @@
 // console.log(fibonacciSequence(10))
 
 
-let fibonacciSequence = (num) => {
-  let arr = [0,1];
+// let fibonacciSequence = (num) => {
+//   let arr = [0,1];
 
-  if (num <= 0) return 'Please enter positive integer';
-  if (num === 1) return [0];
-  if (num === 2) return arr;
+//   if (num <= 0) return 'Please enter positive integer';
+//   if (num === 1) return [0];
+//   if (num === 2) return arr;
 
-  while (num > 2){
-    arr.push(arr.slice(-2).reduce((a,b) => a + b));
-    num--;
+//   while (num > 2){
+//     arr.push(arr.slice(-2).reduce((a,b) => a + b));
+//     num--;
+//   }
+//   return arr;
+// }
+
+// console.log(fibonacciSequence(10))
+
+
+const maxSum = (arr) => {
+  let currSum = 0;
+  let answer = 0;
+
+  for (let i = 0; i < arr.length; i++){
+    currSum = arr[i] + arr[i+1] + arr[i+2];
+
+    if (currSum > answer) answer = currSum;
+    currSum = 0;
   }
-  return arr;
+  return answer;
 }
 
-console.log(fibonacciSequence(10))
+let test = [1,2,3,4,5,6,5,4,3,2,1,9,9,9]
+
+console.log(maxSum(test))
 
 
 // module.exports = { changeToCamelCase };
