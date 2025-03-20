@@ -2542,13 +2542,32 @@
 // fizzBuzz(30)
 
 
-const reverseWords = (str) => {
-  return str.split(' ').map((word) => word.split('').reverse().join('')).join(' ')
+// const reverseWords = (str) => {
+//   return str.split(' ').map((word) => word.split('').reverse().join('')).join(' ')
+// }
+
+// let test = 'Hey you should offer me a job!'
+
+// console.log(reverseWords(test))
+
+
+const fibonacciSequence = (num) => {
+  let fib1 = 0;
+  let fib2 = 1;
+  let nextFib;
+  let arr = [];
+
+  for (let i = 0; i < num; i++){
+    arr.push(fib1);
+    nextFib = fib1 + fib2;
+    fib1 = fib2;
+    fib2 = nextFib;
+  }
+  return arr;
+
 }
 
-let test = 'Hey you should offer me a job!'
-
-console.log(reverseWords(test))
+console.log(fibonacciSequence(10))
 
 
 // module.exports = { changeToCamelCase };
