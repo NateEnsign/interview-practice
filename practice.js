@@ -2649,17 +2649,33 @@
 
 // console.log(uniqueElements(test))
 
-const anagramCheck = (str1,str2) => {
-  let sortedStr1 = str1.toLowerCase().split('').sort().join('');
-  let sortedStr2 = str2.toLowerCase().split('').sort().join('');
+// const anagramCheck = (str1,str2) => {
+//   let sortedStr1 = str1.toLowerCase().split('').sort().join('');
+//   let sortedStr2 = str2.toLowerCase().split('').sort().join('');
 
-  return sortedStr1 === sortedStr2;
+//   return sortedStr1 === sortedStr2;
+// }
+
+// let string1 = 'qwert';
+// let string2 = 'tqrdwe';
+
+// console.log(anagramCheck(string1,string2))
+
+
+const numberOfVowels = (str) => {
+  let count = 0;
+
+  str = str.toLowerCase();
+
+  for (let i = 0; i < str.length; i++){
+    if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u') count++;
+  }
+  return count;
 }
 
-let string1 = 'qwert';
-let string2 = 'tqrdwe';
+let test = 'bookaeiouUI'
 
-console.log(anagramCheck(string1,string2))
+console.log(numberOfVowels(test))
 
 
 // module.exports = { changeToCamelCase };
