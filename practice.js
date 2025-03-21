@@ -2614,21 +2614,31 @@
 // console.log(reverseString(test));
 
 
-const longestWord = (str) => {
-  let arr = str.replace(/[.!?-]/g, '').split(' ');
+// const longestWord = (str) => {
+//   let arr = str.replace(/[.!?-]/g, '').split(' ');
 
-  let longest = arr[0];
+//   let longest = arr[0];
 
-  for (let i = 0; i < arr.length; i++){
-    if (arr[i].length > longest.length) longest = arr[i];
-  }
+//   for (let i = 0; i < arr.length; i++){
+//     if (arr[i].length > longest.length) longest = arr[i];
+//   }
 
-  return longest;
+//   return longest;
+// }
+
+// let test = 'Which one of these will be the lon-gest?'
+
+// console.log(longestWord(test))
+
+const isPalindrome = (str) => {
+  let reverseStr = str.split('').reverse().join('');
+
+  return str === reverseStr;
 }
 
-let test = 'Which one of these will be the lon-gest?'
+let test = 'raceca';
 
-console.log(longestWord(test))
+console.log(isPalindrome(test))
 
 
 // module.exports = { changeToCamelCase };
