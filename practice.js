@@ -2605,13 +2605,30 @@
 // console.log(maxSum(test))
 
 
-const reverseString = (str) => {
-  return str.split('').reverse().join('');
+// const reverseString = (str) => {
+//   return str.split('').reverse().join('');
+// }
+
+// let test = 'Hey this should be fun'
+
+// console.log(reverseString(test));
+
+
+const longestWord = (str) => {
+  let arr = str.replace(/[.!?-]/g, '').split(' ');
+
+  let longest = arr[0];
+
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i].length > longest.length) longest = arr[i];
+  }
+
+  return longest;
 }
 
-let test = 'Hey this should be fun'
+let test = 'Which one of these will be the lon-gest?'
 
-console.log(reverseString(test));
+console.log(longestWord(test))
 
 
 // module.exports = { changeToCamelCase };
