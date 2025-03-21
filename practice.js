@@ -2641,13 +2641,25 @@
 // console.log(isPalindrome(test))
 
 
-const uniqueElements = (arr) => {
- return [...new Set(arr)]
+// const uniqueElements = (arr) => {
+//  return [...new Set(arr)]
+// }
+
+// let test = [1,2,3,4,5,5,6,7]
+
+// console.log(uniqueElements(test))
+
+const anagramCheck = (str1,str2) => {
+  let sortedStr1 = str1.toLowerCase().split('').sort().join('');
+  let sortedStr2 = str2.toLowerCase().split('').sort().join('');
+
+  return sortedStr1 === sortedStr2;
 }
 
-let test = [1,2,3,4,5,5,6,7]
+let string1 = 'qwert';
+let string2 = 'tqrdwe';
 
-console.log(uniqueElements(test))
+console.log(anagramCheck(string1,string2))
 
 
 // module.exports = { changeToCamelCase };
