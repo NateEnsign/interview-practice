@@ -2630,15 +2630,24 @@
 
 // console.log(longestWord(test))
 
-const isPalindrome = (str) => {
-  let reverseStr = str.split('').reverse().join('');
+// const isPalindrome = (str) => {
+//   let reverseStr = str.split('').reverse().join('');
 
-  return str === reverseStr;
+//   return str === reverseStr;
+// }
+
+// let test = 'raceca';
+
+// console.log(isPalindrome(test))
+
+
+const uniqueElements = (arr) => {
+ return [...new Set(arr)]
 }
 
-let test = 'raceca';
+let test = [1,2,3,4,5,5,6,7]
 
-console.log(isPalindrome(test))
+console.log(uniqueElements(test))
 
 
 // module.exports = { changeToCamelCase };
