@@ -2662,20 +2662,34 @@
 // console.log(anagramCheck(string1,string2))
 
 
-const numberOfVowels = (str) => {
-  let count = 0;
+// const numberOfVowels = (str) => {
+//   let count = 0;
 
-  str = str.toLowerCase();
+//   str = str.toLowerCase();
 
-  for (let i = 0; i < str.length; i++){
-    if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u') count++;
+//   for (let i = 0; i < str.length; i++){
+//     if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u') count++;
+//   }
+//   return count;
+// }
+
+// let test = 'bookaeiouUI'
+
+// console.log(numberOfVowels(test))
+
+
+const largestNumber = (arr) => {
+  let answer = 0;
+
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] > answer) answer = arr[i];
   }
-  return count;
+  return answer;
 }
 
-let test = 'bookaeiouUI'
+let test = [1,2,3,17,4,5,6]
 
-console.log(numberOfVowels(test))
+console.log(largestNumber(test))
 
 
 // module.exports = { changeToCamelCase };
