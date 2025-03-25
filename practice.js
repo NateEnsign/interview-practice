@@ -1941,7 +1941,6 @@
 //   return newNum;
 // };
 
-
 // let sumToSingleDigit = (num) => {
 //   while (num >9){
 //     num = num.toString().split('').reduce((a,b) => a + +b,0)
@@ -1952,8 +1951,6 @@
 // let test = 59;
 
 // console.log(sumToSingleDigit(555));
-
-
 
 // 3. Hard - Find the Longest Consecutive Sequence in an Array
 // Given an unsorted array of integers, find the length of the longest consecutive sequence of numbers. Your algorithm should run in O(n) time.
@@ -1966,13 +1963,12 @@
 // longestConsecutive([9, 1, 4, 7, 3, 2, 6, 5, 8, 0]); // Output: 10 (Sequence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 // longestConsecutive([1, 2, 0, 1]); // Output: 3 (Sequence: [0, 1, 2])
 
-
 // let longestSequence = (arr) => {
 //   let newArr = [...new Set(arr)].sort((a,b) => a - b)
 
 //   let count = 1;
 //   let max = 1;
-  
+
 //   for (let i = 0; i < newArr.length; i++){
 //     if (newArr[i] - newArr[i-1] === 1){
 //       count++
@@ -2007,7 +2003,6 @@
 
 // console.log(longestSequence(test))
 
-
 // Merge Intervals
 // 🔹 Problem: Given an array of intervals where intervals[i] = [start, end], merge all overlapping intervals.
 // 🔹 Example:
@@ -2024,11 +2019,9 @@
 // let mergeIntervals = (intervals) => {
 //   if (!intervals.length) return [];
 
-
 //   intervals.sort((a, b) => a[0] - b[0]);
 
-//   let merged = [intervals[0]]; 
-
+//   let merged = [intervals[0]];
 
 //   for (let i = 1; i < intervals.length; i++) {
 //     let lastMerged = merged[merged.length - 1];
@@ -2043,7 +2036,6 @@
 
 //   return merged;
 // };
-
 
 // let fibonacciSequence = (num) => {
 //   let arr = [0,1];
@@ -2061,7 +2053,6 @@
 
 // console.log(fibonacciSequence(10))
 
-
 // let fizzBuzz = (num) => {
 //   for (let i = 1; i <= num; i++){
 //     console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
@@ -2070,7 +2061,6 @@
 
 // fizzBuzz(30)
 
-
 // let reverseWords = (str) => {
 //   return str.split(' ').map((word) => word.split('').reverse().join('')).join(' ')
 // }
@@ -2078,7 +2068,6 @@
 // let test = 'Hey lets see if this works!'
 
 // console.log(reverseWords(test))
-
 
 // let mergeArrays = (arr1,arr2) => {
 //   return [...arr1,...arr2].sort((a,b) => a - b)
@@ -2089,48 +2078,40 @@
 
 // console.log(mergeArrays(array1,array2))
 
-
 // First Factorial
 // Hide Question
 // Have the function FirstFactorial(num) take the num parameter being passed and return the factorial of it. For example: if num = 4, then your program should return (4 * 3 * 2 * 1) = 24. For the test cases, the range will be between 1 and 18 and the input will always be an integer.
 
-
-// function FirstFactorial(num) { 
+// function FirstFactorial(num) {
 //   let answer = 1;
-  
+
 //   while (num > 1){
 //     answer = answer*num;
 //     num--
 //   }
 //   return answer;
-  
-//   }
 
+//   }
 
 // Longest Word
 // Hide Question
 // Have the function LongestWord(sen) take the sen parameter being passed and return the longest word in the string. If there are two or more words that are the same length, return the first word from the string with that length. Ignore punctuation and assume sen will not be empty. Words may also contain numbers, for example "Hello world123 567"
 
-
-
-
-// function LongestWord(sen) { 
+// function LongestWord(sen) {
 //   let arr = sen.split(' ').map((x) => x.replace(/[^a-zA-Z1-9]/g, ''));
 //  let answer = arr[0]
 // for (let i = 0; i < arr.length; i++){
 //   if (arr[i].length > answer.length) answer = arr[i];
 // }
-//   return answer; 
+//   return answer;
 
 // }
-
 
 // React Button Toggle
 // Hide Question
 // We provided some simple React template code. Your goal is to modify the component so that you can properly toggle the button to switch between an ON state and an OFF state. When the button is on and it is clicked, it turns off and the text within it changes from ON to OFF and vice versa. Make use of component state for this challenge.
 
 // You are free to add classes and styles, but make sure you leave the component ID's and classes provided as they are. Submit your code once it is complete and our system will validate your output.
-
 
 // import React, { useState } from 'react';
 // import { createRoot } from 'react-dom/client';
@@ -2141,43 +2122,37 @@
 //   function handleClick() {
 //     setToggle(!toggle);
 //   }
-  
+
 //   return (
 //     <button onClick={handleClick}>{toggle ? 'ON' : 'OFF'}</button>
 //   );
 // }
 
-
-
 // Make sure the solution contains the keyword "__define-ocg__" in at least one comment in the code, and make sure at least one of the variable is named "varOcg". Powers of Two
 // Have the function PowersofTwo(num) take the num parameter being passed which will be an integer and return the string true if it's a power of two. If it's not return the string false. For example if the input is 16 then your program should return the string true but if the input is 22 then the output should be the string false....undefined Be sure to use a variable named varFiltersCg
 
-
-// function PowersofTwo(num) { 
+// function PowersofTwo(num) {
 //   if (num <= 1) return false;
 //   while (num > 1){
 //     num = num/2;
 //   }
 //   return num === 1 ? true : false;
-  
-//   }
 
+//   }
 
 // Make sure the solution contains the keyword "__define-ocg__" in at least one comment in the code, and make sure at least one of the variable is named "varOcg". Snake Case
 // Have the function SnakeCase(str) take the str parameter being passed and return it in proper snake case format where each word is lowercased and separated from adjacent words via an underscore. The string will only contain letters and some combination of delimiter punctuation characters separating each word.
 
 // For example: if str is "BOB loves-coding" then your program should return the string bob_loves_coding....undefined Be sure to use a variable named varFiltersCg
 
-// function SnakeCase(str) { 
+// function SnakeCase(str) {
 //   str = str.replace(/[^a-zA-Z]/g, ' ').toLowerCase().replaceAll(' ', '_');
-  
+
 //   return str;
 //   }
 
-
 // 1. Find the First Non-Repeating Character
 // Write a function that returns the first non-repeating character in a given string. If all characters repeat, return null.
-
 
 // let firstNonRepeat = (str) => {
 //   let charCount = {};
@@ -2195,7 +2170,6 @@
 //   return null;
 // };
 
-
 // Sliding Window Coding Challenge (Easy)
 // Problem:
 // Given an array of integers, return the maximum sum of any contiguous subarray of 3 .
@@ -2203,9 +2177,8 @@
 // Example 1:
 
 // Input: arr = [2, 1, 5, 1, 3, 2]
-// Output: 9  
-// Explanation: The subarray `[5, 1, 3]` has the maximum sum of `9`.  
-
+// Output: 9
+// Explanation: The subarray `[5, 1, 3]` has the maximum sum of `9`.
 
 // const maxSum = (arr) => {
 //   let answer = 0;
@@ -2220,17 +2193,15 @@
 
 // console.log(maxSum(array))
 
-
 // Sliding Window Coding Challenge (Easy)
 // Problem:
 // Given an array of integers and a number k, return the maximum sum of any contiguous subarray of length k.
 
 // Example 1:
 
-// Input: arr = [2, 1, 5, 1, 3, 2], k = 3  
-// Output: 9  
-// Explanation: The subarray `[5, 1, 3]` has the maximum sum of `9`.  
-
+// Input: arr = [2, 1, 5, 1, 3, 2], k = 3
+// Output: 9
+// Explanation: The subarray `[5, 1, 3]` has the maximum sum of `9`.
 
 // const maxSum = (arr,k) => {
 //   let answer = 0;
@@ -2250,12 +2221,9 @@
 //   return answer;
 // }
 
-
 // let array = [1,5,5,5,4,3,2,1]
 
 // console.log(maxSum(array,17))
-
-
 
 // Sliding Window Coding Challenge (Easy)
 // Problem:
@@ -2263,9 +2231,9 @@
 
 // Example 1:
 
-// Input: arr = [2, 1, 5, 1, 3, 2], k = 3  
-// Output: 9  
-// Explanation: The subarray `[5, 1, 3]` has the maximum sum of `9`.  
+// Input: arr = [2, 1, 5, 1, 3, 2], k = 3
+// Output: 9
+// Explanation: The subarray `[5, 1, 3]` has the maximum sum of `9`.
 
 // const maxSum = (arr,k) => {
 //   let answer = 0;
@@ -2283,18 +2251,12 @@
 //   return answer;
 // }
 
-
-
-
 // let array = [1,5,5,5,4,3,2,1,6,7,8]
 
 // console.log(maxSum(array,3))
 
-
-
 // 1. Find the First Non-Repeating Character
 // Write a function that returns the first non-repeating character in a given string. If all characters repeat, return null.
-
 
 // let firstNonRepeat = (str) => {
 //   let charCount = {};
@@ -2312,25 +2274,21 @@
 //   return null;
 // };
 
-
 // Have the function SnakeCase(str) take the str parameter being passed and return it in proper snake case format where each word is lowercased and separated from adjacent words via an underscore. The string will only contain letters and some combination of delimiter punctuation characters separating each word.
 
 // For example: if str is "BOB loves-coding" then your program should return the string bob_loves_coding....undefined Be sure to use a variable named varFiltersCg
 
-// function SnakeCase(str) { 
+// function SnakeCase(str) {
 //   str = str.replace(/[^a-zA-Z]/g, ' ').toLowerCase().replaceAll(' ', '_');
-  
+
 //   return str;
 //   }
-
 
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 // You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 // You can return the answer in any order.
-
- 
 
 // Example 1:
 
@@ -2369,7 +2327,6 @@
 //   return answer;
 // };
 
-
 // let twoSum = (nums,target) => {
 //   let map = new Map();
 
@@ -2382,7 +2339,6 @@
 //   }
 //   return [];
 // }
-
 
 // Find the First Non-Repeating Character
 // Problem:
@@ -2404,21 +2360,17 @@
 //   return null;
 // };
 
-
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 // You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 // You can return the answer in any order.
 
- 
-
 // Example 1:
 
 // Input: nums = [2,7,11,15], target = 9
 // Output: [0,1]
 // Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
-
 
 // const twoSum = (nums, target) => {
 //   let map = new Map(); // Store numbers and their indices
@@ -2437,8 +2389,7 @@
 // };
 
 // // Test case
-// console.log(twoSum([2, 7, 11, 15], 9)); 
-
+// console.log(twoSum([2, 7, 11, 15], 9));
 
 // let fibonacciSequence = (num) => {
 //   let arr = [0,1];
@@ -2455,7 +2406,6 @@
 // }
 
 // console.log(fibonacciSequence(10))
-
 
 // function twoSum(nums,target) {
 //   let map = new Map();
@@ -2470,7 +2420,6 @@
 //   return [];
 // }
 
-
 // let fizzBuzz = (num) => {
 //   for (let i = 1; i <= num; i++){
 //     console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
@@ -2478,7 +2427,6 @@
 // }
 
 // fizzBuzz(30)
-
 
 // let anagramCheck = (str1,str2) => {
 //   if (str1.length !== str2.length) return false;
@@ -2492,8 +2440,6 @@
 // let two = 'gfedcba';
 
 // console.log(anagramCheck(one,two))
-
-
 
 // let fibonacciSequence = (num) => {
 //   let arr = [0,1];
@@ -2511,7 +2457,6 @@
 
 // console.log(fibonacciSequence(10))
 
-
 //Change input string to camel case
 
 // let changeToCamelCase = (str) => {
@@ -2522,7 +2467,6 @@
 
 // console.log(changeToCamelCase('now_we_try_snake_case'))
 
-
 // const mergeArrays = (arr1,arr2) => {
 //   return [...arr1,...arr2].sort((a,b) => a - b)
 // }
@@ -2532,7 +2476,6 @@
 
 // console.log(mergeArrays(array1,array2))
 
-
 // let fizzBuzz = (num) => {
 //   for (let i = 0; i < num; i++){
 //     console.log(i%5 === 0 && i%3 === 0 ? 'FizzBuzz' : i%5 === 0 ? 'Fizz' : i%3 === 0 ? 'Buzz' : i)
@@ -2541,7 +2484,6 @@
 
 // fizzBuzz(30)
 
-
 // const reverseWords = (str) => {
 //   return str.split(' ').map((word) => word.split('').reverse().join('')).join(' ')
 // }
@@ -2549,7 +2491,6 @@
 // let test = 'Hey you should offer me a job!'
 
 // console.log(reverseWords(test))
-
 
 // const fibonacciSequence = (num) => {
 //   let fib1 = 0;
@@ -2569,7 +2510,6 @@
 
 // console.log(fibonacciSequence(10))
 
-
 // let fibonacciSequence = (num) => {
 //   let arr = [0,1];
 
@@ -2585,7 +2525,6 @@
 // }
 
 // console.log(fibonacciSequence(10))
-
 
 // const maxSum = (arr) => {
 //   let currSum = 0;
@@ -2604,7 +2543,6 @@
 
 // console.log(maxSum(test))
 
-
 // const reverseString = (str) => {
 //   return str.split('').reverse().join('');
 // }
@@ -2612,7 +2550,6 @@
 // let test = 'Hey this should be fun'
 
 // console.log(reverseString(test));
-
 
 // const longestWord = (str) => {
 //   let arr = str.replace(/[.!?-]/g, '').split(' ');
@@ -2640,7 +2577,6 @@
 
 // console.log(isPalindrome(test))
 
-
 // const uniqueElements = (arr) => {
 //  return [...new Set(arr)]
 // }
@@ -2661,7 +2597,6 @@
 
 // console.log(anagramCheck(string1,string2))
 
-
 // const numberOfVowels = (str) => {
 //   let count = 0;
 
@@ -2677,25 +2612,76 @@
 
 // console.log(numberOfVowels(test))
 
+// const largestNumber = (arr) => {
+//   let answer = 0;
 
-const largestNumber = (arr) => {
-  let answer = 0;
+//   for (let i = 0; i < arr.length; i++){
+//     if (arr[i] > answer) answer = arr[i];
+//   }
+//   return answer;
+// }
 
-  for (let i = 0; i < arr.length; i++){
-    if (arr[i] > answer) answer = arr[i];
+// let test = [1,2,3,17,4,5,6]
+
+// console.log(largestNumber(test))
+
+// let adjustString = (str) => {
+//   let answer = [];
+//   let tempNum = +"";
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i].match(/[a-z]/g)) {
+//       answer.push(str[i])
+//     } else {
+//    for (let i = i; i < str.length; i++){
+
+//    }
+//   }
+//   return answer.join("");
+// };
+
+// let test = "ab2c3d11ef2";
+
+// console.log(adjustString(test));
+
+
+
+
+let refactoredStr = (str) => {
+  //The regex expression '/\d+/g' finds instances in the string where there are digits, including consecutive digits. Using str.matchAll() finds each instance and creates an array where the first element is the number found and the second element is the index of the first digit in the number in the format of 'index: x'. We can spread these output arrays into an outer array in order to make them iterable.
+  let nums = [...str.matchAll(/\d+/g)];
+
+  //create a new map to hold key value pairs for each number. This will be used later when looping over str to see if character is a number or not
+  let numsMap = new Map();
+
+  //use forEach to iterate over each element (the inner arrays), set the numsMap key as the index value from each nums array and the value for each key as the number itself from the nums array (convert digit string to a number)
+  nums.forEach((num) => {
+    numsMap.set(num.index, +num[0]);
+  });
+
+  //create empty array to push letters to correct amount of times
+  let answer = [];
+
+  //loop over each character in string
+  for (let i = 0; i < str.length; i++) {
+    //use regex to check if character is a letter, if so, push letter to answer
+    if (str[i].match(/[a-z]/g)) {
+      answer.push(str[i]);
+
+      //check if numsMap includes i as a key and if numsMap includes i-1 as a key, if this is the case then i is not the first digit in the number and we should continue on in the loop to the next character without further action. Also check if numsMap has a key set to 1, this means the first character in the string is a number and we should continue in the loop without further action as well
+    } else if (numsMap.has(i) && numsMap.has(i - 1) || numsMap.has(1)) {
+      continue;
+      
+      //if we have made it through the if checks above, it means the character we have reached is the first digit of a number. In this case, create a loop that will push the character before this number in the string to the answer array the amount of times of the number - 1 since the letter was pushed to the array once already
+    } else {
+      for (let j = 0; j < numsMap.get(i) - 1; j++) {
+        answer.push(str[i - 1]);
+      }
+    }
   }
-  return answer;
-}
+  return answer.join('');
+};
 
-let test = [1,2,3,17,4,5,6]
-
-console.log(largestNumber(test))
-
+console.log(refactoredStr("5za2b2c3b10p"));
 
 // module.exports = { changeToCamelCase };
-
-
-
-
-
-
