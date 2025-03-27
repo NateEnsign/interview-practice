@@ -2685,35 +2685,48 @@
 
 // console.log(refactoredStr("5za2b2c3b10p"));
 
-let refactorStr = (str) => {
-  let nums = [...str.matchAll(/\d+/g)]
+// let refactorStr = (str) => {
+//   let nums = [...str.matchAll(/\d+/g)]
 
-  let numsMap = new Map();
+//   let numsMap = new Map();
 
-  nums.forEach((num) => {
-    numsMap.set(num.index, +num[0])
-  });
+//   nums.forEach((num) => {
+//     numsMap.set(num.index, +num[0])
+//   });
 
-  let answer = [];
+//   let answer = [];
+
+//   for (let i = 0; i < str.length; i++){
+//     if (str[i].match(/[a-z]/g)){
+//       answer.push(str[i])
+//     } else if (numsMap.has(i) && numsMap.has(i-1)){
+//       continue;
+//     } else {
+//       for (let j = 0; j < numsMap.get(i) - 1; j++){
+//         answer.push(str[i - 1]);
+//       }
+//     }
+//   }
+//  return answer.join('');
+// }
+
+// console.log(refactorStr('a1b2c3d10'));
+
+
+const numberOfVowels = (str) => {
+  let count = 0;
+
+  str = str.toLowerCase();
 
   for (let i = 0; i < str.length; i++){
-    if (str[i].match(/[a-z]/g)){
-      answer.push(str[i])
-    } else if (numsMap.has(i) && numsMap.has(i-1)){
-      continue;
-    } else {
-      for (let j = 0; j < numsMap.get(i) - 1; j++){
-        answer.push(str[i - 1]);
-      }
-    }
+    if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u') count++;
   }
- return answer.join('');
+  return count;
 }
 
-console.log(refactorStr('7a1b2c3d10'));
+let test = 'bookaeiouUI'
 
-
-
+console.log(numberOfVowels(test))
 
 
 
