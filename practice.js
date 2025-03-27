@@ -2646,42 +2646,89 @@
 
 
 
+// AwardCo code challenge 2
 
-let refactoredStr = (str) => {
-  //The regex expression '/\d+/g' finds instances in the string where there are digits, including consecutive digits. Using str.matchAll() finds each instance and creates an array where the first element is the number found and the second element is the index of the first digit in the number in the format of 'index: x'. We can spread these output arrays into an outer array in order to make them iterable.
-  let nums = [...str.matchAll(/\d+/g)];
+// let refactoredStr = (str) => {
+//   //The regex expression '/\d+/g' finds instances in the string where there are digits, including consecutive digits. Using str.matchAll() finds each instance and creates an array where the first element is the number found and the second element is the index of the first digit in the number in the format of 'index: x'. We can spread these output arrays into an outer array in order to make them iterable.
+//   let nums = [...str.matchAll(/\d+/g)];
 
-  //create a new map to hold key value pairs for each number. This will be used later when looping over str to see if character is a number or not
+//   //create a new map to hold key value pairs for each number. This will be used later when looping over str to see if character is a number or not
+//   let numsMap = new Map();
+
+//   //use forEach to iterate over each element (the inner arrays), set the numsMap key as the index value from each nums array and the value for each key as the number itself from the nums array (convert digit string to a number)
+//   nums.forEach((num) => {
+//     numsMap.set(num.index, +num[0]);
+//   });
+
+//   //create empty array to push letters to correct amount of times
+//   let answer = [];
+
+//   //loop over each character in string
+//   for (let i = 0; i < str.length; i++) {
+//     //use regex to check if character is a letter, if so, push letter to answer
+//     if (str[i].match(/[a-z]/g)) {
+//       answer.push(str[i]);
+
+//       //check if numsMap includes i as a key and if numsMap includes i-1 as a key, if this is the case then i is not the first digit in the number and we should continue on in the loop to the next character without further action. Also check if numsMap has a key set to 1, this means the first character in the string is a number and we should continue in the loop without further action as well
+//     } else if (numsMap.has(i) && numsMap.has(i - 1) || numsMap.has(1)) {
+//       continue;
+
+//       //if we have made it through the if checks above, it means the character we have reached is the first digit of a number. In this case, create a loop that will push the character before this number in the string to the answer array the amount of times of the number - 1 since the letter was pushed to the array once already
+//     } else {
+//       for (let j = 0; j < numsMap.get(i) - 1; j++) {
+//         answer.push(str[i - 1]);
+//       }
+//     }
+//   }
+//   return answer.join('');
+// };
+
+// console.log(refactoredStr("5za2b2c3b10p"));
+
+let refactorStr = (str) => {
+  let nums = [...str.matchAll(/\d+/g)]
+
   let numsMap = new Map();
 
-  //use forEach to iterate over each element (the inner arrays), set the numsMap key as the index value from each nums array and the value for each key as the number itself from the nums array (convert digit string to a number)
   nums.forEach((num) => {
-    numsMap.set(num.index, +num[0]);
+    numsMap.set(num.index, +num[0])
   });
 
-  //create empty array to push letters to correct amount of times
   let answer = [];
 
-  //loop over each character in string
-  for (let i = 0; i < str.length; i++) {
-    //use regex to check if character is a letter, if so, push letter to answer
-    if (str[i].match(/[a-z]/g)) {
-      answer.push(str[i]);
-
-      //check if numsMap includes i as a key and if numsMap includes i-1 as a key, if this is the case then i is not the first digit in the number and we should continue on in the loop to the next character without further action. Also check if numsMap has a key set to 1, this means the first character in the string is a number and we should continue in the loop without further action as well
-    } else if (numsMap.has(i) && numsMap.has(i - 1) || numsMap.has(1)) {
+  for (let i = 0; i < str.length; i++){
+    if (str[i].match(/[a-z]/g)){
+      answer.push(str[i])
+    } else if (numsMap.has(i) && numsMap.has(i-1)){
       continue;
-      
-      //if we have made it through the if checks above, it means the character we have reached is the first digit of a number. In this case, create a loop that will push the character before this number in the string to the answer array the amount of times of the number - 1 since the letter was pushed to the array once already
     } else {
-      for (let j = 0; j < numsMap.get(i) - 1; j++) {
+      for (let j = 0; j < numsMap.get(i) - 1; j++){
         answer.push(str[i - 1]);
       }
     }
   }
-  return answer.join('');
-};
+ return answer.join('');
+}
 
-console.log(refactoredStr("5za2b2c3b10p"));
+console.log(refactorStr('7a1b2c3d10'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // module.exports = { changeToCamelCase };
