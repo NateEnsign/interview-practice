@@ -2713,20 +2713,48 @@
 // console.log(refactorStr('a1b2c3d10'));
 
 
-const numberOfVowels = (str) => {
-  let count = 0;
+// const numberOfVowels = (str) => {
+//   let count = 0;
 
-  str = str.toLowerCase();
+//   str = str.toLowerCase();
+
+//   for (let i = 0; i < str.length; i++){
+//     if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u') count++;
+//   }
+//   return count;
+// }
+
+// let test = 'bookaeiouUI'
+
+// console.log(numberOfVowels(test))
+
+
+const expandStr = (str) => {
+  let nums = [...str.matchAll(/\d+/g)]
+
+  let numsMap = new Map();
+
+  let answer = [];
+
+  nums.forEach((num) => {
+    numsMap.set(num.index, num[0]);
+  })
 
   for (let i = 0; i < str.length; i++){
-    if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u') count++;
+    if (str[i].match(/[a-z]/)){
+      answer.push(str[i])
+    }else if (numsMap.has(i) && numsMap.has(i - 1)){
+      continue;
+    }else {
+      for (let j = 0; j < numsMap.get(i) - 1; j++){
+        answer.push(str[i-1]);
+      }
+    }
   }
-  return count;
+  return answer.join('');
 }
 
-let test = 'bookaeiouUI'
-
-console.log(numberOfVowels(test))
+console.log(expandStr('a3b2cd10'));
 
 
 
