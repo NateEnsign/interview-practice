@@ -2782,31 +2782,72 @@
 
 // console.log(numberOfVowels(test))
 
-const expandStr = (str) => {
-  let nums = [...str.matchAll(/\d+/g)];
+// const expandStr = (str) => {
+//   let nums = [...str.matchAll(/\d+/g)];
 
-  let numsMap = new Map();
+//   let numsMap = new Map();
 
-  nums.forEach((num) => {
-    numsMap.set(num.index, num[0]);
-  });
+//   nums.forEach((num) => {
+//     numsMap.set(num.index, num[0]);
+//   });
 
-  let answer = [];
+//   let answer = [];
 
-  for (let i = 0; i < str.length; i++) {
-    if (str[i].match(/[a-z]/)) {
-      answer.push(str[i]);
-    } else if (numsMap.has[i] && numsMap.has[i - 1]) {
-      continue;
-    } else {
-      for (let j = 0; j < numsMap.get(i) - 1; j++) {
-        answer.push(str[i - 1]);
-      }
-    }
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i].match(/[a-z]/)) {
+//       answer.push(str[i]);
+//     } else if (numsMap.has[i] && numsMap.has[i - 1]) {
+//       continue;
+//     } else {
+//       for (let j = 0; j < numsMap.get(i) - 1; j++) {
+//         answer.push(str[i - 1]);
+//       }
+//     }
+//   }
+//   console.log(answer.join(""));
+// };
+
+// expandStr("8ab2c3d10");
+
+
+let fibonacciSequence = (num) => {
+  let arr = [0,1];
+
+  if (num <= 0) return 'Please enter positive integer';
+  if (num === 1) return [0];
+  if (num === 2) return arr;
+
+  while (num > 2){
+    arr.push(arr.slice(-2).reduce((a,b) => a + b,0));
+    num--;
   }
-  console.log(answer.join(""));
-};
+  return arr;
+}
 
-expandStr("8ab2c3d10");
+console.log(fibonacciSequence(10))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // module.exports = { changeToCamelCase };
