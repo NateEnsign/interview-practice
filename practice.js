@@ -2644,8 +2644,6 @@
 
 // console.log(adjustString(test));
 
-
-
 // AwardCo code challenge 2
 
 // let refactoredStr = (str) => {
@@ -2712,7 +2710,6 @@
 
 // console.log(refactorStr('a1b2c3d10'));
 
-
 // const numberOfVowels = (str) => {
 //   let count = 0;
 
@@ -2727,7 +2724,6 @@
 // let test = 'bookaeiouUI'
 
 // console.log(numberOfVowels(test))
-
 
 // const expandStr = (str) => {
 //   let nums = [...str.matchAll(/\d+/g)]
@@ -2756,6 +2752,20 @@
 
 // console.log(expandStr('a3b2cd10'));
 
+// const numberOfVowels = (str) => {
+//   let count = 0;
+
+//   str = str.toLowerCase();
+
+//   for (let i = 0; i < str.length; i++){
+//     if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u') count++;
+//   }
+//   return count;
+// }
+
+// let test = 'bookaeiouUI'
+
+// console.log(numberOfVowels(test))
 
 // const numberOfVowels = (str) => {
 //   let count = 0;
@@ -2772,36 +2782,31 @@
 
 // console.log(numberOfVowels(test))
 
+const expandStr = (str) => {
+  let nums = [...str.matchAll(/\d+/g)];
 
-const numberOfVowels = (str) => {
-  let count = 0;
+  let numsMap = new Map();
 
-  str = str.toLowerCase();
+  nums.forEach((num) => {
+    numsMap.set(num.index, num[0]);
+  });
 
-  for (let i = 0; i < str.length; i++){
-    if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u') count++;
+  let answer = [];
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].match(/[a-z]/)) {
+      answer.push(str[i]);
+    } else if (numsMap.has[i] && numsMap.has[i - 1]) {
+      continue;
+    } else {
+      for (let j = 0; j < numsMap.get(i) - 1; j++) {
+        answer.push(str[i - 1]);
+      }
+    }
   }
-  return count;
-}
+  console.log(answer.join(""));
+};
 
-let test = 'bookaeiouUI'
-
-console.log(numberOfVowels(test))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+expandStr("8ab2c3d10");
 
 // module.exports = { changeToCamelCase };
