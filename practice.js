@@ -2809,7 +2809,6 @@
 
 // expandStr("8ab2c3d10");
 
-
 // let fibonacciSequence = (num) => {
 //   let arr = [0,1];
 
@@ -2826,8 +2825,6 @@
 
 // console.log(fibonacciSequence(10))
 
-
-
 // const mergeArrays = (arr1,arr2) => {
 //   return [...arr1,...arr2].sort((a,b) => a - b);
 // }
@@ -2835,8 +2832,6 @@
 // let array2 = [2,4,6,8,10];
 
 // console.log(mergeArrays(array1,array2))
-
-
 
 // let fizzBuzz = (num) => {
 //   for (let i = 1; i <= num; i++){
@@ -2846,35 +2841,37 @@
 
 // fizzBuzz(30)
 
+// let reverseWords = (str) => {
+//   return str.split(' ').map((word) => word.split('').reverse().join('')).join(' ');
+// }
 
-let reverseWords = (str) => {
-  return str.split(' ').map((word) => word.split('').reverse().join('')).join(' ');
-}
+// console.log(reverseWords('Hey you should offer me a job!'))
 
-console.log(reverseWords('Hey you should offer me a job!'))
+let expandStr = (str) => {
+  let nums = [...str.matchAll(/\d+/g)];
 
+  let numsMap = new Map();
 
+  nums.forEach((num) => {
+    numsMap.set(num.index, num[0]);
+  });
 
+  let answer = [];
 
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].match(/[a-z]/)) {
+      answer.push(str[i]);
+    } else if (numsMap.has(i) && numsMap.has(i - 1)) {
+      continue;
+    } else {
+      for (let j = 0; j < numsMap.get(i) - 1; j++) {
+        answer.push(str[i - 1]);
+      }
+    }
+  }
+  console.log(answer.join(""));
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+expandStr("ab2c3d10");
 
 // module.exports = { changeToCamelCase };
